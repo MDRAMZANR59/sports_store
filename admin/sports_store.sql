@@ -24,18 +24,18 @@ DROP TABLE IF EXISTS `authentication`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `authentication` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `contact` varchar(100) NOT NULL,
-  `photo` varchar(100) NOT NULL,
-  `user_Name` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `status` int(1) NOT NULL,
-  `created_At` datetime DEFAULT NULL,
-  `created_By` datetime DEFAULT NULL,
-  `updated_At` datetime DEFAULT NULL,
-  `updated_By` int(11) DEFAULT NULL,
-  `deleted_At` datetime DEFAULT NULL,
+  `name` varchar(100),
+  `email` varchar(100) ,
+  `contact` varchar(100),
+  `photo` varchar(100) ,
+  `username` varchar(100) ,
+  `password` varchar(100) ,
+  `status` int(1) ,
+  `created_at` datetime ,
+  `created_by` datetime ,
+  `updated_at` datetime ,
+  `updated_by` int(11),
+  `deleted_at` datetime ,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -58,12 +58,12 @@ DROP TABLE IF EXISTS `catagory`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `catagory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(100) NOT NULL,
-  `created_At` datetime DEFAULT NULL,
-  `created_By` int(11) DEFAULT NULL,
-  `updated_At` datetime DEFAULT NULL,
-  `updated_By` int(11) DEFAULT NULL,
-  `deleted_At` datetime DEFAULT NULL,
+  `type` varchar(100),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -86,16 +86,16 @@ DROP TABLE IF EXISTS `customer`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `contact` varchar(100) NOT NULL,
-  `payment_Status` int(1) NOT NULL,
-  `advance` int(11) NOT NULL,
-  `due` int(11) DEFAULT NULL,
-  `created_At` datetime DEFAULT NULL,
-  `created_By` int(11) DEFAULT NULL,
-  `updated_At` datetime DEFAULT NULL,
-  `updated_By` int(11) DEFAULT NULL,
-  `deleted_At` datetime DEFAULT NULL,
+  `name` varchar(100),
+  `contact` varchar(100),
+  `payment_Status` int(1),
+  `advance` int(11),
+  `due` int(11),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -118,17 +118,17 @@ DROP TABLE IF EXISTS `itmes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `itmes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_Name` varchar(100) NOT NULL,
-  `details` text NOT NULL,
-  `photo` varchar(100) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `catagory_Id` int(11) DEFAULT NULL,
-  `company_Name` varchar(100) NOT NULL,
-  `created_At` datetime NOT NULL,
-  `created_By` int(11) NOT NULL,
-  `updated_At` datetime DEFAULT NULL,
-  `updated_By` int(11) DEFAULT NULL,
-  `deleted_At` datetime NOT NULL,
+  `product_name` varchar(100),
+  `details` text,
+  `photo` varchar(100),
+  `price` decimal(10,2),
+  `catagory_id` int(11),
+  `company_name` varchar(100),
+  `created_at` datetime ,
+  `created_by` int(11) ,
+  `updated_at` datetime ,
+  `updated_by` int(11) ,
+  `deleted_at` datetime ,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -151,18 +151,18 @@ DROP TABLE IF EXISTS `purchase`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchase` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `supplier_Id` int(11) NOT NULL,
-  `purchase_Date` date NOT NULL,
-  `qty` int(11) NOT NULL,
-  `sub_Amount` decimal(10,2) NOT NULL,
-  `discount` decimal(10,2) DEFAULT NULL,
-  `vat` decimal(10,2) NOT NULL,
-  `total_Amount` decimal(10,2) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_By` int(11) NOT NULL,
-  `updated_At` datetime NOT NULL,
-  `updated_By` int(11) NOT NULL,
-  `deleted_At` datetime NOT NULL,
+  `supplier_id` int(11),
+  `purchase_date` date,
+  `qty` int(11),
+  `sub_amount` decimal(10,2),
+  `discount` decimal(10,2),
+  `vat` decimal(10,2),
+  `total_amount` decimal(10,2),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -185,16 +185,16 @@ DROP TABLE IF EXISTS `purchase_details`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchase_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `purchase_Id` int(11) NOT NULL,
-  `purchase_date` date NOT NULL,
-  `product_Id` int(11) NOT NULL,
-  `qty` decimal(10,2) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `created_At` datetime NOT NULL,
-  `created_By` int(11) NOT NULL,
-  `updated_At` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` datetime NOT NULL,
+  `purchase_id` int(11),
+  `purchase_date` date,
+  `product_id` int(11),
+  `qty` decimal(10,2),
+  `price` decimal(10,2),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -217,18 +217,18 @@ DROP TABLE IF EXISTS `sales`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `customer_Id` int(11) NOT NULL,
-  `sales_Date` date NOT NULL,
-  `qty` int(11) NOT NULL,
-  `sub_amount` decimal(10,2) NOT NULL,
-  `discount` decimal(10,2) NOT NULL,
-  `vat` decimal(10,2) NOT NULL,
-  `total_Amount` decimal(10,2) NOT NULL,
-  `created_At` datetime NOT NULL,
-  `created_By` int(11) NOT NULL,
-  `updated_At` datetime NOT NULL,
-  `updated_By` int(11) NOT NULL,
-  `deleted_At` datetime NOT NULL,
+  `customer_id` int(11) ,
+  `sales_date` date,
+  `qty` int(11),
+  `sub_amount` decimal(10,2),
+  `discount` decimal(10,2),
+  `vat` decimal(10,2),
+  `total_amount` decimal(10,2),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -251,16 +251,16 @@ DROP TABLE IF EXISTS `sales_details`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sales_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sales_Id` int(11) NOT NULL,
-  `sales_date` date NOT NULL,
-  `product_Id` int(11) NOT NULL,
-  `qty` decimal(10,2) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `created_At` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_At` datetime NOT NULL,
-  `updated_By` int(11) NOT NULL,
-  `deleted_At` datetime NOT NULL,
+  `sales_id` int(11),
+  `sales_date` date,
+  `product_id` int(11),
+  `qty` decimal(10,2),
+  `price` decimal(10,2),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -283,16 +283,16 @@ DROP TABLE IF EXISTS `stock`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `purchase_Id` int(11) NOT NULL,
-  `product_Id` int(11) NOT NULL,
-  `qty` decimal(10,2) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `stock_date` date NOT NULL,
-  `created_At` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_At` datetime NOT NULL,
-  `updated_By` int(11) NOT NULL,
-  `deleted_At` datetime NOT NULL,
+  `purchase_id` int(11),
+  `product_id` int(11),
+  `qty` decimal(10,2),
+  `price` decimal(10,2),
+  `stock_date` date,
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -315,16 +315,15 @@ DROP TABLE IF EXISTS `supplier`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `supplier` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `contact` varchar(100) NOT NULL,
-  `location` varchar(100) NOT NULL,
-  `product_id` varchar(10) NOT NULL,
-  `suplayer_Catagory` char(1) NOT NULL,
-  `created_At` datetime DEFAULT NULL,
-  `created_By` int(11) DEFAULT NULL,
-  `updated_At` datetime DEFAULT NULL,
-  `updated_By` int(11) DEFAULT NULL,
-  `deleted_At` datetime DEFAULT NULL,
+  `name` varchar(100),
+  `contact` varchar(100),
+  `location` varchar(100),
+  `product_id` varchar(10),
+  `created_at` datetime,
+  `created_by` int(11),
+  `updated_at` datetime,
+  `updated_by` int(11),
+  `deleted_at` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
