@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+                            <p>Copyright © 2024. All rights reserved. ISDB <a href="https://colorlib.com/wp/templates/">R59 WDPF</a></p>
                         </div>
                     </div>
                 </div>

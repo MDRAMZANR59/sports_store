@@ -1,202 +1,173 @@
-<?php include('include/header.php') ; ?>
+<?php include('include/header.php'); ?>
 <!-- Content -->
-<div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Purchase/</span> Add New</h4>
+<div class="container-fluid">
+    <h4 class="page-header"><span class="text-muted">Purchase/</span> Add New</h4>
 
     <!-- Basic Layout -->
     <div class="row">
-    <div class="col-xl">
-        <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Purchase Information</h5>
-        </div>
-        <div class="card-body">
-            <form class="form" method="post" action="">
-                <div class="row">
-                    <div class="col-md-2 mt-2">
-                        <label for="customrName" class="float-end"><h6>Customer</h6></label>
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-control form-select" name="supplier_id" id="supplier_id">
-                            <option value="">Select Supplier</option>
-                            <?php 
-                                $result=$mysqli->common_select('supplier');
-                                if($result){
-                                    if($result['data']){
-                                        $i=1;
-                                        foreach($result['data'] as $d){
-                            ?>
-                                <option value="<?= $d->id ?>" > <?= $d->contact ?> <?= $d->name ?></option>
-                            <?php } } } ?>
-                        </select>
-                    </div>
-                    
-                    <div class="col-md-2 mt-2">
-                        <label for="date" class="float-end"><h6>Date</h6></label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="date" id="purchase_date" class="form-control" value="<?= date("Y-m-d") ?>" name="purchase_date">
-                    </div>
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Purchase Information</h5>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-md-2 mt-2">
-                        <label for="reference_no" class="float-end"><h6>Product</h6></label>
-                    </div>
-                    <div class="col-md-10">
-                        <select class="form-control form-select" onchange="return_row_with_data(this)" id="product">
-                            <option value="">Select Medicine</option>
-                            <?php 
-                                $result=$mysqli->common_select('medicine');
-                                $medicine=array();
-                                if($result){
-                                    if($result['data']){
-                                        $i=1;
-                                        foreach($result['data'] as $d){
-                                            $medicine[$d->id]=$d;
-                            ?>
-                                <option value='<?= json_encode($d) ?>' > <?= $d->brand_name ?> <?= $d->generic_name ?></option>
-                            <?php } } } ?>
-                        </select>
-                    </div>
-                </div>
-                
-                <table class="table mb-5">
-                    <thead>
-                        <tr class="">
-                            <th class="p-2">Product Name</th>
-                            <th class="p-2">Qty</th>
-                            <th class="p-2">Sell Price</th>
-                            <th class="p-2">Amount</th>
-                            <th class="p-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="details_data">
-
-                    </tbody>
-                </table>
-
-
-                <div class="row mb-5">
-                    <div class="col-12 col-sm-6">
-                        <div class="row">
-                            <div class="col-4 offset-2 mt-2 text-end pe-3">
-                                <label for="" class="form-group"><h6>Total Quantities</h6></label> 
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post" action="">
+                        <div class="form-group">
+                            <label for="supplier_id" class="col-md-2 control-label"><h6>Supplier</h6></label>
+                            <div class="col-md-4">
+                                <select class="form-control" name="supplier_id" id="supplier_id">
+                                    <option value="">Select Supplier</option>
+                                    <?php 
+                                        $result = $mysqli->common_select('supplier');
+                                        if ($result && $result['data']) {
+                                            foreach ($result['data'] as $d) {
+                                                echo "<option value='{$d->id}'>{$d->contact} {$d->name}</option>";
+                                            }
+                                        }
+                                    ?>
+                                </select>
                             </div>
-                            <div class="col-4 mt-2">
-                                <label for="" class="form-group"><h6 id="total_qty">0</h6></label>
-                                <input type="hidden" name="total_qty" id="total_qty_p">
+                            <label for="purchase_date" class="col-md-2 control-label"><h6>Date</h6></label>
+                            <div class="col-md-4">
+                                <input type="date" id="purchase_date" class="form-control" value="<?= date('Y-m-d') ?>" name="purchase_date">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-4 offset-2 mt-2 text-end pe-3">
-                                <label for="" class="form-group"><h6>Discount</h6></label> 
-                            </div>
-                            <div class="col-6 mt-2">
-                                <input type="text" class="form-control form-group" id="discount" name="discount" onkeyup="check_change()">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4 offset-2 mt-2 text-end pe-3">
-                                <label for="" class="form-group"><h6>Vat (%)</h6></label> 
-                            </div>
-                            <div class="col-4 mt-2">
-                                <input type="text" class="form-control form-group" id="vat" onkeyup="check_change()">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-12 col-sm-6">
-                        <div class="row">
-                            <div class="col-4 offset-4 mt-2 pe-2 text-end">
-                                <label for="" class="form-group"><h6>Subtotal</h6></label> 
-                            </div>
-                            <div class="col-4 mt-2 pe-5 text-end">
-                                <label for="" class="form-group"><h6 id="tsubtotal">0.00</h6></label>
-                                <input type="hidden" name="tsubtotal" id="tsubtotal_p">
-                            </div>
-                        </div>   
-                        
-                        <div class="row">
-                            <div class="col-4 offset-4 mt-2 pe-2 text-end">
-                                <label for="" class="form-group"><h6>Discount</h6></label> 
-                            </div>
-                            <div class="col-4 mt-2 pe-5 text-end">
-                                <label for="" class="form-group"><h6 id="tdiscount">0.00</h6></label>
-                                <input type="hidden" name="tdiscount" id="tdiscount_p">
-                            </div>
-                        </div>  
-                        <div class="row">
-                            <div class="col-4 offset-4 mt-2 pe-2 text-end">
-                                <label for="" class="form-group"><h6>Vat</h6></label> 
-                            </div>
-                            <div class="col-4 mt-2 pe-5 text-end">
-                                <label for="" class="form-group"><h6 id="vat_v">0.00</h6></label>
-                                <input type="hidden" name="vat" id="vat_p">
+                        <div class="form-group">
+                            <label for="product" class="col-md-2 control-label"><h6>Product</h6></label>
+                            <div class="col-md-10">
+                                <select class="form-control" onchange="return_row_with_data(this)" id="product">
+                                    <option value="">Select Medicine</option>
+                                    <?php 
+                                        $result = $mysqli->common_select('medicine');
+                                        if ($result && $result['data']) {
+                                            foreach ($result['data'] as $d) {
+                                                echo "<option value='" . json_encode($d) . "'>{$d->brand_name} {$d->generic_name}</option>";
+                                            }
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-4 offset-4 mt-2 pe-2 text-end">
-                                <label for="" class="form-group"><h6>Grand Total</h6></label> 
+
+                        <table class="table table-bordered mb-5">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Qty</th>
+                                    <th>Sell Price</th>
+                                    <th>Amount</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="details_data">
+                                <!-- Rows will be added dynamically -->
+                            </tbody>
+                        </table>
+
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="" class="col-md-4 control-label text-right"><h6>Total Quantities</h6></label>
+                                    <div class="col-md-8">
+                                        <label for="" class="control-label"><h6 id="total_qty">0</h6></label>
+                                        <input type="hidden" name="total_qty" id="total_qty_p">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="discount" class="col-md-4 control-label text-right"><h6>Discount</h6></label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="discount" name="discount" onkeyup="check_change()">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vat" class="col-md-4 control-label text-right"><h6>Vat (%)</h6></label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="vat" onkeyup="check_change()">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-4 mt-2 pe-5 text-end">
-                                <label for="" class="form-group"><h6 id="tgrandtotal">0.00</h6></label>
-                                <input type="hidden" name="tgrandtotal" id="tgrandtotal_p">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="" class="col-md-4 control-label text-right"><h6>Subtotal</h6></label>
+                                    <div class="col-md-8 text-right">
+                                        <label for="" class="control-label"><h6 id="tsubtotal">0.00</h6></label>
+                                        <input type="hidden" name="tsubtotal" id="tsubtotal_p">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-md-4 control-label text-right"><h6>Discount</h6></label>
+                                    <div class="col-md-8 text-right">
+                                        <label for="" class="control-label"><h6 id="tdiscount">0.00</h6></label>
+                                        <input type="hidden" name="tdiscount" id="tdiscount_p">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-md-4 control-label text-right"><h6>Vat</h6></label>
+                                    <div class="col-md-8 text-right">
+                                        <label for="" class="control-label"><h6 id="vat_v">0.00</h6></label>
+                                        <input type="hidden" name="vat" id="vat_p">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-md-4 control-label text-right"><h6>Grand Total</h6></label>
+                                    <div class="col-md-8 text-right">
+                                        <label for="" class="control-label"><h6 id="tgrandtotal">0.00</h6></label>
+                                        <input type="hidden" name="tgrandtotal" id="tgrandtotal_p">
+                                    </div>
+                                </div>
                             </div>
-                        </div> 
-                    </div>
-                </div>
-                                
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                        
-                    </div>
-                </div>
-            </form>
-            <?php 
-                if($_POST){
-                    $pur['supplier_id']=$_POST['supplier_id'];
-                    $pur['purchase_date']=$_POST['purchase_date'];
-                    $pur['qty']=$_POST['total_qty'];
-                    $pur['sub_amount']=$_POST['tsubtotal'];
-                    $pur['discount']=$_POST['tdiscount'];
-                    $pur['vat']=$_POST['vat'];
-                    $pur['total_amount']=$_POST['tgrandtotal'];
-                    $pur['created_at']=date("Y-m-d H:i:s");
-                    $pur['created_by']=$_SESSION['id'];
-                    $rs=$mysqli->common_create('purchase',$pur);
-                    if($rs){
-                        if($rs['data']){
-                            if($_POST['medicine_id']){
-                                foreach($_POST['medicine_id'] as $k => $v){
-                                    $purd['purchase_id']=$rs['data'];
-                                    $purd['purchase_date']=$_POST['purchase_date'];
-                                    $purd['medicine_id']=$v;
-                                    $purd['qty']=$_POST['qty'][$k];
-                                    $purd['price']=$_POST['price'][$k];
-                                    $purd['created_at']=date("Y-m-d H:i:s");
-                                    $purd['created_by']=$_SESSION['id'];
-                                    $rs=$mysqli->common_create('purchase_details',$purd);
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                    <?php 
+                        if ($_POST) {
+                            $pur = [
+                                'supplier_id' => $_POST['supplier_id'],
+                                'purchase_date' => $_POST['purchase_date'],
+                                'qty' => $_POST['total_qty'],
+                                'sub_amount' => $_POST['tsubtotal'],
+                                'discount' => $_POST['tdiscount'],
+                                'vat' => $_POST['vat'],
+                                'total_amount' => $_POST['tgrandtotal'],
+                                'created_at' => date('Y-m-d H:i:s'),
+                                'created_by' => $_SESSION['id']
+                            ];
+                            $rs = $mysqli->common_create('purchase', $pur);
+                            if ($rs && $rs['data']) {
+                                if ($_POST['medicine_id']) {
+                                    foreach ($_POST['medicine_id'] as $k => $v) {
+                                        $purd = [
+                                            'purchase_id' => $rs['data'],
+                                            'purchase_date' => $_POST['purchase_date'],
+                                            'medicine_id' => $v,
+                                            'qty' => $_POST['qty'][$k],
+                                            'price' => $_POST['price'][$k],
+                                            'created_at' => date('Y-m-d H:i:s'),
+                                            'created_by' => $_SESSION['id']
+                                        ];
+                                        $mysqli->common_create('purchase_details', $purd);
+                                    }
                                 }
+                                echo "<script>window.location='{$baseurl}purchase_list.php'</script>";
+                            } else {
+                                echo $rs['error'];
                             }
-
-                            echo "<script>window.location='{$baseurl}purchase_list.php'</script>";
-                        }else{
-                            echo $rs['error'];
                         }
-                    }
-                }
-            ?>
+                    ?>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
-    
     </div>
 </div>
 <!-- / Content -->
 
-<?php include('include/footer.php') ; ?>
+<?php include('include/footer.php'); ?>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -205,97 +176,71 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 
-
 <script>
-    var medicine_data=<?= json_encode($medicine) ?>;
-    var selected_medicine=[];
-    function return_row_with_data(item){
-        let data=JSON.parse(item.value);
-        if(!selected_medicine.some(k => k == data.id)){
-            let row=`<tr>
-                        <td class="p-2">
-                            ${data.brand_name}
-                            <input type="hidden" name="medicine_id[]" value="${data.id}">
-                        </td>
-                        <td class="p-2">
-                            <input type="text" class="form-control qty" name="qty[]" onkeyup="get_cal(this,${data.id})">
-                        </td>
-                        <td class="p-2">
-                            ${data.price}
-                            <input type="hidden" class="price" name="price[]" value="${data.price}">
-                        </td>
-                        <td class="p-2">
-                            <span id="price${data.id}" class="subprice"> </span>
-                        </td>
-                        <td class="p-2">Action</td>
-                    </tr>`
-            document.getElementById('details_data').insertRow().innerHTML=row;
-            selected_medicine.push(data.id)
+    var medicine_data = <?= json_encode($medicine) ?>;
+    var selected_medicine = [];
+
+    function return_row_with_data(item) {
+        let data = JSON.parse(item.value);
+        if (!selected_medicine.includes(data.id)) {
+            let row = `<tr>
+                            <td>${data.brand_name}<input type="hidden" name="medicine_id[]" value="${data.id}"></td>
+                            <td><input type="text" class="form-control qty" name="qty[]" onkeyup="get_cal(this,${data.id})"></td>
+                            <td>${data.price}<input type="hidden" class="price" name="price[]" value="${data.price}"></td>
+                            <td><span id="price${data.id}" class="subprice"></span></td>
+                            <td><button type="button" class="btn btn-danger btn-sm" onclick="removerow(this)">Remove</button></td>
+                        </tr>`;
+            $('#details_data').append(row);
+            selected_medicine.push(data.id);
         }
-        
-    }
-    //INCREMENT ITEM
-    function removerow(e){
-        $(e).parents('tr').remove();
     }
 
-    //CALCUALATED SALES PRICE
-    function get_cal(qty,mid){
-        var price = (isNaN(parseFloat(medicine_data[mid].price))) ? 0 :parseFloat(medicine_data[mid].price); 
-        var qty = (isNaN(parseFloat(qty.value))) ? 0 :parseFloat(qty.value); 
-    
-        var subtotal = price * qty;
-            document.getElementById('price'+mid).innerHTML=subtotal
-
-        total_calculate();
+    function removerow(e) {
+        $(e).closest('tr').remove();
+        total_sum();
     }
-    //END
-    //CALCULATE PROFIT MARGIN PERCENTAGE
-    function total_calculate(){
-        var totalqty = 0;
-        document.querySelectorAll('.qty').forEach(function(e){
-            totalqty += (isNaN(parseFloat(e.value))) ? 0 :parseFloat(e.value);
-        });
-        
-        var subtotal = 0;
-        document.querySelectorAll('.subprice').forEach(function(e){
-            subtotal += (isNaN(parseFloat(e.innerHTML))) ? 0 :parseFloat(e.innerHTML);
+
+    function get_cal(e, id) {
+        let qty = $(e).closest('tr').find('.qty').val();
+        let price = $(e).closest('tr').find('.price').val();
+        let sub_price = qty * price;
+        $(`#price${id}`).text(sub_price.toFixed(2));
+        total_sum();
+    }
+
+    function total_sum() {
+        let total_qty = 0;
+        let total_price = 0;
+
+        $('.qty').each(function () {
+            total_qty += parseInt($(this).val()) || 0;
         });
 
-        document.getElementById('total_qty').innerHTML=totalqty;
-        document.getElementById('total_qty_p').value=totalqty;
-        
-        document.getElementById('tsubtotal').innerHTML=subtotal;
-        document.getElementById('tsubtotal_p').value=subtotal;
+        $('.subprice').each(function () {
+            total_price += parseFloat($(this).text()) || 0;
+        });
 
-        
-        check_change();
-    }
-    //END
+        $('#total_qty').text(total_qty);
+        $('#total_qty_p').val(total_qty);
 
-    function check_change(){
-        var vat=(isNaN(parseFloat(document.getElementById('vat').value))) ? 0 :parseFloat(document.getElementById('vat').value);
-        var discount=(isNaN(parseFloat(document.getElementById('discount').value))) ? 0 :parseFloat(document.getElementById('discount').value);
-        var tsubtotal=document.getElementById('tsubtotal_p').value;
-        vat= tsubtotal * (vat/100)
-        document.getElementById('tdiscount').innerHTML=discount.toFixed(2)
-        document.getElementById('tdiscount_p').value=discount.toFixed(2)
-        document.getElementById('vat_v').innerHTML=vat.toFixed(2)
-        document.getElementById('vat_p').value=vat.toFixed(2)
+        $('#tsubtotal').text(total_price.toFixed(2));
+        $('#tsubtotal_p').val(total_price.toFixed(2));
 
-        cal_grandtotl()
-    }
+        let discount = parseFloat($('#discount').val()) || 0;
+        $('#tdiscount').text(discount.toFixed(2));
+        $('#tdiscount_p').val(discount.toFixed(2));
 
-    function cal_grandtotl(){
-        var tsubtotal_p=(isNaN(parseFloat(document.getElementById('tsubtotal_p').value))) ? 0 :parseFloat(document.getElementById('tsubtotal_p').value);
-        var vat=(isNaN(parseFloat(document.getElementById('vat_p').value))) ? 0 :parseFloat(document.getElementById('vat_p').value);
-        var discount=(isNaN(parseFloat(document.getElementById('tdiscount_p').value))) ? 0 :parseFloat(document.getElementById('tdiscount_p').value);
-        var grandtotal=((tsubtotal_p-discount)+vat);
-        var roundof=Math.floor(grandtotal);
-            subtotal_diff=grandtotal-roundof;
+        let vat = parseFloat($('#vat').val()) || 0;
+        let vat_amount = (total_price * vat) / 100;
+        $('#vat_v').text(vat_amount.toFixed(2));
+        $('#vat_p').val(vat_amount.toFixed(2));
 
-        document.getElementById('tgrandtotal').innerHTML=parseFloat(roundof).toFixed(2)
-        document.getElementById('tgrandtotal_p').value=parseFloat(roundof).toFixed(2)
+        let grand_total = total_price - discount + vat_amount;
+        $('#tgrandtotal').text(grand_total.toFixed(2));
+        $('#tgrandtotal_p').val(grand_total.toFixed(2));
     }
 
+    function check_change() {
+        total_sum();
+    }
 </script>

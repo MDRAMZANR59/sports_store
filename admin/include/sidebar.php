@@ -14,8 +14,6 @@
                         </a>
                         <ul class="nav nav-second-level" aria-expanded="true">
                             <li><a title="Dashboard v.1" href="./index.php"><span class="mini-sub-pro">Dashboard</span></a></li>
-                            <li><a title="Analytics" href="./Admin Panel/analytics.php"><span class="mini-sub-pro">Analytics</span></a></li>
-                            <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -51,7 +49,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Purchase Details</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
                             <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
                             <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>

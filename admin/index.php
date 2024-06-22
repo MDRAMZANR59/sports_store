@@ -1,6 +1,5 @@
 <?php include_once('include/header.php') ?>
-            <!-- Mobile Menu end -->
-             <!--search bar-->
+           
             <div class="breadcome-area" style="top:50px; position: relative" >
                 <div class="container-fluid">
                     <div class="row">
