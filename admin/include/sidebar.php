@@ -14,7 +14,7 @@
                         </a>
                         <ul class="nav nav-second-level" aria-expanded="true">
                             <li><a title="Dashboard v.1" href="./index.php"><span class="mini-sub-pro">Dashboard</span></a></li>
-                            <li><a title="Analytics" href="./analytics.php"><span class="mini-sub-pro">Analytics</span></a></li>
+                            <li><a title="Analytics" href="./Admin Panel/analytics.php"><span class="mini-sub-pro">Analytics</span></a></li>
                             <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
                         </ul>
                     </li>
@@ -22,36 +22,32 @@
                         <a title="Landing Page" href="login.php" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Authentication</span></a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Customer</span></a>
+                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Customer</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                            <li><a title="All Professors" href="<?= $baseurl ?>customer_add.php"><span class="mini-sub-pro">Add New</span></a></li>
-                            <li><a title="Add Professor" href="<?= $baseurl ?>customer_list.php"><span class="mini-sub-pro">List</span></a></li>
+                            <li><a title="All Customer" href="<?= $baseurl ?>customer_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                            <li><a title="Add Customer" href="<?= $baseurl ?>customer_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Supplier</span></a>
+                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Supplier</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                            <li><a title="All Professors" href="<?= $baseurl ?>supplier_add.php"><span class="mini-sub-pro">Add New</span></a></li>
-                            <li><a title="Add Professor" href="<?= $baseurl ?>supplier_list.php"><span class="mini-sub-pro">List</span></a></li>
+                            <li><a title="All Supplier" href="<?= $baseurl ?>supplier_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                            <li><a title="Add Supplier" href="<?= $baseurl ?>supplier_list.php"><span class="mini-sub-pro">List</span></a></li>
                           
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Courses</span></a>
+                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Items</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                            <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Courses</span></a></li>
-                            <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">Add Course</span></a></li>
-                            <li><a title="Edit Courses" href="edit-course.html"><span class="mini-sub-pro">Edit Course</span></a></li>
-                            <li><a title="Courses Profile" href="course-info.html"><span class="mini-sub-pro">Courses Info</span></a></li>
-                            <li><a title="Product Payment" href="course-payment.html"><span class="mini-sub-pro">Courses Payment</span></a></li>
+                            <li><a title="All Items" href="<?= $baseurl ?>items_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                            <li><a title="Add Items" href="<?= $baseurl ?>items_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Purchase</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                            <li><a title="All Library" href="library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
-                            <li><a title="Add Library" href="add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
-                            <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                        <li><a title="purchase_add" href="<?= $baseurl ?>purchase_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                        <li><a title="purchase_list" href="<?= $baseurl ?>purchase_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
                     <li>
