@@ -3,8 +3,6 @@
 3. customer 		Done              
 4. itmes                Done
 5. purchase             Done
-6. purchase_details       
-7. sales                  
-8. sales_details          
+7. sales             
 9. stock                  
 10.supplier  		Done

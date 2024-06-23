@@ -5,12 +5,12 @@
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
 <div class="container">
-    <h4 class="page-header"><small>items /</small> List</h4>
+    <h4 class="page-header"><small>Category /</small> List</h4>
 
     <!-- Basic Bootstrap Table -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h5 class="panel-title">items</h5>
+            <h5 class="panel-title">Category</h5>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
@@ -19,14 +19,12 @@
                         <tr>
                             <th>#SL</th>
                             <th>Name</th>
-                            <th>Contact</th>
-                            <th>Due</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
-                            $result=$mysqli->common_select('items');
+                            $result=$mysqli->common_select('catagory');
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -35,16 +33,14 @@
                         <tr>
                             <td><?= $i++ ?></td>
                             <td><?= $data->name ?></td>
-                            <td><?= $data->contact ?></td>
-                            <td><?= $data->due ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                         <i class="glyphicon glyphicon-option-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?= $baseurl ?>items_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-                                        <li><a href="<?= $baseurl ?>items_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+                                        <li><a href="<?= $baseurl ?>category_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
+                                        <li><a href="<?= $baseurl ?>category_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
