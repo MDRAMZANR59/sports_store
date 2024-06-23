@@ -3,11 +3,11 @@
 <!-- Content -->
 
 <div class="container">
-    <h4 class="page-header"><small>Customer/</small> Update</h4>
+    <h4 class="page-header"><small>items/</small> Update</h4>
     <?php 
         $olddata=array();
         $con['id']=$_GET['id'];
-        $result=$mysqli->common_select_single('customer','*',$con);
+        $result=$mysqli->common_select_single('items','*',$con);
         if($result){
             if($result['data']){
                 $olddata=$result['data'];
@@ -19,7 +19,7 @@
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Customer Information</h5>
+                    <h5 class="panel-title">items Information</h5>
                 </div>
                 <div class="panel-body">
                     <form method="post" action="">
@@ -41,10 +41,10 @@
                         if($_POST){
                             $_POST['updated_at']=date('Y-m-d H:i:s');
                             $_POST['updated_by']=1;
-                            $rs=$mysqli->common_update('customer',$_POST,$con);
+                            $rs=$mysqli->common_update('items',$_POST,$con);
                             if($rs){
                                 if($rs['data']){
-                                    echo "<script>window.location='{$baseurl}customer_list.php'</script>";
+                                    echo "<script>window.location='{$baseurl}items_list.php'</script>";
                                 }else{
                                     echo $rs['error'];
                                 }

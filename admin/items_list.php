@@ -5,12 +5,12 @@
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
 <div class="container">
-    <h4 class="page-header"><small>Customer /</small> List</h4>
+    <h4 class="page-header"><small>items /</small> List</h4>
 
     <!-- Basic Bootstrap Table -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h5 class="panel-title">Customer</h5>
+            <h5 class="panel-title">items</h5>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
@@ -26,7 +26,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $result=$mysqli->common_select('customer');
+                            $result=$mysqli->common_select('items');
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -43,8 +43,8 @@
                                         <i class="glyphicon glyphicon-option-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?= $baseurl ?>customer_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-                                        <li><a href="<?= $baseurl ?>customer_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+                                        <li><a href="<?= $baseurl ?>items_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
+                                        <li><a href="<?= $baseurl ?>items_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
                                     </ul>
                                 </div>
                             </td>

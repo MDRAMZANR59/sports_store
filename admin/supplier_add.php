@@ -3,14 +3,14 @@
 <!-- Content -->
 
 <div class="container">
-    <h4 class="page-header"><small>Customer/</small> Add New</h4>
+    <h4 class="page-header"><small>supplier/</small> Add New</h4>
 
     <!-- Basic Layout -->
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Customer Information</h5>
+                    <h5 class="panel-title">supplier Information</h5>
                 </div>
                 <div class="panel-body">
                     <form method="post" action="">
@@ -32,10 +32,10 @@
                         if($_POST){
                             $_POST['created_at']=date('Y-m-d H:i:s');
                             $_POST['created_by']=1;
-                            $rs=$mysqli->common_create('customer',$_POST);
+                            $rs=$mysqli->common_create('supplier_list',$_POST);
                             if($rs){
                                 if($rs['data']){
-                                    echo "<script>window.location='{$baseurl}customer_list.php'</script>";
+                                    echo "<script>window.location='{$baseurl}supplier_list.php'</script>";
                                 }else{
                                     echo $rs['error'];
                                 }
