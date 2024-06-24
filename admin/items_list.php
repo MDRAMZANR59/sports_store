@@ -1,6 +1,13 @@
-<?php include('include/header.php') ; ?>
+<?php include('include/header.php'); ?>
+<!-- Include jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Include Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!-- Include DataTables CSS -->
 <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css" rel="stylesheet">
- 
+<!-- Include Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Include DataTables JS -->
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
@@ -14,29 +21,29 @@
         </div>
         <div class="panel-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="itemsTable">
                     <thead>
                         <tr>
                             <th>#SL</th>
-                            <th>name</th>
+                            <th>Name</th>
                             <th>Details</th>
                             <th>Photo</th>
+                            <th>Price</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
-                            $result=$mysqli->common_select('items');
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $data){
+                            $result = $mysqli->common_select('items');
+                            if ($result && $result['data']) {
+                                $i = 1;
+                                foreach ($result['data'] as $data) {
                         ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $data->product_name ?></td>
+                            <td><?= $data->name ?></td>
                             <td><?= $data->details ?></td>
-                            <td><?= $data->photo ?></td>
+                            <td><img src="<?= $data->photo ?>" alt="<?= $data->name ?>" style="width: 50px; height: 50px;"></td>
                             <td><?= $data->price ?></td>
                             <td>
                                 <div class="dropdown">
@@ -50,7 +57,10 @@
                                 </div>
                             </td>
                         </tr>
-                        <?php } } } ?>
+                        <?php 
+                                }
+                            } 
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -61,4 +71,11 @@
 </div>
 <!-- / Content -->
 
-<?php include('include/footer.php') ; ?>
+<!-- Initialize DataTable -->
+<script>
+$(document).ready(function() {
+    $('#itemsTable').DataTable();
+});
+</script>
+
+<?php include('include/footer.php'); ?>

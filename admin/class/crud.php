@@ -10,7 +10,7 @@
             $this->connection=new mysqli($this->host,$this->user,$this->password,$this->database);
         }
 
-        public function common_select($table,$fields='*',$condition=false,$sort_field=false,$sort='ASC'){
+        public function common_select($table,$fields='*',$condition=false,$sort_field=false,$sort='ASC'){//Problem "Eta Kothay Coll HOise"
             $result=array();
             $error=false;
             $sql="select $fields from $table where deleted_at is null ";
@@ -165,3 +165,4 @@
         }
     }
 ?>
+

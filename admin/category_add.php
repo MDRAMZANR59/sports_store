@@ -3,19 +3,19 @@
 <!-- Content -->
 
 <div class="container">
-    <h4 class="page-header"><small>Category/</small> Add New</h4>
+    <h4 class="page-header"><small>Items/</small> Add New</h4>
 
     <!-- Basic Layout -->
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Category Information</h5>
+                    <h5 class="panel-title">Items </h5>
                 </div>
                 <div class="panel-body">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="fullname">Category Name</label>
+                            <label for="fullname">Items </label>
                             <input type="text" name="name" class="form-control" id="fullname" placeholder="Category" />
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
