@@ -16,8 +16,12 @@
                             <li><a title="Dashboard v.1" href="./index.php"><span class="mini-sub-pro">Dashboard</span></a></li>
                         </ul>
                     </li>
+                    
                     <li>
-                        <a title="Landing Page" href="login.php" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Authentication</span></a>
+                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">User</span></a>
+                        <ul class="nav nav-second-level" aria-expanded="false">
+                            <li><a title="All User" href="<?= $baseurl ?>authentication_list.php"><span class="mini-sub-pro">List</span></a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Customer</span></a>
@@ -53,6 +57,20 @@
                         <ul class="nav nav-second-level" aria-expanded="false">
                         <li><a title="purchase_add" href="<?= $baseurl ?>purchase_add.php"><span class="mini-sub-pro">Add New</span></a></li>
                         <li><a title="purchase_list" href="<?= $baseurl ?>purchase_list.php"><span class="mini-sub-pro">List</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="educate-icon educate-library icon-wrap" ></span> <span class="mini-click-non">Sales</span></a>
+                        <ul class="nav nav-second-level" aria-expanded="false">
+                            <li><a title="Add items" href="<?= $baseurl ?>sales_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                            <li><a title="List Items" href="<?= $baseurl ?>sales_list.php"><span class="mini-sub-pro">List</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Stock</span></a>
+                        <ul class="nav nav-second-level" aria-expanded="false">
+                        <li><a title="Stock_add" href="<?= $baseurl ?>stock_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                        <li><a title="Stock_list" href="<?= $baseurl ?>stock_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
                 </ul>
