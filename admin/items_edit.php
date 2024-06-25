@@ -1,7 +1,7 @@
 <?php include('include/header.php') ; ?>
 
 <div class="container">
-    <h4 class="page-header"><small>Category/</small> Add New</h4>
+    <h4 class="page-header"><small>Items/</small> Add New</h4>
     <?php 
         $olddata=array();
         $con['id']=$_GET['id'];
@@ -17,13 +17,23 @@
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Category Information</h5>
+                    <h5 class="panel-title">Items</h5>
                 </div>
                 <div class="panel-body">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="fullname">Category Name</label>
-                            <input type="text" name="name" class="form-control" id="fullname" value="<?= $olddata->name ?>" />
+                            <label for="fullname">Items Name</label>
+                            <input type="text" name="product_name" class="form-control" id="fullname" value="<?= $olddata->product_name ?>" />
+                            <label for="details">Details </label>
+                            <input type="text" name="details" class="form-control" id="details" value="<?= $olddata->details ?>" />
+                            <label for="img">Photo </label>
+                            <input type="file" name="photo" class="form-control" id="img" value="<?= $olddata->photo ?>" />
+                            <label for="price">Price </label>
+                            <input type="number" name="price" class="form-control" id="price" value="<?= $olddata->price ?>" />
+                            <label for="catagoryId">Catagory Id </label>
+                            <input type="text" name="catagory_id" class="form-control" id="catagoryId" value="<?= $olddata->catagory_id ?>" />
+                            <label for="companyName">Company Name </label>
+                            <input type="text" name="company_name" class="form-control" id="companyName" value="<?= $olddata->company_name ?>" />
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>

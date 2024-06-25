@@ -16,13 +16,17 @@
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="fullname">Product Name </label>
-                            <input type="text" name="name" class="form-control" id="fullname" placeholder="Product Name" />
+                            <input type="text" name="product_name" class="form-control" id="fullname" placeholder="Product Name" />
                             <label for="details">Details </label>
                             <input type="text" name="details" class="form-control" id="details" placeholder="Product Details" />
                             <label for="img">Photo </label>
                             <input type="file" name="photo" class="form-control" id="img" placeholder="" />
                             <label for="price">Price </label>
                             <input type="number" name="price" class="form-control" id="price" placeholder="Category" />
+                            <label for="catagoryId">Catagory Id </label>
+                            <input type="text" name="catagory_id" class="form-control" id="catagoryId" placeholder="Category Id" />
+                            <label for="companyName">Company Name </label>
+                            <input type="text" name="company_name" class="form-control" id="companyName" placeholder="Company Name" />
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>

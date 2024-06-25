@@ -15,16 +15,12 @@
                 <div class="panel-body">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" name="name" class="form-control" id="fullname" placeholder="John Doe" />
+                            <label for="supplier">Full Name</label>
+                            <input type="text" name="name" class="form-control" id="supplier" placeholder="supplier" />
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone No</label>
-                            <input type="text" name="contact" id="phone" class="form-control" placeholder="658 799 8941" />
-                        </div>
-                        <div class="form-group">
-                            <label for="due">Due</label>
-                            <input type="text" name="due" id="due" class="form-control" placeholder="0.00" />
+                            <input type="text" name="contact" id="phone" class="form-control" placeholder="+88 01" />
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
@@ -32,7 +28,7 @@
                         if($_POST){
                             $_POST['created_at']=date('Y-m-d H:i:s');
                             $_POST['created_by']=1;
-                            $rs=$mysqli->common_create('supplier_list',$_POST);
+                            $rs=$mysqli->common_create('supplier',$_POST);
                             if($rs){
                                 if($rs['data']){
                                     echo "<script>window.location='{$baseurl}supplier_list.php'</script>";

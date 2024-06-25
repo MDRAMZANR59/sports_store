@@ -10,7 +10,7 @@
     <!-- Basic Bootstrap Table -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h5 class="panel-title">Category</h5>
+            <h5 class="panel-title">Items</h5>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
@@ -22,6 +22,8 @@
                             <th>Details</th>
                             <th>Photo</th>
                             <th>Price</th>
+                            <th>Catagory Id</th>
+                            <th>Company Name</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -35,7 +37,12 @@
                         ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $data->name ?></td>
+                            <td><?= $data->product_name ?></td>
+                            <td><?= $data->details ?></td>
+                            <td><?= $data->photo ?></td>
+                            <td><?= $data->price ?></td>
+                            <td><?= $data->catagory_id ?></td>
+                            <td><?= $data->company_name ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

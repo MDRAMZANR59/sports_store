@@ -20,7 +20,6 @@
                             <th>#SL</th>
                             <th>Name</th>
                             <th>Contact</th>
-                            <th>Due</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -36,7 +35,6 @@
                             <td><?= $i++ ?></td>
                             <td><?= $data->name ?></td>
                             <td><?= $data->contact ?></td>
-                            <td><?= $data->due ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

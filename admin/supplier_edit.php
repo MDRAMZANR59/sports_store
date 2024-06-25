@@ -31,10 +31,6 @@
                             <label for="phone">Phone No</label>
                             <input type="text" name="contact" id="phone" class="form-control" value="<?= $olddata->contact ?>" />
                         </div>
-                        <div class="form-group">
-                            <label for="due">Due</label>
-                            <input type="text" name="due" id="due" class="form-control" value="<?= $olddata->due ?>" />
-                        </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
                     <?php 
