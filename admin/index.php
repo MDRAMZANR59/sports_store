@@ -206,10 +206,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-cards-item">
                             <div class="single-product-image">
-                                <a href="#"><img src="img/product/profile-bg.jpg" alt=""></a>
+                                <a href="#"><img src="assets/assets/img/product/profile-bg.jpg" alt=""></a>
                             </div>
                             <div class="single-product-text">
-                                <img src="img/product/pro4.jpg" alt="">
+                                <img src="assets/img/product/pro4.jpg" alt="">
                                 <h4><a class="cards-hd-dn" href="#">Angela Dominic</a></h4>
                                 <h5>Web Designer & Developer</h5>
                                 <p class="ctn-cards">Lorem ipsum dolor sit amet, this is a consectetur adipisicing elit</p>
@@ -243,7 +243,7 @@
                                 <h2>Reviews</h2>
                             </div>
                             <div class="single-review-st-text">
-                                <img src="img/notification/1.jpg" alt="">
+                                <img src="assets/img/notification/1.jpg" alt="">
                                 <div class="review-ctn-hf">
                                     <h3>Sarah Graves</h3>
                                     <p>Highly recommend</p>
@@ -257,7 +257,7 @@
                                 </div>
                             </div>
                             <div class="single-review-st-text">
-                                <img src="img/notification/2.jpg" alt="">
+                                <img src="assets/img/notification/2.jpg" alt="">
                                 <div class="review-ctn-hf">
                                     <h3>Garbease sha</h3>
                                     <p>Awesome Pro</p>
@@ -271,7 +271,7 @@
                                 </div>
                             </div>
                             <div class="single-review-st-text">
-                                <img src="img/notification/3.jpg" alt="">
+                                <img src="assets/img/notification/3.jpg" alt="">
                                 <div class="review-ctn-hf">
                                     <h3>Gobetro pro</h3>
                                     <p>Great Website</p>
@@ -285,7 +285,7 @@
                                 </div>
                             </div>
                             <div class="single-review-st-text">
-                                <img src="img/notification/4.jpg" alt="">
+                                <img src="assets/img/notification/4.jpg" alt="">
                                 <div class="review-ctn-hf">
                                     <h3>Siam Graves</h3>
                                     <p>That's Good</p>
@@ -299,7 +299,7 @@
                                 </div>
                             </div>
                             <div class="single-review-st-text">
-                                <img src="img/notification/5.jpg" alt="">
+                                <img src="assets/img/notification/5.jpg" alt="">
                                 <div class="review-ctn-hf">
                                     <h3>Sarah Graves</h3>
                                     <p>Highly recommend</p>
@@ -313,7 +313,7 @@
                                 </div>
                             </div>
                             <div class="single-review-st-text">
-                                <img src="img/notification/6.jpg" alt="">
+                                <img src="assets/img/notification/6.jpg" alt="">
                                 <div class="review-ctn-hf">
                                     <h3>Julsha Grav</h3>
                                     <p>Sei Hoise bro</p>
@@ -331,7 +331,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <div class="single-product-item res-mg-t-30 table-mg-t-pro-n tb-sm-res-d-n dk-res-t-d-n">
                             <div class="single-product-image">
-                                <a href="#"><img src="img/product/book-4.jpg" alt=""></a>
+                                <a href="#"><img src="assets/img/product/book-4.jpg" alt=""></a>
                             </div>
                             <div class="single-product-text edu-pro-tx">
                                 <h4><a href="#">Title Demo Here</a></h4>
@@ -510,7 +510,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <div class="courses-inner res-mg-t-30 table-mg-t-pro-n tb-sm-res-d-n dk-res-t-d-n">
                             <div class="courses-title">
-                                <a href="#"><img src="img/courses/1.jpg" alt="" /></a>
+                                <a href="#"><img src="assets/img/courses/1.jpg" alt="" /></a>
                                 <h2>Apps Development</h2>
                             </div>
                             <div class="courses-alaltic">
