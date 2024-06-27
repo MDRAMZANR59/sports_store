@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
- <!--Start dashbo
+ <!--Start dashboard-->
 <div style="position:relative">
 <div class="analytics-sparkle-area">
             <div class="container-fluid">
