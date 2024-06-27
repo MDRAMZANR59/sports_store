@@ -82,11 +82,11 @@ session_start();
             <form action="" method="post" id="loginForm">
               <div class="form-group">
                 <label class="control-label" for="username">Username</label>
-                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
+                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required=""name="username" id="username" class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label" for="password">Password</label>
-                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                <input type="password" title="Please enter your password" placeholder="******" required="" name="password" id="password" class="form-control">
               </div>
               <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
               <a class="btn btn-default btn-block" href="register.php">Register</a>

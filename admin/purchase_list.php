@@ -4,7 +4,7 @@
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
-<div class="container">
+<div class="container-fluid">
     <h4 class="page-header"><small>Purchase /</small> List</h4>
 
     <!-- Basic Bootstrap Table -->
@@ -29,8 +29,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                            $result=$mysqli->common_select('purchase');
+                        <?php
+                            $result=$mysqli->common_select_query('select supplier.name as sup_name,purchase.* from purchase join supplier on supplier.id=purchase.supplier_id');
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -38,7 +38,7 @@
                         ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $data->supplier_id ?></td>
+                            <td><?= $data->sup_name ?></td>
                             <td><?= $data->purchase_date ?></td>
                             <td><?= $data->qty ?></td>
                             <td><?= $data->sub_amount ?></td>

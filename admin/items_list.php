@@ -29,7 +29,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $result=$mysqli->common_select('items');
+                            $result=$mysqli->common_select_query('SELECT items.*, catagory.name as cat FROM `items` join catagory on catagory.id=items.catagory_id WHERE items.deleted_at is null');
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -39,9 +39,9 @@
                             <td><?= $i++ ?></td>
                             <td><?= $data->product_name ?></td>
                             <td><?= $data->details ?></td>
-                            <td><?= $data->photo ?></td>
+                            <td> <img src="<?= $baseurl ?>assets/items/<?= $data->photo ?>" width="80px" alt=""> </td>
                             <td><?= $data->price ?></td>
-                            <td><?= $data->catagory_id ?></td>
+                            <td><?= $data->cat ?></td>
                             <td><?= $data->company_name ?></td>
                             <td>
                                 <div class="dropdown">
