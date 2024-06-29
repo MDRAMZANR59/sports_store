@@ -4,7 +4,7 @@
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
-<div class="container">
+<div class="container-fluid">
     <h4 class="page-header"><small>Customer /</small> List</h4>
 
     <!-- Basic Bootstrap Table -->

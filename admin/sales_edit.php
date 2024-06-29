@@ -1,6 +1,6 @@
 <?php include('include/header.php') ; ?>
 
-<div class="container">
+<div class="container-fluid">
     <h4 class="page-header"><small>Sales/</small> Add New</h4>
     <?php 
         $olddata=array();

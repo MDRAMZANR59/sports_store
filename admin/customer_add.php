@@ -2,7 +2,7 @@
 
 <!-- Content -->
 
-<div class="container">
+<div class="container-fluid">
     <h4 class="page-header"><small>Customer/</small> Add New</h4>
 
     <!-- Basic Layout -->

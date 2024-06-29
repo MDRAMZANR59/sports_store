@@ -2,7 +2,7 @@
 
 <!-- Content -->
 
-<div class="container">
+<div class="container-fluid">
     <h4 class="page-header"><small>supplier/</small> Update</h4>
     <?php 
         $olddata=array();
