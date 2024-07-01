@@ -107,6 +107,20 @@
 		<script src="<?= $baseurl ?>js/bootstrap.bundle.min.js"></script>
 		<script src="<?= $baseurl ?>js/tiny-slider.js"></script>
 		<script src="<?= $baseurl ?>js/custom.js"></script>
+		<script src="<?= $baseurl ?>js/jquery-3.7.1.js"></script>
+		<script>
+			function addToCart(id){
+				$.get('cart_add.php',
+					{ id : id},
+					function(data){
+						if(data){
+							data=JSON.parse(data);
+							$('.cart_total').html(data.total_qty)
+						}
+					}
+				)
+			}
+		</script>
 	</body>
 
 </html>
