@@ -4375,7 +4375,7 @@ div#sparklinehome canvas {
 /*  20. Custom Scroll
 /*----------------------------------------*/
 .comment-scrollbar, .timeline-scrollbar, .messages-scrollbar, .project-list-scrollbar {
-    height: 580px;
+    height: 662px;
 }
 .mCSB_outside+.mCSB_scrollTools {
     right: -15px;
