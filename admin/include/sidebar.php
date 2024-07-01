@@ -70,6 +70,13 @@
                         <li><a title="Stock_list" href="<?= $baseurl ?>stock_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span style="color:white" class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Cupon</span></a>
+                        <ul class="nav nav-second-level" aria-expanded="false">
+                        <li><a title="Cupon_add" href="<?= $baseurl ?>cupon_add.php"><span class="mini-sub-pro">Add New</span></a></li>
+                        <li><a title="Cupon_list" href="<?= $baseurl ?>cupon_list.php"><span class="mini-sub-pro">List</span></a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
