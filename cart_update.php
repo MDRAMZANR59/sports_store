@@ -6,8 +6,11 @@
   if(isset($_SESSION['cart']['item'][$id])){
     if($type=='in')
       $_SESSION['cart']['item'][$id]['qty']= $_SESSION['cart']['item'][$id]['qty'] + 1;
-    else
-      $_SESSION['cart']['item'][$id]['qty']= $_SESSION['cart']['item'][$id]['qty'] - 1;
+    else{
+      if($_SESSION['cart']['item'][$id]['qty'] > 1){
+        $_SESSION['cart']['item'][$id]['qty']= $_SESSION['cart']['item'][$id]['qty'] - 1;
+      }
+    }
   }
   $total_price=$total_qty=0;
   if(isset($_SESSION['cart']['item']) and $_SESSION['cart']['item']){
