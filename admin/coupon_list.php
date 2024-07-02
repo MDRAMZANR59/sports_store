@@ -27,7 +27,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $result=$mysqli->common_select('cupon');
+                            $result=$mysqli->common_select('coupon');
                             if($result){
                                 if($result['data']){
                                     $i=1;

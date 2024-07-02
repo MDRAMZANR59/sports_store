@@ -36,7 +36,7 @@
                         if($_POST){
                             $_POST['created_at']=date('Y-m-d H:i:s');
                             $_POST['created_by']=1;
-                            $rs=$mysqli->common_create('cupon',$_POST);
+                            $rs=$mysqli->common_create('coupon',$_POST);
                             if($rs){
                                 if($rs['data']){
                                     echo "<script>window.location='{$baseurl}cupon_list.php'</script>";

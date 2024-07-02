@@ -31,10 +31,10 @@
             <p>Enter your coupon code if you have one.</p>
           </div>
           <div class="col-md-7 mb-3 mb-md-0">
-            <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+            <input type="text" class="form-control py-3" id="cupon_code" placeholder="Coupon Code">
           </div>
           <div class="col-md-5">
-            <button class="btn btn-black">Apply Coupon</button>
+            <button class="btn btn-black" onclick="apply_coupone()">Apply Coupon</button>
           </div>
         </div>
       </div>
@@ -46,23 +46,10 @@
                 <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
               </div>
             </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <span class="text-black">Subtotal</span>
-              </div>
-              <div class="col-md-6 text-right">
-                <strong class="text-black">$230.00</strong>
-              </div>
+            <div class="totaldata">
+              
             </div>
-            <div class="row mb-5">
-              <div class="col-md-6">
-                <span class="text-black">Total</span>
-              </div>
-              <div class="col-md-6 text-right">
-                <strong class="text-black">$230.00</strong>
-              </div>
-            </div>
-
+            
             <div class="row">
               <div class="col-md-12">
                 <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.php'">Proceed To Checkout</button>
@@ -82,6 +69,7 @@
   writeProduct(cart_data)
   function writeProduct(data){
     let tbodydata="";
+    let totaldata="";
     if(data.item !=""){
       for (const [key, value] of Object.entries(data.item)) {
         tbodydata+=`<tr>
@@ -107,6 +95,30 @@
                     <td><a href="javascript:void(0)" onclick="deleteCart(${key})" class="btn btn-black btn-sm">X</a></td>
                   </tr>`;
       }
+      totaldata=`<div class="row mb-3">
+                  <div class="col-md-6">
+                    <span class="text-black">Subtotal</span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <strong class="text-black">BDT ${data.total}</strong>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <span class="text-black">Discount</span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <strong class="text-black">BDT ${data.discount}</strong>
+                  </div>
+                </div>
+                <div class="row mb-5">
+                  <div class="col-md-6">
+                    <span class="text-black">Total</span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <strong class="text-black">BDT ${data.total - data.discount}</strong>
+                  </div>
+                </div>`;
     }else{
       tbodydata=`<tr>
                     <td colspan="6">
@@ -115,6 +127,7 @@
                   </tr>`;
     }
     $('.cart_data').html(tbodydata)
+    $('.totaldata').html(totaldata)
   }
 
   function updateCart(id,type){
@@ -135,6 +148,20 @@
         if(data){
           data=JSON.parse(data);
           writeProduct(data)
+        }
+      }
+    )
+  }
+  function apply_coupone(){
+    let cupon_code=$('#cupon_code').val();
+    $.get('apply_coupone.php',
+      { cupon_code : cupon_code},
+      function(data){
+        if(data){
+          data=JSON.parse(data);
+          writeProduct(data);
+          $('#cupon_code').val('');
+          alert('your coupone code applied succefully')
         }
       }
     )

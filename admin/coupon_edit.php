@@ -3,11 +3,11 @@
 <!-- Content -->
 
 <div class="container-fluid">
-    <h4 class="page-header"><small>Cupon/</small> Update</h4>
+    <h4 class="page-header"><small>Coupon/</small> Update</h4>
     <?php 
         $olddata=array();
         $con['id']=$_GET['id'];
-        $result=$mysqli->common_select_single('cupon','*',$con);
+        $result=$mysqli->common_select_single('coupon','*',$con);
         if($result){
             if($result['data']){
                 $olddata=$result['data'];

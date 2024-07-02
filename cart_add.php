@@ -31,6 +31,8 @@
       }
     }
     $_SESSION['cart']['total']=$total_price;
+    $_SESSION['cart']['discount']=0;
+    $_SESSION['cart']['cupon']="";
     $_SESSION['cart']['total_qty']=$total_qty;
   }
 ?>
