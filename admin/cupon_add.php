@@ -16,7 +16,7 @@
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="cupon_code">Cupon Code</label>
-                            <input type="cupon_code" name="cupon_code" id="cupon_code" class="form-control" placeholder="F5D68XF" />
+                            <input type="text" name="cupon_code" id="cupon_code" class="form-control" placeholder="F5D68XF" />
                         </div>
                         <div class="form-group">
                             <label for="discount">Discount</label>
@@ -39,7 +39,7 @@
                             $rs=$mysqli->common_create('cupon',$_POST);
                             if($rs){
                                 if($rs['data']){
-                                    echo "<script>window.location='{$baseurl} cupon_list.php'</script>";
+                                    echo "<script>window.location='{$baseurl}cupon_list.php'</script>";
                                 }else{
                                     echo $rs['error'];
                                 }
