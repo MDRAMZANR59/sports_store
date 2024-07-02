@@ -25,7 +25,7 @@
                     <form method="post" action="">
                         <div class="form-group">
                         <label for="cupon_code">Cupon Code</label>
-                            <input type="cupon_code" name="cupon_code" id="cupon_code" class="form-control" value="<?= $olddata->cupon_code ?>" />
+                            <input type="text" name="cupon_code" id="cupon_code" class="form-control" value="<?= $olddata->cupon_code ?>" />
                         </div>
                         <div class="form-group">
                             <label for="discount">Discount</label>

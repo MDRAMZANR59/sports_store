@@ -35,7 +35,7 @@
                         ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $data->current_code ?></td>
+                            <td><?= $data->cupon_code ?></td>
                             <td><?= $data->discount ?></td>
                             <td><?= $data->start_date ?></td>
                             <td><?= $data->finish_date ?></td>
