@@ -3,19 +3,19 @@
 <!-- Content -->
 
 <div class="container-fluid">
-    <h4 class="page-header"><small>Cupon/</small> Add New</h4>
+    <h4 class="page-header"><small>Coupon/</small> Add New</h4>
 
     <!-- Basic Layout -->
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Cupon Information</h5>
+                    <h5 class="panel-title">Coupon Information</h5>
                 </div>
                 <div class="panel-body">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="cupon_code">Cupon Code</label>
+                            <label for="cupon_code">Coupon Code</label>
                             <input type="text" name="cupon_code" id="cupon_code" class="form-control" placeholder="F5D68XF" />
                         </div>
                         <div class="form-group">
@@ -39,7 +39,7 @@
                             $rs=$mysqli->common_create('coupon',$_POST);
                             if($rs){
                                 if($rs['data']){
-                                    echo "<script>window.location='{$baseurl}cupon_list.php'</script>";
+                                    echo "<script>window.location='{$baseurl}coupon_list.php'</script>";
                                 }else{
                                     echo $rs['error'];
                                 }

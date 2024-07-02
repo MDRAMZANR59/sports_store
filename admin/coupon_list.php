@@ -5,12 +5,12 @@
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
 <div class="container-fluid">
-    <h4 class="page-header"><small>Cupon /</small> List</h4>
+    <h4 class="page-header"><small>Coupon /</small> List</h4>
 
     <!-- Basic Bootstrap Table -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h5 class="panel-title">Cupon</h5>
+            <h5 class="panel-title">Coupon</h5>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
@@ -18,7 +18,7 @@
                     <thead>
                         <tr>
                             <th>#SL</th>
-                            <th>Cupon Code</th>
+                            <th>Coupon Code</th>
                             <th>Discount</th>
                             <th>Start Date</th>
                             <th>Finish Date</th>
@@ -45,8 +45,8 @@
                                         <i class="glyphicon glyphicon-option-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?= $baseurl ?>cupon_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-                                        <li><a href="<?= $baseurl ?>cupon_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+                                        <li><a href="<?= $baseurl ?>coupon_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
+                                        <li><a href="<?= $baseurl ?>coupon_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
