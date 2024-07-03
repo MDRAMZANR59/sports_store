@@ -112,7 +112,7 @@ session_start();
         </div>
 			</div>
 			<div class="text-center login-footer">
-				<p>Copyright © 2024.</p>
+				<p>Copyright © 2024 ISDB WDFP R59.</p>
 			</div>
 		</div>   
   </div>
