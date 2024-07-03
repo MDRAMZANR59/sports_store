@@ -46,7 +46,7 @@ CREATE TABLE `authentication` (
 
 LOCK TABLES `authentication` WRITE;
 /*!40000 ALTER TABLE `authentication` DISABLE KEYS */;
-INSERT INTO `authentication` VALUES (1,'Kamal Uddin','kamal@yahoo.com',NULL,NULL,'kamal','40bd001563085fc35165329ea1ff5c5ecbdbbeef',NULL,'2024-06-11 09:14:30',NULL,NULL,1,NULL),(2,'kamal','kamal@yahoo.com',NULL,NULL,'kamal','40bd001563085fc35165329ea1ff5c5ecbdbbeef',NULL,'2024-06-11 09:16:53',NULL,NULL,1,'2024-06-24 09:13:38');
+INSERT INTO `authentication` VALUES (1,'Kamal Uddin','kamal@yahoo.com',NULL,NULL,'kamal','40bd001563085fc35165329ea1ff5c5ecbdbbeef',NULL,'2024-06-11 09:14:30',NULL,NULL,NULL,NULL),(2,'kamal','kamal@yahoo.com',NULL,NULL,'kamal','40bd001563085fc35165329ea1ff5c5ecbdbbeef',NULL,'2024-06-11 09:16:53',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `authentication` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `catagory` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +75,7 @@ CREATE TABLE `catagory` (
 
 LOCK TABLES `catagory` WRITE;
 /*!40000 ALTER TABLE `catagory` DISABLE KEYS */;
-INSERT INTO `catagory` VALUES (1,'Computer','2024-06-27 09:12:49',1,NULL,1,'2024-06-27 09:25:16'),(2,'Photo Paper','2024-06-27 09:25:13',1,NULL,1,'2024-06-27 09:25:50'),(3,'Color','2024-06-27 09:25:39',1,NULL,1,'2024-07-02 05:54:49'),(4,'Paper','2024-06-27 09:25:58',1,NULL,1,'2024-07-02 05:54:46'),(5,'Home Items','2024-07-02 05:54:37',1,'2024-07-02 05:55:29',1,NULL),(6,'Shop Items','2024-07-02 05:54:58',1,'2024-07-02 05:55:40',1,NULL);
+INSERT INTO `catagory` VALUES (1,'Football','2024-07-02 17:30:15',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `catagory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,17 +88,17 @@ DROP TABLE IF EXISTS `coupon`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `coupon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cupon_code` varchar(50) DEFAULT NULL,
-  `discount` int(11) DEFAULT NULL,
-  `start_date` date DEFAULT NULL,
-  `finish_date` date DEFAULT NULL,
-  `created_by` varchar(25) DEFAULT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_by` varchar(25) DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL,
+  `cupon_code` varchar(100) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `start_date` date NOT NULL,
+  `finish_date` date NOT NULL,
+  `created_by` varchar(50) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_by` varchar(50) NOT NULL,
+  `updated_at` date NOT NULL,
+  `deleted_at` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `coupon` (
 
 LOCK TABLES `coupon` WRITE;
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
-INSERT INTO `coupon` VALUES (1,'dfdcvDFVv',5,'2024-07-11','2024-07-19','1','2024-07-02','1','2024-07-02','2024-07-02'),(2,'0',100,'2024-07-17','2024-07-17','1','2024-07-02','1',NULL,'2024-07-02'),(3,'0',100,'2024-07-01','2024-07-13','1','2024-07-02','1',NULL,'2024-07-02'),(4,'ASDCD54vv44',500,'2024-07-11','2024-07-15','1','2024-07-02','1','2024-07-02','2024-07-02'),(5,'r59',20,'2024-07-01','2024-07-03','1','2024-07-02','1',NULL,'2024-07-02'),(6,'r59',10,'2024-07-02','2024-07-06','1','2024-07-02',NULL,NULL,NULL);
+INSERT INTO `coupon` VALUES (1,'DD5XIF',52,'2024-07-12','2024-07-30','1','2024-07-01','1','2024-07-01','2024-07-01'),(2,'DD5XIF',50,'2024-07-10','2024-07-22','1','2024-07-01','1','0000-00-00','2024-07-01'),(3,'',0,'0000-00-00','0000-00-00','1','2024-07-02','1','2024-07-02','2024-07-02'),(4,'sdfsd',74,'2024-07-10','2024-07-24','1','2024-07-02','1','2024-07-02','2024-07-02'),(5,'r59',5,'2024-07-02','2024-07-04','1','2024-07-02','1','2024-07-02','0000-00-00');
 /*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,6 +142,52 @@ LOCK TABLES `customer` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `delivary_details`
+--
+
+DROP TABLE IF EXISTS `delivary_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `delivary_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bill_country` varchar(50) NOT NULL,
+  `ship_country` varchar(50) NOT NULL,
+  `bill_first_name` varchar(50) NOT NULL,
+  `ship_first_name` varchar(50) NOT NULL,
+  `bill_last_name` varchar(50) NOT NULL,
+  `ship_last_name` varchar(50) NOT NULL,
+  `bill_company_name` varchar(100) NOT NULL,
+  `ship_company_name` varchar(100) NOT NULL,
+  `bill_address` varchar(100) NOT NULL,
+  `ship_address` varchar(100) NOT NULL,
+  `bill_state` varchar(50) NOT NULL,
+  `ship_state` varchar(50) NOT NULL,
+  `bill_post` varchar(50) NOT NULL,
+  `ship_post` varchar(50) NOT NULL,
+  `bill_email` varchar(50) NOT NULL,
+  `ship_email` varchar(50) NOT NULL,
+  `bill_phone` int(15) NOT NULL,
+  `ship_phone` int(15) NOT NULL,
+  `notes` varchar(500) NOT NULL,
+  `created_at` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_at` date NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `deleted_at` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delivary_details`
+--
+
+LOCK TABLES `delivary_details` WRITE;
+/*!40000 ALTER TABLE `delivary_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `delivary_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `items`
 --
 
@@ -162,7 +208,7 @@ CREATE TABLE `items` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +217,7 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'sdffdsfsd','sdfdsfsd','',20000.00,0,'sdfdsfsd','2024-06-27 08:09:18',1,'2024-06-27 08:09:23',1,'2024-06-27 08:09:26'),(2,'sdfsdf','sdfsdfsd','17194723866345.jpg',20000.00,1,'sdfdsfsd','2024-06-27 09:13:06',1,NULL,1,'2024-06-27 09:14:58'),(3,'dsfdsfs','sdffsdfsd','17194724913895.jpg',1000.00,1,'sdfsd','2024-06-27 09:14:51',1,NULL,1,'2024-06-27 09:14:55'),(4,'Photo Paper','Fuji Film 240gm','17194732756210.jpg',120.00,4,'Fuji Film','2024-06-27 09:27:55',1,NULL,1,'2024-07-02 05:55:46'),(5,'sdfsd','sdfdsfsd','17196347473030.jpg',5000.00,3,'sdfdsfsd','2024-06-29 06:19:07',1,NULL,1,'2024-07-02 05:55:49'),(6,'Chair','Business Class Luxary Chair','17198926422857.jpg',500.00,5,'Figma','2024-07-02 05:57:22',1,NULL,NULL,NULL),(7,'Table','Home Student Table','17198927375435.jpg',2000.00,5,'JMG','2024-07-02 05:58:57',1,NULL,NULL,NULL),(8,'Tool Chair','Single Normal Tool','17198927973766.jpg',10.00,5,'Figma','2024-07-02 05:59:57',1,NULL,NULL,NULL);
+INSERT INTO `items` VALUES (1,'','',NULL,0.00,0,'','2024-07-02 17:31:55',1,NULL,NULL,NULL),(2,'Football','fgfg','17199343318545.jpg',40.00,1,'DEER','2024-07-02 17:32:11',1,'2024-07-02 17:32:16',1,'2024-07-02 17:32:19'),(3,'Football','sdfsd','17199343871191.jpg',40.00,1,'DEER','2024-07-02 17:33:07',1,NULL,NULL,NULL),(4,'sdfsd','sdfsd','17199344151536.jpg',2.00,1,'sdfsd','2024-07-02 17:33:35',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +244,7 @@ CREATE TABLE `purchase` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,38 +253,7 @@ CREATE TABLE `purchase` (
 
 LOCK TABLES `purchase` WRITE;
 /*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
-INSERT INTO `purchase` VALUES (1,1,'2024-06-27',5,600.00,100.00,120.00,620.00,NULL,'2024-06-27 09:28:41',1,NULL,NULL,NULL),(2,1,'2024-06-27',5,600.00,100.00,120.00,620.00,NULL,'2024-06-27 09:40:16',1,NULL,NULL,NULL),(3,1,'2024-06-27',5,600.00,100.00,120.00,620.00,NULL,'2024-06-27 10:01:51',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `purchase_details`
---
-
-DROP TABLE IF EXISTS `purchase_details`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `purchase_details` (
-  `purchase_id` int(11) DEFAULT NULL,
-  `purchase_date` date DEFAULT NULL,
-  `product_id` int(11) DEFAULT NULL,
-  `qty` decimal(10,2) DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
-  `create_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `purchase_details`
---
-
-LOCK TABLES `purchase_details` WRITE;
-/*!40000 ALTER TABLE `purchase_details` DISABLE KEYS */;
-/*!40000 ALTER TABLE `purchase_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -325,7 +340,7 @@ CREATE TABLE `supplier` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -334,7 +349,6 @@ CREATE TABLE `supplier` (
 
 LOCK TABLES `supplier` WRITE;
 /*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
-INSERT INTO `supplier` VALUES (1,'Md Fahim','018','2024-06-27 09:25:04',1,NULL,NULL,NULL),(2,'Monsur Digital','0155','2024-07-02 05:54:07',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -347,4 +361,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-02 14:05:51
+-- Dump completed on 2024-07-03 10:35:35

@@ -3,7 +3,7 @@
 <!-- Content -->
 
 <div class="container-fluid">
-    <h4 class="page-header"><small>Customer/</small> Add New</h4>
+    <h4 class="page-header"><small>Customer</small> Add New</h4>
 
     <!-- Basic Layout -->
     <div class="row">
@@ -15,17 +15,46 @@
                 <div class="panel-body">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" name="name" class="form-control" id="fullname" placeholder="John Doe" />
+                            <label for="country">Country</label>
+                            <input type="text" name="country" class="form-control" id="country" placeholder="Country" />
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone No</label>
-                            <input type="text" name="contact" id="phone" class="form-control" placeholder="658 799 8941" />
+                            <label for="first_name">First Name</label>
+                            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" />
                         </div>
                         <div class="form-group">
-                            <label for="due">Due</label>
-                            <input type="text" name="due" id="due" class="form-control" placeholder="0.00" />
+                            <label for="last_name">Last Name</label>
+                            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name" />
                         </div>
+                        <div class="form-group">
+                            <label for="company_name">Company Name</label>
+                            <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" name="address" class="form-control" id="address" placeholder="address" />
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" name="state" class="form-control" id="state" placeholder="state" />
+                        </div>
+                        <div class="form-group">
+                            <label for="post">Post</label>
+                            <input type="text" name="post" class="form-control" id="post" placeholder="Post" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="number" name="phone" class="form-control" id="phone" placeholder="Phone" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fullname">Notes</label>
+                            <input type="text" name="notes" class="form-control" id="notes" placeholder="Notes" />
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
                     <?php 

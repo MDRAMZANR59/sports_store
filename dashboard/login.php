@@ -1,6 +1,6 @@
 <?php
 session_start();
-  $baseurl="http://localhost/sports_store/";
+  $baseurl="http://localhost/sports_store/dashboard/";
   include_once('class/crud.php');
   $mysqli=new crud();
 ?>
@@ -10,7 +10,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login | Kiaalap - Kiaalap Admin Template</title>
+    <title>Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -71,7 +71,8 @@ session_start();
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
-	<div class="error-pagewrap">
+	<div style="margin:auto; width:50% ">
+  <div class="error-pagewrap">
 		<div class="error-page-int">
 			<div class="text-center m-b-md custom-login">
 				<h3>PLEASE LOGIN TO APP</h3>
@@ -115,6 +116,7 @@ session_start();
 				<p>Copyright © 2024.</p>
 			</div>
 		</div>   
+  </div>
   </div>
     <!-- jquery
 		============================================ -->

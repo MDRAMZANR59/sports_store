@@ -1,8 +1,14 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['loggedin']) && !$_SESSION['loggedin']){
+      header('location:index.php');
+  }
+?>
 <?php 
-	session_start();
-	include_once('class/crud.php');
-	$mysqli=new crud();
-	$baseurl="http://localhost/sports_store/";
+  include_once('class/crud.php');
+  $mysqli=new crud();
+  $baseurl="http://localhost/sports_store/dashboard/";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -35,20 +41,30 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="<?= $baseurl ?>index.php">Home</a>
-						</li>
+						<li class="nav-item"><a class="nav-link" href="<?= $baseurl ?>index.php">Home</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>shop.php">Shop</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>about.php">About us</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>services.php">Services</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>blog.php">Blog</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>contact.php">Contact us</a></li>
 					</ul>
-
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="javascript:void(0)"><img src="<?= $baseurl ?>images/user.svg"></a></li>
+						<li>
+							<ul class="navbar-nav mai-top-nav header-right-menu">
+								<li class="nav-item dropdown">
+									<a href="#" class="nav-lin" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
+									</a>
+									<ul class="dropdown-menu animated zoomIn" aria-labelledby="navbarDropdown">
+										<li><a class="dropdown-item" href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a></li>
+										<li><a class="dropdown-item" href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a></li>
+										<li><a class="dropdown-item" href="<?= $baseurl ?>login.php"><span class="edu-icon edu-locked author-log-ic"></span>Login</a></li>
+									</ul>
+								</li>
+        					</ul>
+						</li>
 						<li><a class="nav-link" href="<?=  $baseurl ?>cart.php"><img src="<?= $baseurl ?>images/cart.svg"><span class="badge cart_total" > <?= isset($_SESSION['cart']['total_qty'])?$_SESSION['cart']['total_qty']:0 ?> </span></a></li>
-					</ul>
+				</ul>
 				</div>
 			</div>
 				
