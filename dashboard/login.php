@@ -98,8 +98,8 @@ session_start();
                 $_POST['password']=sha1($_POST['password']);
                 $rs=$crud->common_select_single('customer','*',$_POST);
                 if($rs['data']){
-                  $_SESSION['loggedin']=true;
-                  $_SESSION['email']=$rs['data']->email;
+                 
+                  $_SESSION['user_email']=$rs['data']->email;
                   echo "<script>window.location='{$baseurl}index.php'</script>";
                 }else{
                   echo "Please check your Email and Password again.";
