@@ -82,8 +82,8 @@ session_start();
           <div class="panel-body">
             <form action="" method="post" id="loginForm">
               <div class="form-group">
-                <label class="control-label" for="username">Username</label>
-                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required=""name="username" id="username" class="form-control">
+                <label class="control-label" for="username">Email</label>
+                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required=""name="email" id="username" class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label" for="password">Password</label>
@@ -96,16 +96,13 @@ session_start();
               if($_POST){
                 $crud=new crud();
                 $_POST['password']=sha1($_POST['password']);
-                $rs=$crud->common_select_single('authentication','*',$_POST);
+                $rs=$crud->common_select_single('customer','*',$_POST);
                 if($rs['data']){
                   $_SESSION['loggedin']=true;
-                  $_SESSION['id']=$rs['data']->id;
-                  $_SESSION['name']=$rs['data']->name;
-                  $_SESSION['username']=$rs['data']->username;
                   $_SESSION['email']=$rs['data']->email;
                   echo "<script>window.location='{$baseurl}index.php'</script>";
                 }else{
-                  echo "Please check your user name and password again.";
+                  echo "Please check your Email and Password again.";
                 }
               }
             ?>

@@ -18,9 +18,15 @@
                     <thead>
                         <tr>
                             <th>#SL</th>
-                            <th>Name</th>
-                            <th>Contact</th>
-                            <th>Due</th>
+                            <th>Country</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Company Name</th>
+                            <th>Address</th>
+                            <th>State</th>
+                            <th>Post</th>
+                            <th>Email</th>
+                            <th>Phone</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -34,16 +40,22 @@
                         ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $data->name ?></td>
-                            <td><?= $data->contact ?></td>
-                            <td><?= $data->due ?></td>
+                            <td><?= $data->country ?></td>
+                            <td><?= $data->first_name ?></td>
+                            <td><?= $data->last_name ?></td>
+                            <td><?= $data->company_name ?></td>
+                            <td><?= $data->address ?></td>
+                            <td><?= $data->state ?></td>
+                            <td><?= $data->post ?></td>
+                            <td><?= $data->email ?></td>
+                            <td><?= $data->phone ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                         <i class="glyphicon glyphicon-option-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?= $baseurl ?>customer_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
+                                        <!-- <li><a href="<?= $baseurl ?>customer_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li> -->
                                         <li><a href="<?= $baseurl ?>customer_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
                                     </ul>
                                 </div>
