@@ -31,8 +31,8 @@
 		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
 		            <div class="form-group">
-		              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
-		              <select id="c_country" name="bill_country" class="form-control">
+		              <label for="bill_country" class="text-black">Country <span class="text-danger">*</span></label>
+		              <select id="bill_country" name="bill_country" class="form-control">
 		                <option value="0">Select a country</option>    
 		                <option value="2">bangladesh</option>    
 		                <option value="3">Algeria</option>    
@@ -50,22 +50,22 @@
 		                <input type="text" class="form-control" id="bill_first_name" name="bill_first_name">
 		              </div>
 		              <div class="col-md-6">
-		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_lname" name="c_lname">
+		                <label for="bill_last_name" class="text-black">Last Name <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_last_name" name="bill_last_name">
 		              </div>
 		            </div>
 
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_companyname" class="text-black">Company Name </label>
-		                <input type="text" class="form-control" id="c_companyname" name="c_companyname">
+		                <label for="bill_company_name" class="text-black">Company Name </label>
+		                <input type="text" class="form-control" id="bill_company_name" name="bill_company_name">
 		              </div>
 		            </div>
 
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_address" class="text-black">Address <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address">
+		                <label for="bill_address" class="text-black">Address <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_address" name="bill_address" placeholder="Street address">
 		              </div>
 		            </div>
 
@@ -75,23 +75,23 @@
 
 		            <div class="form-group row">
 		              <div class="col-md-6">
-		                <label for="c_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_state_country" name="c_state_country">
+		                <label for="bill_state" class="text-black">State / Country <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_state" name="bill_state">
 		              </div>
 		              <div class="col-md-6">
-		                <label for="c_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
+		                <label for="bill_post" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_post" name="bill_post">
 		              </div>
 		            </div>
 
 		            <div class="form-group row mb-5">
 		              <div class="col-md-6">
-		                <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_email_address" name="c_email_address">
+		                <label for="bill_email" class="text-black">Email Address <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_email" name="bill_email">
 		              </div>
 		              <div class="col-md-6">
-		                <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Phone Number">
+		                <label for="bill_phone" class="text-black">Phone <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_phone" name="c_phone" placeholder="Phone Number">
 		              </div>
 		            </div>
 
@@ -115,8 +115,8 @@
 		                <div class="py-2">
 
 		                  <div class="form-group">
-		                    <label for="c_diff_country" class="text-black">Country <span class="text-danger">*</span></label>
-		                    <select id="c_diff_country" class="form-control">
+						  <label for="ship_country" class="text-black">Country <span class="text-danger">*</span></label>
+						  <select id="ship_country" name="ship_country" class="form-control">
 		                      <option value="1">Select a country</option>    
 		                      <option value="2">bangladesh</option>    
 		                      <option value="3">Algeria</option>    
@@ -132,26 +132,26 @@
 
 		                  <div class="form-group row">
 		                    <div class="col-md-6">
-		                      <label for="c_diff_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_fname" name="c_diff_fname">
+		                      <label for="ship_first_name" class="text-black">First Name <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_first_name" name="ship_first_name">
 		                    </div>
 		                    <div class="col-md-6">
-		                      <label for="c_diff_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_lname" name="c_diff_lname">
+		                      <label for="ship_last_name" class="text-black">Last Name <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_last_name" name="ship_last_name">
 		                    </div>
 		                  </div>
 
 		                  <div class="form-group row">
 		                    <div class="col-md-12">
-		                      <label for="c_diff_companyname" class="text-black">Company Name </label>
-		                      <input type="text" class="form-control" id="c_diff_companyname" name="c_diff_companyname">
+		                      <label for="ship_company_name" class="text-black">Company Name </label>
+		                      <input type="text" class="form-control" id="ship_company_name" name="ship_company_name">
 		                    </div>
 		                  </div>
 
 		                  <div class="form-group row  mb-3">
 		                    <div class="col-md-12">
-		                      <label for="c_diff_address" class="text-black">Address <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_address" name="c_diff_address" placeholder="Street address">
+		                      <label for="ship_address" class="text-black">Address <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_address" name="ship_address" placeholder="Street address">
 		                    </div>
 		                  </div>
 
@@ -161,23 +161,23 @@
 
 		                  <div class="form-group row">
 		                    <div class="col-md-6">
-		                      <label for="c_diff_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_state_country" name="c_diff_state_country">
+		                      <label for="ship_state" class="text-black">State / Country <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_state" name="ship_state">
 		                    </div>
 		                    <div class="col-md-6">
-		                      <label for="c_diff_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_postal_zip" name="c_diff_postal_zip">
+		                      <label for="ship_post" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_post" name="ship_post">
 		                    </div>
 		                  </div>
 
 		                  <div class="form-group row mb-5">
 		                    <div class="col-md-6">
-		                      <label for="c_diff_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_email_address" name="c_diff_email_address">
+		                      <label for="ship_email" class="text-black">Email Address <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_email" name="ship_email">
 		                    </div>
 		                    <div class="col-md-6">
-		                      <label for="c_diff_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_phone" name="c_diff_phone" placeholder="Phone Number">
+		                      <label for="ship_phone" class="text-black">Phone <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="ship_phone" name="ship_phone" placeholder="Phone Number">
 		                    </div>
 		                  </div>
 
@@ -187,8 +187,8 @@
 		            </div>
 
 		            <div class="form-group">
-		              <label for="c_order_notes" class="text-black">Order Notes</label>
-		              <textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
+		              <label for="notes" class="text-black">Order Notes</label>
+		              <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
 		            </div>
 
 		          </div>
