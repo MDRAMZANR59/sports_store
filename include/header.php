@@ -1,13 +1,7 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['user_loggedin']) && !$_SESSION['user_loggedin']){
-      header('location:../login.php');
-  }
-?>
 <?php 
-  include_once('../class/crud.php');
+  include_once('class/crud.php');
   $mysqli=new crud();
-  $baseurl="http://localhost/sports_store/dashboard/";
+  $baseurl="http://localhost/sports_store/";
 
 ?>
 <!doctype html>
