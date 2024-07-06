@@ -1,9 +1,5 @@
-<?php
-session_start();
-  $baseurl="http://localhost/sports_store/admin/";
-  include_once('class/crud.php');
-  $mysqli=new crud();
-?>
+<?php session_start(); ?>
+<?php require_once('connection.php'); ?>
 <!doctype html>
 <html class="no-js" lang="en">
 

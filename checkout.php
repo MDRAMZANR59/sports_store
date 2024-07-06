@@ -32,7 +32,7 @@
 		          <div class="p-3 p-lg-5 border bg-white">
 		            <div class="form-group">
 		              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
-		              <select id="c_country" class="form-control">
+		              <select id="c_country" name="bill_country" class="form-control">
 		                <option value="0">Select a country</option>    
 		                <option value="2">bangladesh</option>    
 		                <option value="3">Algeria</option>    
@@ -46,8 +46,8 @@
 		            </div>
 		            <div class="form-group row">
 		              <div class="col-md-6">
-		                <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_fname" name="c_fname">
+		                <label for="bill_first_name" class="text-black">First Name <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="bill_first_name" name="bill_first_name">
 		              </div>
 		              <div class="col-md-6">
 		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>

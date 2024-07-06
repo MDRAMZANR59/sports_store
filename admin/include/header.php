@@ -1,15 +1,5 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['loggedin']) && !$_SESSION['loggedin']){
-      header('location:login.php');
-  }
-?>
-<?php 
-  include_once('class/crud.php');
-  $mysqli=new crud();
-  $baseurl="http://localhost/sports_store/admin/";
-
-?>
+<?php require_once('auth_check.php'); ?>
+<?php require_once('connection.php'); ?>
 <!doctype html>
 <html class="no-js" lang="en">
 

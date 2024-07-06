@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php include_once('include/header.php') ?>
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -28,9 +27,8 @@
             </form>
             <?php
               if($_POST){
-                $crud=new crud();
                 $_POST['password']=sha1($_POST['password']);
-                $rs=$crud->common_select_single('customer','*',$_POST);
+                $rs=$mysqli->common_select_single('customer','*',$_POST);
                 if($rs['data']){
                  
                   $_SESSION['user_loggedin']=true;
