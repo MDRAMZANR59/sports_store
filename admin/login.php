@@ -89,9 +89,8 @@
             </form>
             <?php
               if($_POST){
-                $crud=new crud();
                 $_POST['password']=sha1($_POST['password']);
-                $rs=$crud->common_select_single('authentication','*',$_POST);
+                $rs=$mysqli->common_select_single('authentication','*',$_POST);
                 if($rs['data']){
                   $_SESSION['loggedin']=true;
                   $_SESSION['id']=$rs['data']->id;
