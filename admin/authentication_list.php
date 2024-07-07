@@ -41,7 +41,7 @@
                             <td><?= $data->name ?></td>
                             <td><?= $data->email ?></td>
                             <td><?= $data->contact ?></td>
-                            <td><?= $data->photo ?></td>
+                            <td> <img src="<?= $baseurl ?>assets/users/<?= $data->photo ?>" width="80px" alt=""> </td>
                             <td><?= $data->username ?></td>
                             <td><?= $data->password ?></td>
                             <td><?= $data->status ?></td>
@@ -51,7 +51,6 @@
                                         <i class="glyphicon glyphicon-option-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?= $baseurl ?>authentication_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
                                         <li><a href="<?= $baseurl ?>authentication_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
                                     </ul>
                                 </div>

@@ -1,11 +1,11 @@
 <?php include('include/header.php') ; ?>
 
 <div class="container-fluid">
-    <h4 class="page-header"><small>Sales/</small> Add New</h4>
+    <h4 class="page-header"><small>Orders/</small> Add New</h4>
     <?php 
         $olddata=array();
         $con['id']=$_GET['id'];
-        $result=$mysqli->common_select_single('sales','*',$con);
+        $result=$mysqli->common_select_single('orders','*',$con);
         if($result){
             if($result['data']){
                 $olddata=$result['data'];

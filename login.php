@@ -28,7 +28,7 @@
             <?php
               if($_POST){
                 $_POST['password']=sha1($_POST['password']);
-                $rs=$mysqli->common_select_single('customer','*',$_POST);
+                $rs=$mysqli->common_select_single('authentication','*',$_POST);
                 if($rs['data']){
                  
                   $_SESSION['user_loggedin']=true;

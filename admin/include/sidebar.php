@@ -23,7 +23,6 @@
                     <li>
                         <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span style="color:white" class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Customer</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                            <li><a title="All Customer" href="<?= $baseurl ?>customer_add.php"><span class="mini-sub-pro">Add New</span></a></li>
                             <li><a title="Add Customer" href="<?= $baseurl ?>customer_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
@@ -57,10 +56,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span style="color:white" class="educate-icon educate-library icon-wrap" ></span> <span class="mini-click-non">Sales</span></a>
+                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span style="color:white" class="educate-icon educate-library icon-wrap" ></span> <span class="mini-click-non">Orders</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                            <li><a title="Add items" href="<?= $baseurl ?>sales_add.php"><span class="mini-sub-pro">Add New</span></a></li>
-                            <li><a title="List Items" href="<?= $baseurl ?>sales_list.php"><span class="mini-sub-pro">List</span></a></li>
+                            <li><a title="List Items" href="<?= $baseurl ?>orders_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
                     <li>

@@ -74,7 +74,7 @@
 			<div class="content-error">
 				<div class="hpanel">
           <div class="panel-body">
-            <form action="" method="post" id="loginForm">
+            <form action="" method="post" id="loginForm" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="control-label" for="name">Name</label>
                 <input type="text" placeholder="Full Name" title="Please enter you name" name="name" id="name" class="form-control">
@@ -84,6 +84,9 @@
                 <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
               </div>
               <div class="form-group">
+                <label for="img">Photo </label>
+                <input type="file" name="photo" class="form-control" id="img" placeholder="" />
+              </div>
                 <label class="control-label" for="username">Username</label>
                 <input type="text" placeholder="No space" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
               </div>
@@ -92,15 +95,25 @@
                 <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
               </div>
               <button class="btn btn-success btn-block loginbtn">Register</button>
-              <a class="btn btn-default btn-block" href="login.php">Login</a>
+              <a class="btn btn-default btn-block" style="margin-left:-1px" href="login.php">Login</a>
             </form>
             <?php
+            if($_POST){
+              if($_FILES){
+                  $img=$_FILES["photo"];
+                  $imagename=time().rand(1111,9999).".jpg";
+                  $rs=move_uploaded_file($img['tmp_name'],'assets/users/'.$imagename);
+                  if($rs){
+                      $_POST['photo']=$imagename;
+                  }
+              }
+            }
               if($_POST){
                 $_POST['password']=sha1($_POST['password']);
                 $_POST['created_at']=date('Y-m-d H:i:s');
                 $rs=$mysqli->common_create('authentication',$_POST);
                 if($rs['data']){
-                  echo "<script>window.location='{$baseurl}login.php'</script>";
+                  echo "<script>window.location='{$baseurl}login.php'</script>"; //why
                 }else{
                   print_r($rs['error']);
                 }
