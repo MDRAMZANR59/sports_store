@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2024 at 07:09 AM
+-- Generation Time: Jul 07, 2024 at 09:05 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -93,7 +93,7 @@ CREATE TABLE `coupon` (
   `created_at` date NOT NULL,
   `updated_by` varchar(50) NOT NULL,
   `updated_at` date NOT NULL,
-  `deleted_at` date NOT NULL
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -101,8 +101,8 @@ CREATE TABLE `coupon` (
 --
 
 INSERT INTO `coupon` (`id`, `cupon_code`, `discount`, `start_date`, `finish_date`, `created_by`, `created_at`, `updated_by`, `updated_at`, `deleted_at`) VALUES
-(1, 'DD5XIF', 52, '2024-07-12', '2024-07-30', '1', '2024-07-01', '1', '2024-07-01', '2024-07-01'),
-(2, 'DD5XIF', 50, '2024-07-10', '2024-07-22', '1', '2024-07-01', '1', '0000-00-00', '2024-07-01'),
+(1, 'DD5XIF', 52, '2024-07-01', '2024-07-30', '1', '2024-07-01', '1', '2024-07-01', NULL),
+(2, 'DD5XIF', 50, '2024-07-01', '2024-07-22', '1', '2024-07-01', '1', '0000-00-00', NULL),
 (3, '', 0, '0000-00-00', '0000-00-00', '1', '2024-07-02', '1', '2024-07-02', '2024-07-02'),
 (4, 'sdfsd', 74, '2024-07-10', '2024-07-24', '1', '2024-07-02', '1', '2024-07-02', '2024-07-02'),
 (5, 'r59', 5, '2024-07-02', '2024-07-04', '1', '2024-07-02', '1', '2024-07-02', '0000-00-00');
@@ -152,45 +152,6 @@ INSERT INTO `customer` (`id`, `country`, `first_name`, `last_name`, `password`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `delivary_details`
---
-
-CREATE TABLE `delivary_details` (
-  `id` int(11) NOT NULL,
-  `bill_country` varchar(50) NOT NULL,
-  `ship_country` varchar(50) NOT NULL,
-  `bill_first_name` varchar(50) NOT NULL,
-  `ship_first_name` varchar(50) NOT NULL,
-  `bill_last_name` varchar(50) NOT NULL,
-  `ship_last_name` varchar(50) NOT NULL,
-  `bill_company_name` varchar(100) NOT NULL,
-  `ship_company_name` varchar(100) NOT NULL,
-  `bill_address` varchar(100) NOT NULL,
-  `ship_address` varchar(100) NOT NULL,
-  `bill_state` varchar(50) NOT NULL,
-  `ship_state` varchar(50) NOT NULL,
-  `bill_post` varchar(50) NOT NULL,
-  `ship_post` varchar(50) NOT NULL,
-  `bill_email` varchar(50) NOT NULL,
-  `ship_email` varchar(50) NOT NULL,
-  `bill_phone` int(15) NOT NULL,
-  `ship_phone` int(15) NOT NULL,
-  `total_amount` decimal(10,2) NOT NULL,
-  `discount` decimal(10,2) NOT NULL,
-  `total_qty` int(11) NOT NULL,
-  `cart_data` text NOT NULL,
-  `coupon_code` varchar(255) NOT NULL,
-  `notes` varchar(500) NOT NULL,
-  `created_at` date NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `updated_at` date NOT NULL,
-  `deleted_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `items`
 --
 
@@ -218,6 +179,52 @@ INSERT INTO `items` (`id`, `product_name`, `details`, `photo`, `price`, `catagor
 (2, 'Football', 'fgfg', '17199343318545.jpg', '40.00', 1, 'DEER', '2024-07-02 17:32:11', 1, '2024-07-02 17:32:16', 1, '2024-07-02 17:32:19'),
 (3, 'Football', 'sdfsd', '17199343871191.jpg', '40.00', 1, 'DEER', '2024-07-02 17:33:07', 1, NULL, NULL, NULL),
 (4, 'sdfsd', 'sdfsd', '17199344151536.jpg', '2.00', 1, 'sdfsd', '2024-07-02 17:33:35', 1, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `bill_country` varchar(50) NOT NULL,
+  `ship_country` varchar(50) NOT NULL,
+  `bill_first_name` varchar(50) NOT NULL,
+  `ship_first_name` varchar(50) NOT NULL,
+  `bill_last_name` varchar(50) NOT NULL,
+  `ship_last_name` varchar(50) NOT NULL,
+  `bill_company_name` varchar(100) NOT NULL,
+  `ship_company_name` varchar(100) NOT NULL,
+  `bill_address` varchar(100) NOT NULL,
+  `ship_address` varchar(100) NOT NULL,
+  `bill_state` varchar(50) NOT NULL,
+  `ship_state` varchar(50) NOT NULL,
+  `bill_post` varchar(50) NOT NULL,
+  `ship_post` varchar(50) NOT NULL,
+  `bill_email` varchar(50) NOT NULL,
+  `ship_email` varchar(50) NOT NULL,
+  `bill_phone` int(15) NOT NULL,
+  `ship_phone` int(15) NOT NULL,
+  `total_amount` decimal(10,2) NOT NULL,
+  `discount` decimal(10,2) NOT NULL,
+  `total_qty` int(11) NOT NULL,
+  `cart_data` text NOT NULL,
+  `coupon_code` varchar(255) NOT NULL,
+  `notes` varchar(500) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `bill_country`, `ship_country`, `bill_first_name`, `ship_first_name`, `bill_last_name`, `ship_last_name`, `bill_company_name`, `ship_company_name`, `bill_address`, `ship_address`, `bill_state`, `ship_state`, `bill_post`, `ship_post`, `bill_email`, `ship_email`, `bill_phone`, `ship_phone`, `total_amount`, `discount`, `total_qty`, `cart_data`, `coupon_code`, `notes`, `created_at`, `created_by`, `updated_by`, `updated_at`, `deleted_at`) VALUES
+(1, '2', '1', 'Ibrahim', '', 'khalil', '', 'WDPF-IT', '', '2no Gate', '', 'asdf', '', '4100', '', 'asdf@yahoo.com', '', 156669998, 0, '40.00', '20.00', 1, 'eyJpdGVtIjp7IjMiOnsicHJvZHVjdF9uYW1lIjoiRm9vdGJhbGwiLCJwaG90byI6IjE3MTk5MzQzODcxMTkxLmpwZyIsInByaWNlIjoiNDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjQwLCJkaXNjb3VudCI6MjAsImN1cG9uIjoiREQ1WElGIiwidG90YWxfcXR5IjoxfQ==', 'DD5XIF', 'sadf', '2024-07-07', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -331,15 +338,15 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `delivary_details`
---
-ALTER TABLE `delivary_details`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -395,16 +402,16 @@ ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `delivary_details`
---
-ALTER TABLE `delivary_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `purchase`

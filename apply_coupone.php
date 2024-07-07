@@ -1,11 +1,9 @@
 <?php 
   session_start();
-  include_once('class/crud.php');
-  $mysqli=new crud();
-  $baseurl="http://localhost/sports_store/";
-
+  require_once('include/connection.php');
   $con['cupon_code']=$_GET['cupon_code'];
   $result=$mysqli->common_select_single('coupon','*',$con);
+
   if($result){
     if($result['data']){
       if($result['data']->discount > 0){

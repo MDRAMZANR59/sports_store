@@ -1,10 +1,7 @@
 <?php 
   session_start();
-  include_once('class/crud.php');
-  $mysqli=new crud();
-  $baseurl="http://localhost/sports_store/";
-
-
+  require_once('include/connection.php');
+  
   $con['id']=$_GET['id'];
   $result=$mysqli->common_select_single('items','*',$con);
   if($result){
