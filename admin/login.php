@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php require_once('connection.php'); ?>
+<?php require_once('include/connection.php'); ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
