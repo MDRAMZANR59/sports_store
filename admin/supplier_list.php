@@ -19,6 +19,12 @@
                         <tr>
                             <th>#SL</th>
                             <th>Name</th>
+                            <th>Photo</th>
+                            <th>Company Name</th>
+                            <th>Address</th>
+                            <th>State</th>
+                            <th>Post</th>
+                            <th>Email</th>
                             <th>Contact</th>
                             <th>Actions</th>
                         </tr>
@@ -34,6 +40,12 @@
                         <tr>
                             <td><?= $i++ ?></td>
                             <td><?= $data->name ?></td>
+                            <td><img src="<?= $baseurl ?>assets/supplier/<?= $data->photo ?>" width="80px" alt=""></td>
+                            <td><?= $data->company_name ?></td>
+                            <td><?= $data->address ?></td>
+                            <td><?= $data->state ?></td>
+                            <td><?= $data->post ?></td>
+                            <td><?= $data->email ?></td>
                             <td><?= $data->contact ?></td>
                             <td>
                                 <div class="dropdown">

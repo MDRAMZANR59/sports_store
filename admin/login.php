@@ -78,7 +78,7 @@
             <form action="" method="post" id="loginForm">
               <div class="form-group">
                 <label class="control-label" for="username">Username</label>
-                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required=""name="username" id="username" class="form-control">
+                <input type="text" placeholder="Kamal" title="Please enter you username" required=""name="username" id="username" class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label" for="password">Password</label>
