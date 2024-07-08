@@ -105,7 +105,7 @@
                                                 //         foreach($result['data'] as $data){
                                             ?>
                                             <!-- <img src="<?= $baseurl ?>assets/users/<?= $data->photo ?>" width="80px" alt=""> -->
-                                            <?php ##} } } ?>
+                                            <?php  ##}} } ?>
                                                 <span class="admin-name"><?= $_SESSION['name'] ?></span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>

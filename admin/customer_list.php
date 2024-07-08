@@ -21,6 +21,7 @@
                             <th>Country</th>
                             <th>First Name</th>
                             <th>Last Name</th>
+                            <th>Photo</th>
                             <th>Company Name</th>
                             <th>Address</th>
                             <th>State</th>
@@ -43,6 +44,7 @@
                             <td><?= $data->country ?></td>
                             <td><?= $data->first_name ?></td>
                             <td><?= $data->last_name ?></td>
+                            <td><img src="<?= $baseurl ?>assets/customer_photos/<?= $data->photo ?>" width="80px" alt=""></td>
                             <td><?= $data->company_name ?></td>
                             <td><?= $data->address ?></td>
                             <td><?= $data->state ?></td>

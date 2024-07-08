@@ -77,22 +77,26 @@
             <form action="" method="post" id="loginForm" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="control-label" for="name">Name</label>
-                <input type="text" placeholder="Full Name" title="Please enter you name" name="name" id="name" class="form-control">
+                <input required="" type="text" placeholder="Full Name" title="Please enter you name" name="name" id="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="contact">Contact</label>
+                <input required="" type="number" placeholder="Contact" title="Please enter your contact" name="contact" id="name" class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label" for="email">Email</label>
-                <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
+                <input required="" type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
               </div>
               <div class="form-group">
                 <label for="img">Photo </label>
-                <input type="file" name="photo" class="form-control" id="img" placeholder="" />
+                <input required="" type="file" name="photo" class="form-control" id="img" placeholder="" />
               </div>
                 <label class="control-label" for="username">Username</label>
-                <input type="text" placeholder="No space" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
+                <input required="" type="text" placeholder="No space" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label" for="password">Password</label>
-                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                <input required="" type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
               </div>
               <button class="btn btn-success btn-block loginbtn">Register</button>
               <a class="btn btn-default btn-block" style="margin-left:-1px" href="login.php">Login</a>

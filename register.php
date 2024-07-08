@@ -7,46 +7,58 @@
         <div class="content-error" style="margin:auto; width:50% ">
           <div class="hpanel">
             <div class="panel-body">
-              <form method="post" action="">
+              <form method="post" action="" enctype="multipart/form-data">
+              <div class="form-group">
+									<label for="ship_country" class="text-black">Country <span class="text-danger">*</span></label>
+									<select id="ship_country" name="ship_country" class="form-control">
+										<option value="1">Select a country</option>    
+										<option value="2">bangladesh</option>    
+										<option value="3">Algeria</option>    
+										<option value="4">Afghanistan</option>    
+										<option value="5">Ghana</option>    
+										<option value="6">Albania</option>    
+										<option value="7">Bahrain</option>    
+										<option value="8">Colombia</option>    
+										<option value="9">Dominican Republic</option>    
+									</select>
+								</div>
                 <div class="form-group">
-                    <label for="country col-sm-4" required="">Country</label>
-                    <input type="text" name="country" class="form-control col-sm-4" id="country" placeholder="Country" />
+                    <label for="first_name" class="col-md-4" >First Name<span class="text-danger">*</span></label>
+                    <input required="" type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" />
                 </div>
                 <div class="form-group">
-                    <label for="first_name" class="col-md-4" required="">First Name</label>
-                    <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" />
+                    <label for="last_name" >Last Name<span class="text-danger">*</span></label>
+                    <input required="" type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name" />
                 </div>
+                <label for="img">Photo </label>
+                    <input type="file" name="photo" class="form-control" id="img" placeholder="" />
                 <div class="form-group">
-                    <label for="last_name" required="">Last Name</label>
-                    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name" />
-                </div>
-                <div class="form-group">
-                    <label for="password" required="">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" />
+                    <label for="password" >Password<span class="text-danger">*</span></label>
+                    <input required="" type="password" name="password" class="form-control" id="password" placeholder="Password" />
                 </div>
                 <div class="form-group">
                     <label for="company_name">Company Name</label>
                     <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name" />
                 </div>
                 <div class="form-group">
-                    <label for="address" required="">Address</label>
-                    <input type="text" name="address" class="form-control" id="address" placeholder="address" />
+                    <label for="address" >Address<span class="text-danger">*</span></label>
+                    <input required="" type="text" name="address" class="form-control" id="address" placeholder="address" />
                 </div>
                 <div class="form-group">
-                    <label for="state" required="">State</label>
-                    <input type="text" name="state" class="form-control" id="state" placeholder="state" />
+                    <label for="state" >State<span class="text-danger">*</span></label>
+                    <input required="" type="text" name="state" class="form-control" id="state" placeholder="state" />
                 </div>
                 <div class="form-group">
-                    <label for="post" required="">Post</label>
-                    <input type="text" name="post" class="form-control" id="post" placeholder="Post" />
+                    <label for="post" >Post<span class="text-danger">*</span></label>
+                    <input required="" type="text" name="post" class="form-control" id="post" placeholder="Post" />
                 </div>
                 <div class="form-group">
-                    <label for="email" required="">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" />
+                    <label for="email" >Email<span class="text-danger">*</span></label>
+                    <input required="" type="email" name="email" class="form-control" id="email" placeholder="Email" />
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="number" name="phone" class="form-control" id="phone" placeholder="Phone" />
+                    <label for="phone">Phone<span class="text-danger">*</span></label>
+                    <input required="" type="number" name="phone" class="form-control" id="phone" placeholder="Phone" />
                 </div>
                 <div class="form-group mt-3">
                 <button type="submit" class="btn btn-primary">Register</button>
@@ -55,6 +67,19 @@
                   
               </form>
             <?php
+            
+            if($_POST){
+                if($_FILES){
+                    $img=$_FILES["photo"];
+                    $imagename=time().rand(1111,9999).".jpg";
+                    $rs=move_uploaded_file($img['tmp_name'],'admin/assets/customer_photos/'.$imagename);
+                    if($rs){
+                        $_POST['photo']=$imagename;
+                    }
+                }
+                
+            }
+       
               if($_POST){
                 $_POST['password']=sha1($_POST['password']);
                 $_POST['created_at']=date('Y-m-d H:i:s');
