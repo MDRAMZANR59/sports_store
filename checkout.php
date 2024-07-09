@@ -263,6 +263,7 @@
 						$rs=$mysqli->common_create('orders',$_POST);
 						if($rs){
 							if($rs['data']){
+								unset($_SESSION['cart']);
 								echo "<script>window.location='{$baseurl}thankyou.php'</script>";
 							}else{
 								echo $rs['error'];

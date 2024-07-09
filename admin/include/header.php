@@ -96,16 +96,14 @@
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                            <img src="<?= $baseurl ?>assets/img/1.jpg"/>
                                             <?php 
-                                                // $result=$mysqli->common_select('authentication');
-                                                // if($result){
-                                                //     if($result['data']){
-                                                //         $i=1;
-                                                //         foreach($result['data'] as $data){
+                                                $con['id']=$_SESSION['id'];
+                                                $result=$mysqli->common_select_single('authentication','*',$con);
+                                                if($result){
+                                                    if($result['data']){
                                             ?>
-                                            <!-- <img src="<?= $baseurl ?>assets/users/<?= $data->photo ?>" width="80px" alt=""> -->
-                                            <?php  ##}} } ?>
+                                            <img src="<?= $baseurl ?>assets/users/<?= $result['data']->photo ?>" width="80px" alt="">
+                                            <?php  }} ?>
                                                 <span class="admin-name"><?= $_SESSION['name'] ?></span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
