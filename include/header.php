@@ -45,13 +45,14 @@
 									<a href="#" class="nav-lin" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
 									</a>
+									<?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
 									<ul class="dropdown-menu animated zoomIn" aria-labelledby="navbarDropdown">
-										<li><a class="dropdown-item" href="<?= $baseurl ?>/dashboard"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a></li>
-										<?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
+										<li><a class="dropdown-item" href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a></li>
 											<li><a class="dropdown-item" href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a></li>
-											
+											<li><a class="dropdown-item" href="<?= $baseurl ?>logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Logout</a></li>
  										<?php }else{ ?>
-										 <li><a class="dropdown-item" href="<?= $baseurl ?>login.php"><span class="edu-icon edu-locked author-log-ic"></span>Login</a></li>
+										<ul class="dropdown-menu animated zoomIn" aria-labelledby="navbarDropdown">
+											<li><a class="dropdown-item" href="<?= $baseurl ?>login.php"><span class="edu-icon edu-locked author-log-ic"></span>Login</a></li>
 										<?php } ?>
 									</ul>
 								</li>

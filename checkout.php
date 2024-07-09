@@ -33,7 +33,7 @@
 						<div class="p-3 p-lg-5 border bg-white">
 							<div class="form-group">
 							<label for="bill_country" class="text-black">Country <span class="text-danger">*</span></label>
-							<select id="bill_country" name="bill_country" class="form-control">
+							<select required="" id="bill_country" name="bill_country" class="form-control">
 								<option value="0">Select a country</option>    
 								<option value="2">bangladesh</option>    
 								<option value="3">Algeria</option>    
@@ -48,51 +48,51 @@
 							<div class="form-group row">
 							<div class="col-md-6">
 								<label for="bill_first_name" class="text-black">First Name <span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="bill_first_name" name="bill_first_name">
+								<input required="" type="text" class="form-control" id="bill_first_name" name="bill_first_name">
 							</div>
 							<div class="col-md-6">
 								<label for="bill_last_name" class="text-black">Last Name <span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="bill_last_name" name="bill_last_name">
+								<input required="" type="text" class="form-control" id="bill_last_name" name="bill_last_name">
 							</div>
 							</div>
 
 							<div class="form-group row">
 							<div class="col-md-12">
 								<label for="bill_company_name" class="text-black">Company Name </label>
-								<input type="text" class="form-control" id="bill_company_name" name="bill_company_name">
+								<input required="" type="text" class="form-control" id="bill_company_name" name="bill_company_name">
 							</div>
 							</div>
 
 							<div class="form-group row">
 							<div class="col-md-12">
 								<label for="bill_address" class="text-black">Address <span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="bill_address" name="bill_address" placeholder="Street address">
+								<input required="" type="text" class="form-control" id="bill_address" name="bill_address" placeholder="Street address">
 							</div>
 							</div>
 
 							<div class="form-group mt-3">
-							<input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
+							<input required="" type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
 							</div>
 
 							<div class="form-group row">
 								<div class="col-md-6">
 									<label for="bill_state" class="text-black">State / Country <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="bill_state" name="bill_state">
+									<input required="" type="text" class="form-control" id="bill_state" name="bill_state">
 								</div>
 								<div class="col-md-6">
 									<label for="bill_post" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="bill_post" name="bill_post">
+									<input required="" type="text" class="form-control" id="bill_post" name="bill_post">
 								</div>
 							</div>
 
 							<div class="form-group row mb-5">
 							<div class="col-md-6">
 								<label for="bill_email" class="text-black">Email Address <span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="bill_email" name="bill_email">
+								<input required="" type="text" class="form-control" id="bill_email" name="bill_email">
 							</div>
 							<div class="col-md-6">
 								<label for="bill_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="bill_phone" name="bill_phone" placeholder="Phone Number">
+								<input required="" type="text" class="form-control" id="bill_phone" name="bill_phone" placeholder="Phone Number">
 							</div>
 							</div>
 
