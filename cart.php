@@ -52,7 +52,13 @@
             
             <div class="row">
               <div class="col-md-12">
-                <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.php'">Proceed To Checkout</button>
+                <!-- <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.php'">Proceed To Checkout</button> -->
+                
+                <?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
+									 <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.php'">Proceed To Checkout</button>
+ 										<?php }else{ ?>
+                       <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='login.php'">Proceed To Checkout</button>
+										<?php } ?>
               </div>
             </div>
           </div>

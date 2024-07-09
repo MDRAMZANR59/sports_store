@@ -10,7 +10,7 @@
               <form method="post" action="" enctype="multipart/form-data">
               <div class="form-group">
 									<label for="ship_country" class="text-black">Country <span class="text-danger">*</span></label>
-									<select id="ship_country" name="ship_country" class="form-control">
+									<select id="ship_country" name="country" class="form-control">
 										<option value="1">Select a country</option>    
 										<option value="2">bangladesh</option>    
 										<option value="3">Algeria</option>    
