@@ -34,9 +34,9 @@
                                     <div class="invoice-logo">
                                         <!-- logo started -->
                                         <div class="logo">
-                                            <img src="assets/img/logos/logo.png" alt="logo">
+                                            <h1 style="color:white">Furni.</h1>
                                         </div>
-                                        <!-- logo ended -->
+                                        <!-- logo ended --> 
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -56,22 +56,21 @@
                                     <div class="invoice-number mb-30">
                                         <h4 class="inv-title-1">Invoice To</h4>
                                         <h2 class="name">Jhon Smith</h2>
-                                        <p class="invo-addr-1">
-                                            Theme Vessel <br/>
-                                            info@themevessel.com <br/>
-                                            21-12 Green Street, Meherpur, Bangladesh <br/>
-                                        </p>
+                                        <span>Name:</span><br/>
+                                        <span>Company:</span><br/>
+                                        <span>Phone:</span><br/>
+                                        <span>Address:</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="invoice-number mb-30">
                                         <div class="invoice-number-inner">
                                             <h4 class="inv-title-1">Invoice From</h4>
-                                            <h2 class="name">Animas Roky</h2>
+                                            <h2 class="name">Fruni</h2>
                                             <p class="invo-addr-1">
-                                                Apexo Inc  <br/>
-                                                billing@apexo.com <br/>
-                                                169 Teroghoria, Bangladesh <br/>
+                                                Furniture BD  <br/>
+                                                shop@furni.com <br/>
+                                                Chittagong, Bangladesh <br/>
                                             </p>
                                         </div>
                                     </div>

@@ -33,6 +33,7 @@
                  
                   $_SESSION['user_loggedin']=true;
                   $_SESSION['user_email']=$rs['data']->email;
+                  $_SESSION['last_name']=$rs['data']->last_name;
                   echo "<script>window.location='{$baseurl}index.php'</script>";
                 }else{
                   echo "Please check your Email and Password again.";

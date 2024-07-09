@@ -37,13 +37,20 @@
 						<li><a class="nav-link" href="<?= $baseurl ?>services.php">Services</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>blog.php">Blog</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>contact.php">Contact us</a></li>
+						
 					</ul>
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 						<li>
 							<ul class="navbar-nav mai-top-nav header-right-menu">
 								<li class="nav-item dropdown">
 									<a href="#" class="nav-lin" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
+									<?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
+										<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
+										<span style="color:white" class="last_name"><?= $_SESSION['last_name'] ?></span>
+ 										<?php }else{ ?>
+											<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
+										<?php } ?>
+									
 									</a>
 									<?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
 									<ul class="dropdown-menu animated zoomIn" aria-labelledby="navbarDropdown">
