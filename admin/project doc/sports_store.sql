@@ -37,8 +37,7 @@ CREATE TABLE `authentication` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `contact` (`contact`)
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -69,7 +68,7 @@ CREATE TABLE `catagory` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,6 +77,7 @@ CREATE TABLE `catagory` (
 
 LOCK TABLES `catagory` WRITE;
 /*!40000 ALTER TABLE `catagory` DISABLE KEYS */;
+INSERT INTO `catagory` VALUES (2,'Home Accesorice','2024-07-10 07:53:38',1,NULL,NULL,NULL),(3,'Office Accesorice','2024-07-10 07:53:57',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `catagory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,9 +139,8 @@ CREATE TABLE `customer` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `phone` (`phone`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +149,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (30,'2','Md','kamal','17205522386211.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','none','none ','none','none','kamal@gmil.com',155,'2024-07-09 21:10:38',NULL,NULL,NULL,NULL);
+INSERT INTO `customer` VALUES (30,'2','Md','kamal','17205522386211.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','none','none ','none','none','kamal@gmil.com',155,'2024-07-09 21:10:38',NULL,NULL,1,'2024-07-10 08:02:36'),(33,'2','Md','Akash','17205915887609.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','mdakash906431@gmail.com',155,'2024-07-10 08:06:28',NULL,NULL,1,'2024-07-10 08:07:13'),(37,'2','Md','Akash','17205917231376.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','akash906431@gmail.com',0,'2024-07-10 08:08:43',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,7 +174,7 @@ CREATE TABLE `items` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,7 +183,7 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'','',NULL,0.00,0,'','2024-07-02 17:31:55',1,NULL,NULL,NULL),(2,'Football','fgfg','17199343318545.jpg',40.00,1,'DEER','2024-07-02 17:32:11',1,'2024-07-02 17:32:16',1,'2024-07-02 17:32:19'),(3,'Football','sdfsd','17199343871191.jpg',40.00,1,'DEER','2024-07-02 17:33:07',1,NULL,1,'2024-07-07 19:31:24'),(4,'sdfsd','sdfsd','17199344151536.jpg',2.00,1,'sdfsd','2024-07-02 17:33:35',1,'2024-07-07 19:31:28',1,'2024-07-07 19:31:30'),(5,'Chair','Funrichar','17204126173719.jpg',100.00,1,'Bd Publice Service','2024-07-08 06:23:37',1,NULL,NULL,NULL),(6,'Table','Funrichar','17204126368731.jpg',100.00,1,'Bd Publice Service','2024-07-08 06:23:56',1,NULL,NULL,NULL);
+INSERT INTO `items` VALUES (1,'','',NULL,0.00,0,'','2024-07-02 17:31:55',1,NULL,NULL,NULL),(2,'Football','fgfg','17199343318545.jpg',40.00,1,'DEER','2024-07-02 17:32:11',1,'2024-07-02 17:32:16',1,'2024-07-02 17:32:19'),(3,'Football','sdfsd','17199343871191.jpg',40.00,1,'DEER','2024-07-02 17:33:07',1,NULL,1,'2024-07-07 19:31:24'),(4,'sdfsd','sdfsd','17199344151536.jpg',2.00,1,'sdfsd','2024-07-02 17:33:35',1,'2024-07-07 19:31:28',1,'2024-07-07 19:31:30'),(5,'Chair','Funrichar','17204126173719.jpg',100.00,1,'Bd Publice Service','2024-07-08 06:23:37',1,NULL,NULL,NULL),(6,'Table','Funrichar','17204126368731.jpg',100.00,1,'Bd Publice Service','2024-07-08 06:23:56',1,NULL,NULL,NULL),(7,'Chair','Luxary Class','17205912355335.jpg',100.00,3,'RFL','2024-07-10 08:00:35',1,NULL,NULL,NULL),(8,'Table','Office Table','17205912782673.jpg',100.00,3,'Otobi','2024-07-10 08:01:18',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,10 +227,8 @@ CREATE TABLE `orders` (
   `deleted_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ship_email` (`ship_email`),
-  UNIQUE KEY `bill_email` (`bill_email`),
-  UNIQUE KEY `bill_phone` (`bill_phone`),
-  UNIQUE KEY `ship_phone` (`ship_phone`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `bill_email` (`bill_email`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,7 +237,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (16,'2','1','s','','s','','s','','s','','s','','s','','mdakash906431@gmail.com','',0,0,200.00,0.00,2,'eyJpdGVtIjp7IjUiOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA0MTI2MTczNzE5LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfX0sInRvdGFsIjoyMDAsImRpc2NvdW50IjowLCJjdXBvbiI6IiIsInRvdGFsX3F0eSI6Mn0=','','','2024-07-09',1,1,NULL,'2024-07-09');
+INSERT INTO `orders` VALUES (19,'2','1','none','','none','','none','','none','','none','','none','','dd@gmail.com','',0,0,500.00,50.00,5,'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjN9fSwidG90YWwiOjUwMCwiZGlzY291bnQiOjUwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6NX0=','r59','','2024-07-10',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,7 +264,7 @@ CREATE TABLE `purchase` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,6 +273,7 @@ CREATE TABLE `purchase` (
 
 LOCK TABLES `purchase` WRITE;
 /*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+INSERT INTO `purchase` VALUES (1,18,'2024-07-09',100,10000.00,2.00,100.00,10098.00,NULL,'2024-07-10 07:55:32',24,'2024-07-10 07:59:15',1,NULL),(2,0,'2024-07-10',0,0.00,0.00,0.00,0.00,NULL,'2024-07-10 07:58:53',24,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -369,8 +367,7 @@ CREATE TABLE `supplier` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `contact` (`contact`)
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -393,4 +390,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-10  1:15:15
+-- Dump completed on 2024-07-10 12:40:15
