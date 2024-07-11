@@ -140,7 +140,7 @@ CREATE TABLE `customer` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (30,'2','Md','kamal','17205522386211.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','none','none ','none','none','kamal@gmil.com',155,'2024-07-09 21:10:38',NULL,NULL,1,'2024-07-10 08:02:36'),(33,'2','Md','Akash','17205915887609.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','mdakash906431@gmail.com',155,'2024-07-10 08:06:28',NULL,NULL,1,'2024-07-10 08:07:13'),(37,'2','Md','Akash','17205917231376.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','akash906431@gmail.com',0,'2024-07-10 08:08:43',NULL,NULL,NULL,NULL);
+INSERT INTO `customer` VALUES (30,'2','Md','kamal','17205522386211.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','none','none ','none','none','kamal@gmil.com',155,'2024-07-09 21:10:38',NULL,NULL,1,'2024-07-10 08:02:36'),(33,'2','Md','Akash','17205915887609.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','mdakash906431@gmail.com',155,'2024-07-10 08:06:28',NULL,NULL,1,'2024-07-10 08:07:13'),(37,'2','Md','Akash','17205917231376.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','akash906431@gmail.com',0,'2024-07-10 08:08:43',NULL,NULL,NULL,NULL),(38,'2','Md','kamal','17205939805033.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','kamal@gmail.com',0,'2024-07-10 08:46:20',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,6 +219,8 @@ CREATE TABLE `orders` (
   `total_qty` int(11) NOT NULL,
   `cart_data` text NOT NULL,
   `coupon_code` varchar(255) NOT NULL,
+  `payment_method` varchar(255) DEFAULT NULL,
+  `shiping_charge` decimal(10,2) NOT NULL DEFAULT 0.00,
   `notes` varchar(500) NOT NULL,
   `created_at` date DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
@@ -228,7 +230,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ship_email` (`ship_email`),
   UNIQUE KEY `bill_email` (`bill_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +239,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (19,'2','1','none','','none','','none','','none','','none','','none','','dd@gmail.com','',0,0,500.00,50.00,5,'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjN9fSwidG90YWwiOjUwMCwiZGlzY291bnQiOjUwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6NX0=','r59','','2024-07-10',1,NULL,NULL,NULL);
+INSERT INTO `orders` VALUES (21,'2','1','none','','none','','none','','none','','none','','none','','eee@gmail','',0,0,200.00,0.00,2,'eyJpdGVtIjp7IjgiOnsicHJvZHVjdF9uYW1lIjoiVGFibGUiLCJwaG90byI6IjE3MjA1OTEyNzgyNjczLmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoxfSwiNyI6eyJwcm9kdWN0X25hbWUiOiJDaGFpciIsInBob3RvIjoiMTcyMDU5MTIzNTUzMzUuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjIwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5IjoyfQ==','',NULL,0.00,'','2024-07-10',1,NULL,NULL,NULL),(22,'2','2','Md','Md','kamal','kamal','Fuji Film','Fuji Film','Chittahong','Chittahong','Khagrachari','Khagrachari','Ramgarh','Ramgarh','kamal@gmail.com','kamal@gmail.com',0,0,300.00,30.00,3,'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMCwiZGlzY291bnQiOjMwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6M30=','r59','Online Payment',0.00,'','2024-07-11',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -390,4 +392,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-10 12:40:15
+-- Dump completed on 2024-07-11 13:29:40
