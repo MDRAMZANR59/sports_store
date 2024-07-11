@@ -45,8 +45,8 @@
 								<li class="nav-item dropdown">
 									<a href="#" class="nav-lin" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									<?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
-										<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
-										<span style="color:white" class="last_name"><?= $_SESSION['last_name'] ?></span>
+										<span class="nav-link" href="#"><span style="color:white" class="last_name"><?= $_SESSION['user_data']->last_name ?></span> <img src="<?= $baseurl ?>assets/images/user.svg"></span>
+										
  										<?php }else{ ?>
 											<span class="nav-link" href="#"><img src="<?= $baseurl ?>assets/images/user.svg"></span>
 										<?php } ?>

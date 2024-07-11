@@ -29,11 +29,11 @@
               if($_POST){
                 $_POST['password']=sha1($_POST['password']);
                 $rs=$mysqli->common_select_single('customer','*',$_POST);
+               
                 if($rs['data']){
-                 
                   $_SESSION['user_loggedin']=true;
                   $_SESSION['user_email']=$rs['data']->email;
-                  $_SESSION['last_name']=$rs['data']->last_name;
+                  $_SESSION['user_data']=$rs['data'];
                   echo "<script>window.location='{$baseurl}index.php'</script>";
                 }else{
                   echo "Please check your Email and Password again.";

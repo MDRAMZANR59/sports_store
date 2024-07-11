@@ -1,3 +1,4 @@
+<?php require_once('include/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -20,7 +21,16 @@
     <link type="text/css" rel="stylesheet" href="css/invoice.css">
 </head>
 <body>
-
+<?php 
+    $invdata=array();
+    $con['id']=$_GET['invoice'];
+    $result=$mysqli->common_select_single('orders','*',$con);
+    if($result){
+        if($result['data']){
+            $invdata=$result['data'];
+        }
+    }
+?>
 <!-- Invoice 2 start -->
 <div class="invoice-2 invoice-content">
     <div class="container">
@@ -43,8 +53,8 @@
                                     <div class="invoice-id">
                                         <div class="info">
                                             <h1 class="inv-header-1">Invoice</h1>
-                                            <p class="mb-1">Invoice Number: <span>#45613</span></p>
-                                            <p class="mb-0">Invoice Date: <span>24 Jan 2022</span></p>
+                                            <p class="mb-1">Invoice Number: <span>#<?= str_pad($invdata->id,7,"0",STR_PAD_LEFT) ?></span></p>
+                                            <p class="mb-0">Invoice Date: <span><?= date('d M Y',strtotime($invdata->created_at)) ?></span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -55,11 +65,10 @@
                                 <div class="col-sm-6">
                                     <div class="invoice-number mb-30">
                                         <h4 class="inv-title-1">Invoice To</h4>
-                                        <h2 class="name">Jhon Smith</h2>
-                                        <span>Name:</span><br/>
-                                        <span>Company:</span><br/>
-                                        <span>Phone:</span><br/>
-                                        <span>Address:</span>
+                                        <h2 class="name"><?= $invdata->bill_first_name ?> <?= $invdata->bill_last_name ?></h2>
+                                        <span>Phone: <?= $invdata->bill_phone ?></span><br/>
+                                        <span>Email: <?= $invdata->bill_email ?></span><br/>
+                                        <span>Address: <?= $invdata->bill_address ?>, <?= $invdata->bill_state ?>, <?= $invdata->bill_post ?></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -90,72 +99,45 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="tr">
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>01</span>
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Businesscard Design</td>
-                                        <td class="text-center">$300</td>
-                                        <td class="text-center">2</td>
-                                        <td class="text-end">$600.00</td>
-                                    </tr>
-                                    <tr class="bg-grea">
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>02</span>
-
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Fruit Flayer Design</td>
-                                        <td class="text-center">$400</td>
-                                        <td class="text-center">1</td>
-                                        <td class="text-end">$60.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>03</span>
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Application Interface Design</td>
-                                        <td class="text-center">$240</td>
-                                        <td class="text-center">3</td>
-                                        <td class="text-end">$640.00</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>04</span>
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Theme Development</td>
-                                        <td class="text-center">$720</td>
-                                        <td class="text-center">4</td>
-                                        <td class="text-end">$640.00</td>
-                                    </tr>
+                                        <?php
+                                            $cartdata=json_decode(base64_decode($invdata->cart_data));
+                                            
+                                            $i=0;
+                                            foreach($cartdata->item as $item){
+                                        ?>
+                                            <tr class="tr">
+                                                <td>
+                                                    <div class="item-desc-1">
+                                                        <span><?= str_pad(++$i,2,"0",STR_PAD_LEFT) ?></span>
+                                                    </div>
+                                                </td>
+                                                <td class="pl0"><?= $item->product_name ?></td>
+                                                <td class="text-center">BDT <?= $item->price ?></td>
+                                                <td class="text-center"><?= $item->qty ?></td>
+                                                <td class="text-end">BDT <?= $item->price * $item->qty ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                    
                                     <tr class="tr2">
                                         <td></td>
                                         <td></td>
                                         <td></td>
                                         <td class="text-center">SubTotal</td>
-                                        <td class="text-end">$710.99</td>
+                                        <td class="text-end">BDT <?= $cartdata->total ?></td>
                                     </tr>
                                     <tr class="tr2">
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td class="text-center">Tax</td>
-                                        <td class="text-end">$85.99</td>
+                                        <td class="text-center">Discount</td>
+                                        <td class="text-end">BDT <?= $cartdata->discount ?></td>
                                     </tr>
                                     <tr class="tr2">
                                         <td></td>
                                         <td></td>
                                         <td></td>
                                         <td class="text-center f-w-600 active-color">Grand Total</td>
-                                        <td class="f-w-600 text-end active-color">$795.99</td>
+                                        <td class="f-w-600 text-end active-color">BDT <?= $cartdata->total - $cartdata->discount ?></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -165,12 +147,12 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-5 col-sm-5">
                                     <div class="payment-method mb-30">
-                                        <h3 class="inv-title-1">Payment Method</h3>
-                                        <ul class="payment-method-list-1 text-14">
-                                            <li><strong>Account No:</strong> 00 123 647 840</li>
-                                            <li><strong>Account Name:</strong> Jhon Doe</li>
-                                            <li><strong>Branch Name:</strong> xyz</li>
-                                        </ul>
+                                        <h3 class="inv-title-1">Delivery To</h3>
+                                        <h2 class="name"><?= $invdata->ship_first_name ?> <?= $invdata->ship_last_name ?></h2>
+                                        <span>Phone: <?= $invdata->ship_phone ?></span><br/>
+                                        <span>Email: <?= $invdata->ship_email ?></span><br/>
+                                        <span>Address: <?= $invdata->ship_address ?>, <?= $invdata->ship_state ?>, <?= $invdata->ship_post ?></span>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-7 col-sm-7">

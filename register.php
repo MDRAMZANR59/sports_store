@@ -11,7 +11,7 @@
               <div class="form-group">
 									<label for="ship_country" class="text-black">Country <span class="text-danger">*</span></label>
 									<select id="ship_country" name="country" class="form-control">
-										<option value="1">Select a country</option>    
+										<option value="0">Select a country</option>    
 										<option value="2">bangladesh</option>    
 										<option value="3">Algeria</option>    
 										<option value="4">Afghanistan</option>    
