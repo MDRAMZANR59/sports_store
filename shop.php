@@ -16,7 +16,7 @@
                 <!-- Start Column 2 -->
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                     <a class="product-item" onclick="addToCart(<?= $data->id ?>)" href="javascript:void(0)">
-                        <img src="<?= $baseurl ?>admin/assets/items/<?= $data->photo ?>" class="img-fluid product-thumbnail">
+                        <img style="height:300px;" src="<?= $baseurl ?>admin/assets/items/<?= $data->photo ?>" class="img-fluid product-thumbnail">
                         <h3 class="product-title"><?= $data->product_name ?></h3>
                         <strong class="product-price">BDT <?= $data->price ?></strong>
 

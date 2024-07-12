@@ -68,7 +68,7 @@ CREATE TABLE `catagory` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +77,7 @@ CREATE TABLE `catagory` (
 
 LOCK TABLES `catagory` WRITE;
 /*!40000 ALTER TABLE `catagory` DISABLE KEYS */;
-INSERT INTO `catagory` VALUES (2,'Home Accesorice','2024-07-10 07:53:38',1,NULL,NULL,NULL),(3,'Office Accesorice','2024-07-10 07:53:57',1,NULL,NULL,NULL);
+INSERT INTO `catagory` VALUES (2,'Home Accesorice','2024-07-10 07:53:38',1,NULL,NULL,NULL),(3,'Office Accesorice','2024-07-10 07:53:57',1,NULL,NULL,NULL),(4,'Store Accesoris','2024-07-12 13:45:37',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `catagory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +140,7 @@ CREATE TABLE `customer` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (30,'2','Md','kamal','17205522386211.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','none','none ','none','none','kamal@gmil.com',155,'2024-07-09 21:10:38',NULL,NULL,1,'2024-07-10 08:02:36'),(33,'2','Md','Akash','17205915887609.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','mdakash906431@gmail.com',155,'2024-07-10 08:06:28',NULL,NULL,1,'2024-07-10 08:07:13'),(37,'2','Md','Akash','17205917231376.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','akash906431@gmail.com',0,'2024-07-10 08:08:43',NULL,NULL,NULL,NULL),(38,'2','Md','kamal','17205939805033.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Chittahong','Khagrachari','Ramgarh','kamal@gmail.com',0,'2024-07-10 08:46:20',NULL,NULL,NULL,NULL);
+INSERT INTO `customer` VALUES (40,'2','Md','kamal','17207151173284.jpg','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Fuji Film','Khagrachari','Ramgarh','Ramgarh','kamal@gmil.com',1559075906,'2024-07-11 18:25:17',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +174,7 @@ CREATE TABLE `items` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,7 +183,7 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'','',NULL,0.00,0,'','2024-07-02 17:31:55',1,NULL,NULL,NULL),(2,'Football','fgfg','17199343318545.jpg',40.00,1,'DEER','2024-07-02 17:32:11',1,'2024-07-02 17:32:16',1,'2024-07-02 17:32:19'),(3,'Football','sdfsd','17199343871191.jpg',40.00,1,'DEER','2024-07-02 17:33:07',1,NULL,1,'2024-07-07 19:31:24'),(4,'sdfsd','sdfsd','17199344151536.jpg',2.00,1,'sdfsd','2024-07-02 17:33:35',1,'2024-07-07 19:31:28',1,'2024-07-07 19:31:30'),(5,'Chair','Funrichar','17204126173719.jpg',100.00,1,'Bd Publice Service','2024-07-08 06:23:37',1,NULL,NULL,NULL),(6,'Table','Funrichar','17204126368731.jpg',100.00,1,'Bd Publice Service','2024-07-08 06:23:56',1,NULL,NULL,NULL),(7,'Chair','Luxary Class','17205912355335.jpg',100.00,3,'RFL','2024-07-10 08:00:35',1,NULL,NULL,NULL),(8,'Table','Office Table','17205912782673.jpg',100.00,3,'Otobi','2024-07-10 08:01:18',1,NULL,NULL,NULL);
+INSERT INTO `items` VALUES (10,'Exclusive Home Chair','Classic Home Chair','17207862164717.jpg',3000.00,2,'Aotobi Furniture LTD','2024-07-12 14:00:06',1,'2024-07-12 14:14:42',1,NULL),(11,'Wooden Home Chair','Classic Home Chair','17207862386639.jpg',2500.00,2,'Aotobi Furniture LTD','2024-07-12 14:02:05',1,'2024-07-12 14:15:07',1,NULL),(12,'Classic Wooden Home Chair','Classic Home Chair','17207862516713.jpg',2800.00,2,'Aotobi Furniture LTD','2024-07-12 14:05:59',1,'2024-07-12 14:15:22',1,NULL),(13,'Luxary Home Chair','Rocking Wooden Home Chair','17207870834088.jpg',4500.00,2,'Aotobi Furniture LTD','2024-07-12 14:24:43',1,NULL,1,'2024-07-12 14:26:30'),(14,'Classic Fome Attach Chair','Fome Attach Classic Home Chair','17207871687733.jpg',2200.00,2,'Aotobi Furniture LTD','2024-07-12 14:26:08',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,7 +230,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ship_email` (`ship_email`),
   UNIQUE KEY `bill_email` (`bill_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +239,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (21,'2','1','none','','none','','none','','none','','none','','none','','eee@gmail','',0,0,200.00,0.00,2,'eyJpdGVtIjp7IjgiOnsicHJvZHVjdF9uYW1lIjoiVGFibGUiLCJwaG90byI6IjE3MjA1OTEyNzgyNjczLmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoxfSwiNyI6eyJwcm9kdWN0X25hbWUiOiJDaGFpciIsInBob3RvIjoiMTcyMDU5MTIzNTUzMzUuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjIwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5IjoyfQ==','',NULL,0.00,'','2024-07-10',1,NULL,NULL,NULL),(22,'2','2','Md','Md','kamal','kamal','Fuji Film','Fuji Film','Chittahong','Chittahong','Khagrachari','Khagrachari','Ramgarh','Ramgarh','kamal@gmail.com','kamal@gmail.com',0,0,300.00,30.00,3,'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMCwiZGlzY291bnQiOjMwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6M30=','r59','Online Payment',0.00,'','2024-07-11',1,NULL,NULL,NULL);
+INSERT INTO `orders` VALUES (21,'2','1','none','','none','','none','','none','','none','','none','','eee@gmail','',0,0,200.00,0.00,2,'eyJpdGVtIjp7IjgiOnsicHJvZHVjdF9uYW1lIjoiVGFibGUiLCJwaG90byI6IjE3MjA1OTEyNzgyNjczLmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoxfSwiNyI6eyJwcm9kdWN0X25hbWUiOiJDaGFpciIsInBob3RvIjoiMTcyMDU5MTIzNTUzMzUuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjIwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5IjoyfQ==','',NULL,0.00,'','2024-07-10',1,NULL,NULL,NULL),(22,'2','2','Md','Md','kamal','kamal','Fuji Film','Fuji Film','Chittahong','Chittahong','Khagrachari','Khagrachari','Ramgarh','Ramgarh','kamal@gmail.com','kamal@gmail.com',0,0,300.00,30.00,3,'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMCwiZGlzY291bnQiOjMwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6M30=','r59','Online Payment',0.00,'','2024-07-11',1,NULL,NULL,NULL),(23,'2','2','Md','Md','kamal','kamal','Fuji Film','Fuji Film','Khagrachari','Khagrachari','Ramgarh','Ramgarh','Ramgarh','Ramgarh','kamal@gmil.com','kamal@gmil.com',1559075906,1559075906,400.00,0.00,4,'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjQwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5Ijo0fQ==','','Online Payment',0.00,'','2024-07-11',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,7 +275,7 @@ CREATE TABLE `purchase` (
 
 LOCK TABLES `purchase` WRITE;
 /*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
-INSERT INTO `purchase` VALUES (1,18,'2024-07-09',100,10000.00,2.00,100.00,10098.00,NULL,'2024-07-10 07:55:32',24,'2024-07-10 07:59:15',1,NULL),(2,0,'2024-07-10',0,0.00,0.00,0.00,0.00,NULL,'2024-07-10 07:58:53',24,NULL,NULL,NULL);
+INSERT INTO `purchase` VALUES (1,18,'2024-07-09',100,10000.00,2.00,100.00,10098.00,NULL,'2024-07-10 07:55:32',24,'2024-07-10 07:59:15',1,'2024-07-12 14:34:42'),(2,0,'2024-07-10',0,0.00,0.00,0.00,0.00,NULL,'2024-07-10 07:58:53',24,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -370,7 +370,7 @@ CREATE TABLE `supplier` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -379,7 +379,7 @@ CREATE TABLE `supplier` (
 
 LOCK TABLES `supplier` WRITE;
 /*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
-INSERT INTO `supplier` VALUES (18,'Md Fahim','17205523075134.jpg','Fuji Film','Khagrachari','Ramgarh','Ramgarh','mdfahim@gmail.com','0155','2024-07-09 21:04:07',1,'2024-07-09 21:11:47',1,NULL);
+INSERT INTO `supplier` VALUES (18,'Md Fahim','17205523075134.jpg','Fuji Film','Khagrachari','Ramgarh','Ramgarh','mdfahim@gmail.com','0155','2024-07-09 21:04:07',1,'2024-07-09 21:11:47',1,'2024-07-12 11:20:02'),(23,'Jon Enderson','17207836206454.jpg','Aotobi Furniture LTD','GEC','Paslish','Paslish','furniture@autobi.com','015574258489','2024-07-12 13:27:00',1,'2024-07-12 13:59:55',1,NULL),(24,'Wiliem Kaley','17207837269553.jpg','RFL Furniture LTD','Uttora','Uttora','Abdullah Pur','furniture@rfl.com','01987214598','2024-07-12 13:28:46',1,NULL,NULL,NULL),(25,'Micel Willem','17207846566754.jpg','Ikea Ltd','Stock Home','Atowa','Atowa','store@ikea.com','97458789452','2024-07-12 13:44:16',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -392,4 +392,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-11 13:29:40
+-- Dump completed on 2024-07-12 18:37:59
