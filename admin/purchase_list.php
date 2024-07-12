@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $result=$mysqli->common_select_query('select supplier.name as sup_name,purchase.* from purchase join supplier on supplier.id=purchase.supplier_id');
+                            $result=$mysqli->common_select('purchase');
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -38,7 +38,7 @@
                         ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $data->sup_name ?></td>
+                            <td><?= $data->supplier_id ?></td>
                             <td><?= $data->purchase_date ?></td>
                             <td><?= $data->qty ?></td>
                             <td><?= $data->sub_amount ?></td>
