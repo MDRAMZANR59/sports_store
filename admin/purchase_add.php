@@ -180,7 +180,7 @@
                                     $purd['price']=$_POST['price'][$k];
                                     $purd['created_at']=date("Y-m-d H:i:s");
                                     $purd['created_by']=$_SESSION['id'];
-                                    $prs=$mysqli->common_create('purchase',$purd);
+                                    $prs=$mysqli->common_create('purchase_details',$purd);
                                     if($prs['data']){
                                         $purs['purchase_id']=$rs['data'];
                                         $purs['item_id']=$v;
