@@ -8,7 +8,7 @@
                 <div class="intro-excerpt">
                     <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
                     <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-                    <p><a href="<?= $baseurl ?>shop.php" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+                    <p><a href="<?= $baseurl ?>shop.php" class="btn btn-secondary me-2">Shop Now</a><a href="<?= $baseurl ?>shop.php" class="btn btn-white-outline">Explore</a></p>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -30,7 +30,7 @@
             <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
                 <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
                 <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
-                <p><a href="shop.html" class="btn">Explore</a></p>
+                <p><a href="<?= $baseurl ?>shop.php" class="btn">Explore</a></p>
             </div> 
             <!-- End Column 1 -->
             <?php 
@@ -144,7 +144,7 @@
                     <li>Donec vitae odio quis nisl dapibus malesuada</li>
                     <li>Donec vitae odio quis nisl dapibus malesuada</li>
                 </ul>
-                <p><a herf="#" class="btn">Explore</a></p>
+                <p><a herf="<?= $baseurl ?>shop.php" class="btn">Explore</a></p>
             </div>
         </div>
     </div>
