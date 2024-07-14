@@ -168,8 +168,8 @@
                                 <div class="col-sm-12">
                                     <div class="contact-info clearfix">
                                         <a href="tel:+55-4XX-634-7071" class="d-flex"><i class="fa fa-phone"></i> +00 123 647 840</a>
-                                        <a href="tel:info@themevessel.com" class="d-flex"><i class="fa fa-envelope"></i> info@themevessel.com</a>
-                                        <a href="tel:info@themevessel.com" class="mr-0 d-flex d-none-580"><i class="fa fa-map-marker"></i> 169 Teroghoria, Bangladesh</a>
+                                        <a href="tel:info@themevessel.com" class="d-flex"><i class="fa fa-envelope"></i> info@furni.com</a>
+                                        <a href="tel:info@themevessel.com" class="mr-0 d-flex d-none-580"><i class="fa fa-map-marker"></i> Chittagong, Bangladesh</a>
                                     </div>
                                 </div>
                             </div>
