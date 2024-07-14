@@ -18,42 +18,53 @@
                     <thead>
                         <tr>
                             <th>#SL</th>
-                            <th>Purchase Id</th>
                             <th>Product Id</th>
-                            <th>Qty</th>
-                            <th>Price</th>
-                            <th>Stock Date</th>
-                            <th>Actions</th>
+                            <th>In</th>
+                            <th>Out</th>
+                            <th>Balance</th>
+                            <th>price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                            $result=$mysqli->common_select('stock');
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $data){
-                        ?>
-                        <tr>
-                            <td><?= $i++ ?></td>
-                            <td><?= $data->purchase_id ?></td>
-                            <td><?= $data->product_id ?></td>
-                            <td><?= $data->qty ?></td>
-                            <td><?= $data->price ?></td>
-                            <td><?= $data->stock_date ?></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                        <i class="glyphicon glyphicon-option-vertical"></i>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="<?= $baseurl ?>stock_edit.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-                                        <li><a href="<?= $baseurl ?>stock_delete.php?id=<?= $data->id ?>"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php } } } ?>
+                    <?php 
+                        $stockin=$stockout=$balance=$price=0;
+                        $result=$mysqli->common_select_query("SELECT sum(if(stock.qty > 0,qty,0)) as stockin,
+                                                                    sum(if(stock.qty < 0,qty,0)) as stockout,
+                                                                    sum(stock.qty) as balance,AVG(stock.price) as price,
+                                                                     items.product_name FROM `stock`
+                                                                JOIN items on items.id=stock.item_id
+                                                                group by item_id");
+                        if($result){
+                            if($result['data']){
+                                $i=1;
+                                foreach($result['data'] as $data){
+                                    $stockin+=$data->stockin;
+                                    $stockout+=abs($data->stockout);
+                                    $balance+=$data->balance;
+                                    $price+=($data->price * $data->balance);
+                    ?>
+                    <tr>
+                    
+                        <td><?= $i++ ?></td>
+                        <td><?= $data->product_name ?></td>
+                        <td><?= $data->stockin ?></td>
+                        <td><?= abs($data->stockout) ?></td>
+                        <td><?= $data->balance ?></td>
+                        <td>BDT <?= $data->price * $data->balance ?></td>
+                    </tr>
+
+                    <?php } } } ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>Total</th>
+                        <th><?= $stockin ?></th>
+                        <th><?= $stockout ?></th>
+                        <th><?= $balance ?></th>
+                        <th>BDT <?= $price ?></th>
+                    </tr>
+                </tfoot>
                     </tbody>
                 </table>
             </div>

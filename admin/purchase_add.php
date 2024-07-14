@@ -68,7 +68,7 @@
                                 <tr class="">
                                     <th class="p-2">Product Name</th>
                                     <th class="p-2">Qty</th>
-                                    <th class="p-2">Sell Price</th>
+                                    <th class="p-2">Price</th>
                                     <th class="p-2">Amount</th>
                                     <th class="p-2">Action</th>
                                 </tr>
@@ -234,8 +234,7 @@
                             <input type="text" class="form-control qty" name="qty[]" onkeyup="get_cal(this,${data.id})">
                         </td>
                         <td class="p-2">
-                            ${data.price}
-                            <input type="hidden" class="price" name="price[]" value="${data.price}">
+                            <input type="text" onkeyup="get_cal(this,${data.id})" class="form-control price" name="price[]" value="">
                         </td>
                         <td class="p-2">
                             <span id="price${data.id}" class="subprice"> </span>
@@ -254,7 +253,9 @@
 
     //CALCUALATED SALES PRICE
     function get_cal(qty,mid){
-        var price = (isNaN(parseFloat(medicine_data[mid].price))) ? 0 :parseFloat(medicine_data[mid].price); 
+        let price=$(qty).parents('tr').find('.price').val();
+       
+            price = (isNaN(parseFloat(price))) ? 0 : parseFloat(price); 
         var qty = (isNaN(parseFloat(qty.value))) ? 0 :parseFloat(qty.value); 
     
         var subtotal = price * qty;

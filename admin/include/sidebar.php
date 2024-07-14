@@ -64,7 +64,6 @@
                     <li>
                         <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span style="color:white" class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Stock</span></a>
                         <ul class="nav nav-second-level" aria-expanded="false">
-                        <li><a title="Stock_add" href="<?= $baseurl ?>stock_add.php"><span class="mini-sub-pro">Add New</span></a></li>
                         <li><a title="Stock_list" href="<?= $baseurl ?>stock_list.php"><span class="mini-sub-pro">List</span></a></li>
                         </ul>
                     </li>
