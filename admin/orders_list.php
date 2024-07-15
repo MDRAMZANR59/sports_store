@@ -25,6 +25,8 @@
                             <th>Discount</th>
                             <th>Total Qty</th>
                             <th>Coupon Code</th>
+                            <th>Status</th>
+                            <th>Status Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -43,6 +45,8 @@
                             <td><?= $data->bill_phone ?></td>
                             <td><?= $data->total_amount ?></td>
                             <td><?= $data->discount ?></td>
+                            <td><?= $data->status ?></td>
+                            <td><?= $data->status_date ?></td>
                             <td><?= $data->total_qty ?></td>
                             <td><?= $data->coupon_code ?></td>
                             <td>
