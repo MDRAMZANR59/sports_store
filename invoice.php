@@ -8,7 +8,7 @@
 
     <!-- External CSS libraries -->
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" >
@@ -169,7 +169,7 @@
                                     <div class="contact-info clearfix">
                                         <a href="tel:+55-4XX-634-7071" class="d-flex"><i class="fa fa-phone"></i> +00 123 647 840</a>
                                         <a href="tel:info@themevessel.com" class="d-flex"><i class="fa fa-envelope"></i> info@furni.com</a>
-                                        <a href="tel:info@themevessel.com" class="mr-0 d-flex d-none-580"><i class="fa fa-map-marker"></i> Chittagong, Bangladesh</a>
+                                        <a href="tel:info@themevessel.com" class="mr-0 d-flex d-none-580"><i class="fa-solid fa-location-dot"></i> Chittagong, Bangladesh</a>
                                     </div>
                                 </div>
                             </div>
