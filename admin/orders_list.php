@@ -45,10 +45,10 @@
                             <td><?= $data->bill_phone ?></td>
                             <td><?= $data->total_amount ?></td>
                             <td><?= $data->discount ?></td>
-                            <td><?= $data->status ?></td>
-                            <td><?= $data->status_date ?></td>
                             <td><?= $data->total_qty ?></td>
                             <td><?= $data->coupon_code ?></td>
+                            <td><?= $data->status ?></td>
+                            <td><?= $data->status_date ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 14, 2024 at 01:26 AM
+-- Generation Time: Jul 15, 2024 at 02:45 AM
 -- Server version: 10.6.18-MariaDB-cll-lve
 -- PHP Version: 8.1.28
 
@@ -224,6 +224,8 @@ CREATE TABLE `orders` (
   `payment_method` varchar(255) DEFAULT NULL,
   `shiping_charge` decimal(10,2) NOT NULL DEFAULT 0.00,
   `notes` varchar(500) NOT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `status_date` date DEFAULT NULL,
   `created_at` date DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
@@ -235,13 +237,17 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `bill_country`, `ship_country`, `bill_first_name`, `ship_first_name`, `bill_last_name`, `ship_last_name`, `bill_company_name`, `ship_company_name`, `bill_address`, `ship_address`, `bill_state`, `ship_state`, `bill_post`, `ship_post`, `bill_email`, `ship_email`, `bill_phone`, `ship_phone`, `total_amount`, `discount`, `total_qty`, `cart_data`, `coupon_code`, `payment_method`, `shiping_charge`, `notes`, `created_at`, `created_by`, `updated_by`, `updated_at`, `deleted_at`) VALUES
-(21, '2', '1', 'none', '', 'none', '', 'none', '', 'none', '', 'none', '', 'none', '', 'eee@gmail', '', 0, 0, 200.00, 0.00, 2, 'eyJpdGVtIjp7IjgiOnsicHJvZHVjdF9uYW1lIjoiVGFibGUiLCJwaG90byI6IjE3MjA1OTEyNzgyNjczLmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoxfSwiNyI6eyJwcm9kdWN0X25hbWUiOiJDaGFpciIsInBob3RvIjoiMTcyMDU5MTIzNTUzMzUuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjIwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5IjoyfQ==', '', NULL, 0.00, '', '2024-07-10', 1, NULL, NULL, NULL),
-(22, '2', '2', 'Md', 'Md', 'kamal', 'kamal', 'Fuji Film', 'Fuji Film', 'Chittahong', 'Chittahong', 'Khagrachari', 'Khagrachari', 'Ramgarh', 'Ramgarh', 'kamal@gmail.com', 'kamal@gmail.com', 0, 0, 300.00, 30.00, 3, 'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMCwiZGlzY291bnQiOjMwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6M30=', 'r59', 'Online Payment', 0.00, '', '2024-07-11', 1, NULL, NULL, NULL),
-(23, '2', '2', 'Md', 'Md', 'kamal', 'kamal', 'Fuji Film', 'Fuji Film', 'Khagrachari', 'Khagrachari', 'Ramgarh', 'Ramgarh', 'Ramgarh', 'Ramgarh', 'kamal@gmil.com', 'kamal@gmil.com', 1559075906, 1559075906, 400.00, 0.00, 4, 'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjQwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5Ijo0fQ==', '', 'Online Payment', 0.00, '', '2024-07-11', 1, NULL, NULL, NULL),
-(24, '2', '2', 'sohana', 'sohana', 'afsana', 'afsana', '123', '', 'Shishu kabarsthan, DC road, chawkbazar,chittagong', 'Shishu kabarsthan, DC road, chawkbazar,chittagong', 'chittagong', 'chittagong', '4202', '4202', 'sohanaafsana16@gmail.com', 'sohanaafsana16@gmail.com', 1876635583, 1876635583, 7300.00, 0.00, 2, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjF9LCIxNSI6eyJwcm9kdWN0X25hbWUiOiJIb21lIFdvb2RlbiBUYWJsZSIsInBob3RvIjoiMTcyMDg0NzQyNTM5MjUuanBnIiwicHJpY2UiOiI0MzAwLjAwIiwicXR5IjoxfX0sInRvdGFsIjo3MzAwLCJkaXNjb3VudCI6MCwiY3Vwb24iOiIiLCJ0b3RhbF9xdHkiOjJ9', '', 'Online Payment', 0.00, '123', '2024-07-13', 1, NULL, NULL, NULL),
-(32, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 204000.00, 20400.00, 8, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjJ9LCIxNyI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSBCbGFjayIsInBob3RvIjoiMTcyMDkyNDE1NjIyMTIuanBnIiwicHJpY2UiOiIyNzAwMC4wMCIsInF0eSI6Mn0sIjIxIjp7InByb2R1Y3RfbmFtZSI6IlNxdWFyZSBUYWJsZSBCb2FyZCIsInBob3RvIjoiMTcyMDkyNDQxNDc1MTYuanBnIiwicHJpY2UiOiIxNjAwMC4wMCIsInF0eSI6Mn0sIjI1Ijp7InByb2R1Y3RfbmFtZSI6Ik9mZmljZSBVc2VzIFNvZmEiLCJwaG90byI6IjE3MjA5MjQ3NTQ5MDUyLmpwZyIsInByaWNlIjoiNTYwMDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjIwNDAwMCwiZGlzY291bnQiOjIwNDAwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6OH0=', 'r59', 'Online Payment', 0.00, '', '2024-07-14', 1, NULL, NULL, NULL),
-(48, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 3000.00, 300.00, 1, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMDAsImRpc2NvdW50IjozMDAsImN1cG9uIjoidGFuYmhpdDEyIiwidG90YWxfcXR5IjoxfQ==', 'tanbhit12', 'Online Payment', 0.00, '', '2024-07-14', 1, NULL, NULL, NULL);
+INSERT INTO `orders` (`id`, `bill_country`, `ship_country`, `bill_first_name`, `ship_first_name`, `bill_last_name`, `ship_last_name`, `bill_company_name`, `ship_company_name`, `bill_address`, `ship_address`, `bill_state`, `ship_state`, `bill_post`, `ship_post`, `bill_email`, `ship_email`, `bill_phone`, `ship_phone`, `total_amount`, `discount`, `total_qty`, `cart_data`, `coupon_code`, `payment_method`, `shiping_charge`, `notes`, `status`, `status_date`, `created_at`, `created_by`, `updated_by`, `updated_at`, `deleted_at`) VALUES
+(21, '2', '1', 'none', '', 'none', '', 'none', '', 'none', '', 'none', '', 'none', '', 'eee@gmail', '', 0, 0, 200.00, 0.00, 2, 'eyJpdGVtIjp7IjgiOnsicHJvZHVjdF9uYW1lIjoiVGFibGUiLCJwaG90byI6IjE3MjA1OTEyNzgyNjczLmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoxfSwiNyI6eyJwcm9kdWN0X25hbWUiOiJDaGFpciIsInBob3RvIjoiMTcyMDU5MTIzNTUzMzUuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjIwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5IjoyfQ==', '', NULL, 0.00, '', NULL, NULL, '2024-07-10', 1, NULL, NULL, NULL),
+(22, '2', '2', 'Md', 'Md', 'kamal', 'kamal', 'Fuji Film', 'Fuji Film', 'Chittahong', 'Chittahong', 'Khagrachari', 'Khagrachari', 'Ramgarh', 'Ramgarh', 'kamal@gmail.com', 'kamal@gmail.com', 0, 0, 300.00, 30.00, 3, 'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMCwiZGlzY291bnQiOjMwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6M30=', 'r59', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-11', 1, NULL, NULL, NULL),
+(23, '2', '2', 'Md', 'Md', 'kamal', 'kamal', 'Fuji Film', 'Fuji Film', 'Khagrachari', 'Khagrachari', 'Ramgarh', 'Ramgarh', 'Ramgarh', 'Ramgarh', 'kamal@gmil.com', 'kamal@gmil.com', 1559075906, 1559075906, 400.00, 0.00, 4, 'eyJpdGVtIjp7IjciOnsicHJvZHVjdF9uYW1lIjoiQ2hhaXIiLCJwaG90byI6IjE3MjA1OTEyMzU1MzM1LmpwZyIsInByaWNlIjoiMTAwLjAwIiwicXR5IjoyfSwiOCI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSIsInBob3RvIjoiMTcyMDU5MTI3ODI2NzMuanBnIiwicHJpY2UiOiIxMDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjQwMCwiZGlzY291bnQiOjAsImN1cG9uIjoiIiwidG90YWxfcXR5Ijo0fQ==', '', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-11', 1, NULL, NULL, NULL),
+(24, '2', '2', 'sohana', 'sohana', 'afsana', 'afsana', '123', '', 'Shishu kabarsthan, DC road, chawkbazar,chittagong', 'Shishu kabarsthan, DC road, chawkbazar,chittagong', 'chittagong', 'chittagong', '4202', '4202', 'sohanaafsana16@gmail.com', 'sohanaafsana16@gmail.com', 1876635583, 1876635583, 7300.00, 0.00, 2, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjF9LCIxNSI6eyJwcm9kdWN0X25hbWUiOiJIb21lIFdvb2RlbiBUYWJsZSIsInBob3RvIjoiMTcyMDg0NzQyNTM5MjUuanBnIiwicHJpY2UiOiI0MzAwLjAwIiwicXR5IjoxfX0sInRvdGFsIjo3MzAwLCJkaXNjb3VudCI6MCwiY3Vwb24iOiIiLCJ0b3RhbF9xdHkiOjJ9', '', 'Online Payment', 0.00, '123', NULL, NULL, '2024-07-13', 1, NULL, NULL, NULL),
+(32, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 204000.00, 20400.00, 8, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjJ9LCIxNyI6eyJwcm9kdWN0X25hbWUiOiJUYWJsZSBCbGFjayIsInBob3RvIjoiMTcyMDkyNDE1NjIyMTIuanBnIiwicHJpY2UiOiIyNzAwMC4wMCIsInF0eSI6Mn0sIjIxIjp7InByb2R1Y3RfbmFtZSI6IlNxdWFyZSBUYWJsZSBCb2FyZCIsInBob3RvIjoiMTcyMDkyNDQxNDc1MTYuanBnIiwicHJpY2UiOiIxNjAwMC4wMCIsInF0eSI6Mn0sIjI1Ijp7InByb2R1Y3RfbmFtZSI6Ik9mZmljZSBVc2VzIFNvZmEiLCJwaG90byI6IjE3MjA5MjQ3NTQ5MDUyLmpwZyIsInByaWNlIjoiNTYwMDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjIwNDAwMCwiZGlzY291bnQiOjIwNDAwLCJjdXBvbiI6InI1OSIsInRvdGFsX3F0eSI6OH0=', 'r59', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-14', 1, NULL, NULL, NULL),
+(48, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 3000.00, 300.00, 1, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjF9fSwidG90YWwiOjMwMDAsImRpc2NvdW50IjozMDAsImN1cG9uIjoidGFuYmhpdDEyIiwidG90YWxfcXR5IjoxfQ==', 'tanbhit12', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-14', 1, NULL, NULL, NULL),
+(49, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 16600.00, 1660.00, 6, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjJ9LCIxMSI6eyJwcm9kdWN0X25hbWUiOiJXb29kZW4gSG9tZSBDaGFpciIsInBob3RvIjoiMTcyMDc4NjIzODY2MzkuanBnIiwicHJpY2UiOiIyNTAwLjAwIiwicXR5IjoyfSwiMTIiOnsicHJvZHVjdF9uYW1lIjoiQ2xhc3NpYyBXb29kZW4gSG9tZSBDaGFpciIsInBob3RvIjoiMTcyMDc4NjI1MTY3MTMuanBnIiwicHJpY2UiOiIyODAwLjAwIiwicXR5IjoyfX0sInRvdGFsIjoxNjYwMCwiZGlzY291bnQiOjE2NjAsImN1cG9uIjoicjU5IiwidG90YWxfcXR5Ijo2fQ==', 'r59', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-14', 1, NULL, NULL, NULL),
+(50, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 73600.00, 0.00, 9, 'eyJpdGVtIjp7IjEwIjp7InByb2R1Y3RfbmFtZSI6IkV4Y2x1c2l2ZSBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjE2NDcxNy5qcGciLCJwcmljZSI6IjMwMDAuMDAiLCJxdHkiOjN9LCIxMSI6eyJwcm9kdWN0X25hbWUiOiJXb29kZW4gSG9tZSBDaGFpciIsInBob3RvIjoiMTcyMDc4NjIzODY2MzkuanBnIiwicHJpY2UiOiIyNTAwLjAwIiwicXR5IjoyfSwiMTIiOnsicHJvZHVjdF9uYW1lIjoiQ2xhc3NpYyBXb29kZW4gSG9tZSBDaGFpciIsInBob3RvIjoiMTcyMDc4NjI1MTY3MTMuanBnIiwicHJpY2UiOiIyODAwLjAwIiwicXR5IjoyfSwiMTciOnsicHJvZHVjdF9uYW1lIjoiVGFibGUgQmxhY2siLCJwaG90byI6IjE3MjA5MjQxNTYyMjEyLmpwZyIsInByaWNlIjoiMjcwMDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjczNjAwLCJkaXNjb3VudCI6MCwiY3Vwb24iOiIiLCJ0b3RhbF9xdHkiOjl9', '', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-14', 1, NULL, NULL, NULL),
+(51, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 7500.00, 0.00, 3, 'eyJpdGVtIjp7IjExIjp7InByb2R1Y3RfbmFtZSI6Ildvb2RlbiBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjM4NjYzOS5qcGciLCJwcmljZSI6IjI1MDAuMDAiLCJxdHkiOjN9fSwidG90YWwiOjc1MDAsImRpc2NvdW50IjowLCJjdXBvbiI6IiIsInRvdGFsX3F0eSI6M30=', '', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-14', 1, NULL, NULL, NULL),
+(52, '2', '2', 'Md', 'Md', 'Ramzan', 'Ramzan', 'ISDB-WDPF', 'ISDB-WDPF', 'Chittagong', 'Chittagong', 'Bayejid', 'Bayejid', 'Oxizyn', 'Oxizyn', 'mdramzanaliisdbr59@gmail.com', 'mdramzanaliisdbr59@gmail.com', 1559075906, 1559075906, 5000.00, 0.00, 2, 'eyJpdGVtIjp7IjExIjp7InByb2R1Y3RfbmFtZSI6Ildvb2RlbiBIb21lIENoYWlyIiwicGhvdG8iOiIxNzIwNzg2MjM4NjYzOS5qcGciLCJwcmljZSI6IjI1MDAuMDAiLCJxdHkiOjJ9fSwidG90YWwiOjUwMDAsImRpc2NvdW50IjowLCJjdXBvbiI6IiIsInRvdGFsX3F0eSI6Mn0=', '', 'Online Payment', 0.00, '', NULL, NULL, '2024-07-15', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -274,7 +280,11 @@ INSERT INTO `purchase` (`id`, `supplier_id`, `purchase_date`, `qty`, `sub_amount
 (1, 23, '2024-07-14', 55, 52900.00, 5.00, 2645.00, 55540.00, NULL, '2024-07-14 05:01:58', 24, NULL, NULL, NULL),
 (2, 23, '2024-07-14', 150, 160000.00, 5000.00, 4800.00, 159800.00, NULL, '2024-07-14 05:12:41', 26, NULL, NULL, NULL),
 (3, 23, '2024-07-14', 100, 40000.00, 500.00, 800.00, 40300.00, NULL, '2024-07-14 05:13:48', 25, NULL, NULL, NULL),
-(4, 23, '2024-07-14', 500, 1000000.00, 5000.00, 50000.00, 1045000.00, NULL, '2024-07-14 05:14:29', 25, NULL, NULL, NULL);
+(4, 23, '2024-07-14', 500, 1000000.00, 5000.00, 50000.00, 1045000.00, NULL, '2024-07-14 05:14:29', 25, NULL, NULL, NULL),
+(5, 23, '2024-07-14', 100, 640000.00, 4000.00, 12800.00, 648800.00, NULL, '2024-07-14 05:53:19', 25, NULL, NULL, NULL),
+(6, 23, '2024-07-14', 100, 184900.00, 5000.00, 3698.00, 183598.00, NULL, '2024-07-14 05:55:42', 25, NULL, NULL, NULL),
+(7, 25, '2024-07-14', 90, 640000.00, 500.00, 32000.00, 671500.00, NULL, '2024-07-14 05:56:42', 25, NULL, NULL, NULL),
+(8, 23, '2024-07-14', 87, 261864.00, 100.00, 5237.28, 267001.00, NULL, '2024-07-14 06:41:59', 25, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -304,7 +314,12 @@ INSERT INTO `purchase_details` (`id`, `purchase_id`, `purchase_date`, `item_id`,
 (1, 1, '2024-07-14', 10, 55.00, 230.00, '2024-07-14 05:01:58', 24, NULL, NULL, NULL),
 (2, 2, '2024-07-14', 10, 150.00, 400.00, '2024-07-14 05:12:41', 26, NULL, NULL, NULL),
 (3, 3, '2024-07-14', 11, 100.00, 200.00, '2024-07-14 05:13:48', 25, NULL, NULL, NULL),
-(4, 4, '2024-07-14', 23, 500.00, 1000.00, '2024-07-14 05:14:29', 25, NULL, NULL, NULL);
+(4, 4, '2024-07-14', 23, 500.00, 1000.00, '2024-07-14 05:14:29', 25, NULL, NULL, NULL),
+(5, 5, '2024-07-14', 10, 100.00, 800.00, '2024-07-14 05:53:19', 25, NULL, NULL, NULL),
+(6, 6, '2024-07-14', 18, 100.00, 430.00, '2024-07-14 05:55:42', 25, NULL, NULL, NULL),
+(7, 7, '2024-07-14', 20, 90.00, 800.00, '2024-07-14 05:56:42', 25, NULL, NULL, NULL),
+(8, 8, '2024-07-14', 17, 45.00, 42.00, '2024-07-14 06:41:59', 25, NULL, NULL, NULL),
+(9, 8, '2024-07-14', 20, 42.00, 510.00, '2024-07-14 06:41:59', 25, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -359,7 +374,21 @@ INSERT INTO `stock` (`id`, `purchase_id`, `sales_id`, `item_id`, `qty`, `price`,
 (2, 2, NULL, 10, 150.00, 400.00, '2024-07-14', '2024-07-14 05:12:41', 26, NULL, NULL, NULL),
 (3, 3, NULL, 11, 100.00, 200.00, '2024-07-14', '2024-07-14 05:13:48', 25, NULL, NULL, NULL),
 (4, 4, NULL, 23, 500.00, 1000.00, '2024-07-14', '2024-07-14 05:14:29', 25, NULL, NULL, NULL),
-(5, NULL, 48, 10, -1.00, 3000.00, '2024-07-14', '2024-07-14 05:23:19', 1, NULL, NULL, NULL);
+(5, NULL, 48, 10, -1.00, 3000.00, '2024-07-14', '2024-07-14 05:23:19', 1, NULL, NULL, NULL),
+(6, NULL, 49, 10, -2.00, 3000.00, '2024-07-14', '2024-07-14 05:45:55', 1, NULL, NULL, NULL),
+(7, NULL, 49, 11, -2.00, 2500.00, '2024-07-14', '2024-07-14 05:45:55', 1, NULL, NULL, NULL),
+(8, NULL, 49, 12, -2.00, 2800.00, '2024-07-14', '2024-07-14 05:45:55', 1, NULL, NULL, NULL),
+(9, 5, NULL, 10, 100.00, 800.00, '2024-07-14', '2024-07-14 05:53:19', 25, NULL, NULL, NULL),
+(10, 6, NULL, 18, 100.00, 430.00, '2024-07-14', '2024-07-14 05:55:42', 25, NULL, NULL, NULL),
+(11, 7, NULL, 20, 90.00, 800.00, '2024-07-14', '2024-07-14 05:56:42', 25, NULL, NULL, NULL),
+(12, NULL, 50, 10, -3.00, 3000.00, '2024-07-14', '2024-07-14 06:37:20', 1, NULL, NULL, NULL),
+(13, NULL, 50, 11, -2.00, 2500.00, '2024-07-14', '2024-07-14 06:37:20', 1, NULL, NULL, NULL),
+(14, NULL, 50, 12, -2.00, 2800.00, '2024-07-14', '2024-07-14 06:37:20', 1, NULL, NULL, NULL),
+(15, NULL, 50, 17, -2.00, 27000.00, '2024-07-14', '2024-07-14 06:37:20', 1, NULL, NULL, NULL),
+(16, 8, NULL, 17, 45.00, 42.00, '2024-07-14', '2024-07-14 06:41:59', 25, NULL, NULL, NULL),
+(17, 8, NULL, 20, 42.00, 510.00, '2024-07-14', '2024-07-14 06:41:59', 25, NULL, NULL, NULL),
+(18, NULL, 51, 11, -3.00, 2500.00, '2024-07-14', '2024-07-14 08:41:35', 1, NULL, NULL, NULL),
+(19, NULL, 52, 11, -2.00, 2500.00, '2024-07-15', '2024-07-15 04:47:42', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -506,19 +535,19 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `purchase_details`
 --
 ALTER TABLE `purchase_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -530,7 +559,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `supplier`
