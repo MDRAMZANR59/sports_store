@@ -14,7 +14,7 @@
 				</span>
 				<h2 class="display-3 text-black">Thank you!</h2>
 				<p class="lead mb-5">You order was successfuly completed.</p>
-				<p><a href="invoice.php?invoice=<?= $_GET['invoice'] ?? "" ?>" class="btn btn-sm btn-outline-black">Print Invoice</a></p>
+				<p><a href="sslcmz.php?invoice=<?= $_GET['invoice'] ?? "" ?>" class="btn btn-sm btn-outline-black">Payment</a></p>
         	</div>
       	</div>
     </div>
