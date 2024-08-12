@@ -35,7 +35,6 @@
 						<li><a class="nav-link" href="<?= $baseurl ?>shop.php">Shop</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>about.php">About us</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>services.php">Services</a></li>
-						<li><a class="nav-link" href="<?= $baseurl ?>blog.php">Blog</a></li>
 						<li><a class="nav-link" href="<?= $baseurl ?>contact.php">Contact us</a></li>
 						
 					</ul>
