@@ -23,7 +23,7 @@
 <body>
 <?php 
     $invdata=array();
-    $con['id']=$_GET['invoice'];
+    $con['transaction_id']=$_GET['txnid'];
     $result=$mysqli->common_select_single('orders','*',$con);
     if($result){
         if($result['data']){

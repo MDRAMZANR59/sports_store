@@ -20,7 +20,7 @@
 <div class="untree_co-section">
 	<div class="container">
 		<?php if(isset($_SESSION['cart'])){ ?>
-		<form action="" method="post">
+		<form action="sslcmz.php" method="post">
 			<div class="row mb-5">
 				<div class="col-md-12">
 				<div class="border p-4 rounded" role="alert">
@@ -220,38 +220,7 @@
 				</div>
 			</div>
 		</form>
-		<?php 
-			if($_POST){
-				$_POST['cart_data']=base64_encode(json_encode($_SESSION['cart']));
-				$_POST['total_amount']=$_SESSION['cart']['total'];
-				$_POST['discount']=$_SESSION['cart']['discount'];
-				$_POST['total_qty']=$_SESSION['cart']['total_qty'];
-				$_POST['coupon_code']=$_SESSION['cart']['cupon'];
-				$_POST['created_at']=date('Y-m-d H:i:s');
-				$_POST['created_by']=1;
-				$rs=$mysqli->common_create('orders',$_POST);
-				if($rs){
-					if($rs['data']){
-						if($_SESSION['cart']['item']){
-							foreach($_SESSION['cart']['item'] as $k => $v){
-								$purs['sales_id']=$rs['data'];
-								$purs['item_id']=$k;
-								$purs['qty']="-".$v['qty'];
-								$purs['price']=$v['price'];
-								$purs['stock_date']=date("Y-m-d H:i:s");
-								$purs['created_at']=date("Y-m-d H:i:s");
-								$purs['created_by']=1;
-								$srs=$mysqli->common_create('stock',$purs);
-							}
-						}
-						unset($_SESSION['cart']);
-						echo "<script>window.location='{$baseurl}thankyou.php?invoice={$rs['data']}'</script>";
-					}else{
-						echo $rs['error'];
-					}
-				}
-			}
-		?>
+		
 		<?php }else{ ?>
 			<h1>Please add product to cart first.</h1>
 		<?php } ?>

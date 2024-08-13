@@ -22,7 +22,8 @@
               </div>
               <div class="form-group mt-3">
                 <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                <a class="btn btn-default btn-block" href="register.php">Register</a>
+                <a class="btn btn-default btn-block" href="register.php">Register</a></br>
+                <a style="text-decoration: none; font-size:20px; color:blue;" href="#">Forget Password ?</a>
               </div>
             </form>
             <?php

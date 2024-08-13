@@ -14,7 +14,7 @@
 				</span>
 				<h2 class="display-3 text-black">Thank you!</h2>
 				<p class="lead mb-5">You order was successfuly completed.</p>
-				<p><a href="sslcmz.php?invoice=<?= $_GET['invoice'] ?? "" ?>" class="btn btn-sm btn-outline-black">Payment</a></p>
+				<p><a href="invoice.php?txnid=<?= $_GET['txnid'] ?? "" ?>" class="btn btn-sm btn-outline-black">Invoice</a></p>
         	</div>
       	</div>
     </div>
@@ -22,101 +22,3 @@
 
 <!-- Start Footer Section -->
 <?php include_once('include/footer.php')?>
-
-
-			<form action="sslcmz.php" method="post">
-			
-			<div class="form-group row">
-				<div class="col-md-6">
-					<button class="btn btn-black btn-lg py-3 btn-block" type="submit">Payment </button>
-				</div>
-			</div>
-
-			</form>
-			
-			<?php 
-				if($_POST){
-					$_POST['vehicle_id']=$_SESSION['cart']['vehicle_id'];
-					$_POST['schedule_id']=$_SESSION['cart']['schedule_id'];
-					$_POST['customer_id']="";
-					$_POST['total_amount']=$_SESSION['cart']['total'];
-					$_POST['total_seat']=$_SESSION['cart']['total_seat'];
-					$_POST['other_charge']=$_SESSION['cart']['other_charge'];
-					$_POST['discount']=$_SESSION['cart']['discount'];
-					$_POST['discount']=$_SESSION['cart']['discount'];
-					$_POST['created_at']=date('Y-m-d H:i:s');
-					$_POST['created_by']=1;
-					$rs=$mysqli->common_create('seat_book',$_POST);
-					if($rs){
-						if($rs['data']){
-							if($_SESSION['cart']['item']){
-                                foreach($_SESSION['cart']['item'] as $k => $v){
-                                    $purd['vehicle_id']=$_SESSION['cart']['vehicle_id'];
-                                    $purd['schedule_id']=$_SESSION['cart']['schedule_id'];
-                                    $purd['seat_book_id']=$rs['data'];
-                                    $purd['seat_id']=$v['seat_id'];
-                                    $purd['price']=$v['price'];
-                                    $purd['created_at']=date("Y-m-d H:i:s");
-                                    $purd['created_by']=$_SESSION['id'];
-                                    $prs=$mysqli->common_create('seat_book_details',$purd);
-                                }
-                            }
-							unset($_SESSION['cart']);
-							echo "<script>window.location='{$baseurl}thankyou.php?invoice={$rs['data']}'</script>";
-						}else{
-							echo $rs['error'];
-						}
-					}
-				}
-			?>
-
-		</div>
-	</div>
-
-
-	<div class="col-md-6">
-		<div class="row mb-5">
-			<div class="col-md-12">
-				<h2 class="h3 mb-3 text-black">Your Order</h2>
-				<div class="p-3 p-lg-5 border bg-white">
-					<table class="table site-block-order-table mb-5">
-						<thead>
-							<th>Product</th>
-							<th>Total</th>
-						</thead>
-						<tbody>
-							<?php foreach($_SESSION['cart']['item'] as $seat){ ?>
-									<tr>
-										<td><?= $seat['name'] ?> </td>
-										<td>BDT <?= $seat['price'] ?></td>
-									</tr>
-							<?php } ?>
-									<tr>
-										<td class="text-black font-weight-bold"><strong>Subtotal</strong></td>
-										<td class="text-black">BDT <?= $_SESSION['cart']['total'] ?></td>
-									</tr>
-									<tr>
-										<td class="text-black font-weight-bold"><strong>Discount</strong></td>
-										<td class="text-black">BDT <?= $_SESSION['cart']['discount'] ?></td>
-									</tr>
-									<tr>
-										<td class="text-black font-weight-bold"><strong>Platform Charges</strong></td>
-										<td class="text-black">BDT <?= $_SESSION['cart']['other_charge'] ?></td>
-									</tr>
-									<tr>
-										<td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-										<td class="text-black">BDT <?= ($_SESSION['cart']['total'] + $_SESSION['cart']['other_charge'] ) - $_SESSION['cart']['discount'] ?></td>
-									</tr>
-						</tbody>
-					</table>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-						
-		
-						
-				
