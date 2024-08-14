@@ -21,7 +21,7 @@ $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_" . uniqid();
 
 # CUSTOMER INFORMATION
-$post_data['cus_name'] = $_POST['first_name']." ".$_POST['last_name'];
+$post_data['cus_name'] = $_POST['bill_first_name']." ".$_POST['bill_last_name'];
 $post_data['cus_email'] = $_POST['bill_email'];
 $post_data['cus_add1'] = $_POST['bill_address'];
 $post_data['cus_add2'] = $_POST['bill_state'];

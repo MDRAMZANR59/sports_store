@@ -6,24 +6,21 @@
   <div class="error-pagewrap">
 		<div class="error-page-int">
 			<div class="text-center m-b-md custom-login">
-				<h3>PLEASE LOGIN TO APP</h3>
+				<h3>Reset Password</h3>
 			</div>
 			<div class="content-error">
 				<div class="hpanel">
           <div class="panel-body">
-            <form action="" method="post" id="loginForm">
+            <form action="" method="post" id="forgetpassword">
               <div class="form-group">
-                <label class="control-label" for="username">Email</label>
-                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required=""name="email" id="username" class="form-control">
+                <label class="control-label" for="oldpassword">Old Password</label>
+                <input type="password" placeholder="Old Password" title="Please enter you Old Password" required=""name="oldpassword" id="oldpassword" class="form-control">
               </div>
-              <div class="form-group">
-                <label class="control-label" for="password">Password</label>
-                <input type="password" title="Please enter your password" placeholder="******" required="" name="password" id="password" class="form-control">
-              </div>
+              
               <div class="form-group mt-3">
                 <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
                 <a class="btn btn-default btn-block" href="register.php">Register</a></br>
-                <a style="text-decoration: none; font-size:20px; color:blue;" href="forget.php">Forget Password ?</a>
+                <a style="text-decoration: none; font-size:20px; color:blue;" href="#">Forget Password ?</a>
               </div>
             </form>
             <?php
