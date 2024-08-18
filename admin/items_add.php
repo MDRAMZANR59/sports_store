@@ -22,7 +22,7 @@
                             <label for="img">Photo </label>
                             <input type="file" name="photo" class="form-control" id="img" placeholder="" />
                             <label for="price">Price </label>
-                            <input type="number" name="price" class="form-control" id="price" placeholder="Category" />
+                            <input type="number" name="price" class="form-control" id="price" placeholder="Price" />
                             <label for="catagory_id">Catagory </label>
                                 <select class="form-control form-select" name="catagory_id">
                                     <option value="">Select Catagory</option>
