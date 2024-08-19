@@ -14,9 +14,12 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	<link href="<?= $baseurl ?>css/tiny-slider.css" rel="stylesheet">
 	<link href="<?= $baseurl ?>css/style.css" rel="stylesheet">
+	<link href="<?= $baseurl ?>css/userinfo.css" rel="stylesheet">
+	<!-- <link href="<?= $baseurl ?>css/myorders.css" rel="stylesheet"> -->
 	<link href="<?= $baseurl ?>css/details.css" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<title>Sports Store</title>
 </head>
 
@@ -56,8 +59,8 @@
 									</a>
 									<?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
 									<ul class="dropdown-menu animated zoomIn" aria-labelledby="navbarDropdown">
-										<li><a class="dropdown-item" href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a></li>
-											<li><a class="dropdown-item" href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a></li>
+										<li><a class="dropdown-item" href="<?= $baseurl ?>myorders.php"><span class="edu-icon edu-home-admin author-log-ic"></span>My Orders</a></li>
+											<li><a class="dropdown-item" href="<?= $baseurl ?>userinfo.php"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a></li>
 											<li><a class="dropdown-item" href="<?= $baseurl ?>logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Logout</a></li>
  										<?php }else{ ?>
 										<ul class="dropdown-menu animated zoomIn" aria-labelledby="navbarDropdown">
