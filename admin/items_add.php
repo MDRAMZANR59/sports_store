@@ -19,10 +19,14 @@
                             <input type="text" name="product_name" class="form-control" id="fullname" placeholder="Product Name" />
                             <label for="details">Details </label>
                             <textarea name="details" class="form-control" id="details"></textarea>
+                            <label for="material">Material </label>
+                            <input type="text" name="material" class="form-control" id="material" placeholder="Material" />
                             <label for="img">Photo </label>
                             <input type="file" name="photo" class="form-control" id="img" placeholder="" />
                             <label for="price">Price </label>
                             <input type="number" name="price" class="form-control" id="price" placeholder="Price" />
+                            <label for="color">Color </label>
+                            <input type="text" name="color" class="form-control" id="color" placeholder="Color" />
                             <label for="catagory_id">Catagory </label>
                                 <select class="form-control form-select" name="catagory_id">
                                     <option value="">Select Catagory</option>

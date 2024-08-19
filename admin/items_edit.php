@@ -26,10 +26,14 @@
                             <input type="text" name="product_name" class="form-control" id="fullname" value="<?= $olddata->product_name ?>" />
                             <label for="details">Details </label>
                             <textarea name="details" class="form-control" id="details"><?= $olddata->details ?></textarea>
+                            <label for="material">Material </label>
+                            <input type="text" name="material" class="form-control" id="material" value="<?= $olddata->material ?>" />
                             <label for="img">Photo </label>
                             <input type="file" name="photo" class="form-control" id="img" value="<?= $olddata->photo ?>" />
                             <label for="price">Price </label>
                             <input type="number" name="price" class="form-control" id="price" value="<?= $olddata->price ?>" />
+                            <label for="color">Color </label>
+                            <input type="text" name="color" class="form-control" id="color" value="<?= $olddata->color ?>" />
                             <label for="catagoryId">Catagory Id </label>
                             <select class="form-control form-select" name="catagory_id">
                                     <option value="">Select Catagory</option>

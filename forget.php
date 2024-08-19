@@ -16,10 +16,18 @@
                 <label class="control-label" for="oldpassword">Old Password</label>
                 <input type="password" placeholder="Old Password" title="Please enter you Old Password" required=""name="oldpassword" id="oldpassword" class="form-control">
               </div>
+              <div class="form-group">
+                <label class="control-label" for="newpassword">New Password</label>
+                <input type="password" placeholder="New Password" title="New Password" required=""name="newpassword" id="newpassword" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="retypepassword">Retype Password</label>
+                <input type="password" placeholder="Retype password" title="Retype Password" required=""name="retypepassword" id="retypepassword" class="form-control">
+              </div>
               
               <div class="form-group mt-3">
-                <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                <a class="btn btn-default btn-block" href="register.php">Register</a></br>
+                <button type="submit" class="btn btn-success btn-block loginbtn">Reset</button>
+                <a class="btn btn-default btn-block" href="#">Try To Other Way</a></br>
                 <a style="text-decoration: none; font-size:20px; color:blue;" href="#">Forget Password ?</a>
               </div>
             </form>

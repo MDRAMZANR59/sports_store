@@ -14,6 +14,9 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	<link href="<?= $baseurl ?>css/tiny-slider.css" rel="stylesheet">
 	<link href="<?= $baseurl ?>css/style.css" rel="stylesheet">
+	<link href="<?= $baseurl ?>css/details.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	<title>Sports Store</title>
 </head>
 

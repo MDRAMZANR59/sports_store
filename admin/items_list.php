@@ -20,8 +20,10 @@
                             <th>#SL</th>
                             <th>Product Name</th>
                             <th>Details</th>
+                            <th>Material</th>
                             <th>Photo</th>
                             <th>Price</th>
+                            <th>Color</th>
                             <th>Catagory Id</th>
                             <th>Company Name</th>
                             <th>Actions</th>
@@ -39,8 +41,10 @@
                             <td><?= $i++ ?></td>
                             <td><?= $data->product_name ?></td>
                             <td><?= $data->details ?></td>
+                            <td><?= $data->material ?></td>
                             <td> <img src="<?= $baseurl ?>assets/items/<?= $data->photo ?>" width="80px" alt=""> </td>
                             <td><?= $data->price ?></td>
+                            <td><?= $data->color ?></td>
                             <td><?= $data->cat ?></td>
                             <td><?= $data->company_name ?></td>
                             <td>
