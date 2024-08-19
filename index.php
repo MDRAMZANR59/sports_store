@@ -43,15 +43,16 @@
             ?>
                 <!-- Start Column 2 -->
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" onclick="addToCart(<?= $data->id ?>)" href="javascript:void(0)">
+                    <a class="product-item" href="<?= $baseurl ?>/details.php">
                         <img style="height:300px" src="<?= $baseurl ?>admin/assets/items/<?= $data->photo ?>" class="img-fluid product-thumbnail">
+                         </a>
                         <h3 class="product-title"><?= $data->product_name ?></h3>
                         <strong class="product-price">BDT <?= $data->price ?></strong>
 
                         <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
+                            <img src="images/cross.svg" onclick="addToCart(<?= $data->id ?>)" class="img-fluid">
                         </span>
-                    </a>
+                   
                 </div> 
                 <!-- End Column 2 -->
             <?php } } } } ?>
