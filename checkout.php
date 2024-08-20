@@ -21,13 +21,7 @@
 	<div class="container">
 		<?php if(isset($_SESSION['cart'])){ ?>
 		<form action="sslcmz.php" method="post">
-			<div class="row mb-5">
-				<div class="col-md-12">
-				<div class="border p-4 rounded" role="alert">
-					Returning customer? <a href="#">Click here</a> to login
-				</div>
-				</div>
-			</div>
+			<input value="<?= $_SESSION['user_data']->id ?>" type="hidden" name="customer_id">
 			<div class="row">
 				<div class="col-md-6 mb-5 mb-md-0">
 					<h2 class="h3 mb-3 text-black">Billing Details</h2>
