@@ -46,7 +46,7 @@
                     <a class="product-item" href="<?= $baseurl ?>product.php?id=<?= $data->id ?>">
                         <img style="height:300px" src="<?= $baseurl ?>admin/assets/items/<?= $data->photo ?>" class="img-fluid product-thumbnail">
                          </a>
-                        <h3 class="product-title"><?= $data->product_name ?></h3>
+                        <h5 class="product-title"><?= $data->product_name ?></h5>
                         <strong class="product-price">BDT <?= $data->price ?></strong>
                         <button type="button" class="btn btn-info btn-sm" onclick="addToCart(<?= $data->id ?>)">Add To Cart</button>
                         

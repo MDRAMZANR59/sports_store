@@ -29,7 +29,7 @@
                                                 $i=1;
                                                 foreach($result['data'] as $d){
                                     ?>
-                                        <option value="<?= $d->id ?>" > <?= $d->contact ?> <?= $d->name ?></option>
+                                        <option value="<?= $d->id ?>" > <?= $d->name ?> <?= $d->contact ?></option>
                                     <?php } } } ?>
                                 </select>
                             </div>

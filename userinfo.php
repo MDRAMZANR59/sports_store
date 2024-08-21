@@ -6,11 +6,18 @@
     <div class="col-md-3">
       <div class="card">
         <div class="card-body text-center">
-        <a href="#">
-            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="img-fluid rounded-circle" alt="Profile Picture">
-          </a>
-          <h4 class="mt-3">Camila Smith</h4>
-          <p class="text-muted">deydey@theEmail.com</p>
+          <?php 
+            $result=$mysqli->common_select_single('customer','*',);
+              if($result){
+                if($result['data']){
+          ?>
+            <img class="img-fluid rounded-circle" alt="Profile Picture" src="<?= $baseurl ?>admin/assets/customer_photos/<?= $result['data']->photo ?>" width="100px">
+          <?php  }} ?>
+          <?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
+          <h4 class="mt-3"><?= $_SESSION['user_data']->first_name ?> <?= $_SESSION['user_data']->last_name ?> </h4>
+          <p class="text-muted"><?= $_SESSION['user_data']->email ?></p>
+          <?php }else{ ?>
+            <?php } ?>
         </div>
 
         <ul class="nav nav-pills flex-column">
@@ -33,10 +40,16 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-6 mb-3">
-              <p><strong>First Name</strong>: Camila</p>
-              <p><strong>Last Name</strong>: Smith</p>
-              <p><strong>Company Name</strong>: 13 July 1983</p>
+            <?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
+              <span style="color:white" class="last_name"><?= $_SESSION['user_data']->last_name ?></span>
+              <p><strong>First Name</strong>: <?= $_SESSION['user_data']->first_name ?> </p>
+              <p><strong>Last Name</strong>: <?= $_SESSION['user_data']->last_name ?></p>
+              <p><strong>Company Name</strong>: <?= $_SESSION['user_data']->company_name ?></p>
+              <p><strong>Phone</strong>: +880 <?= $_SESSION['user_data']->phone ?></p>
+              <p><strong>Address <br/> </strong><?= $_SESSION['user_data']->post ?>, <?= $_SESSION['user_data']->state ?>, <?= $_SESSION['user_data']->address ?></p>
             </div>
+              <?php }else{ ?>
+              <?php } ?>
           </div>
         </div>
       </div>
@@ -46,23 +59,29 @@
         </div>
         <div class="card-body">
           <div class="row">
+          <?php 
+            $result=$mysqli->common_select_single('orders','*',);
+              if($result){
+                if($result['data']){
+          ?>
             <div class="col-sm-6 mb-3">
             <div class="card-header">Bill Address</div>
-              <p><strong>Country</strong>: </p>
-              <p><strong>State</strong>: Smith</p>
-              <p><strong>Address</strong>: Australia</p>
-              <p><strong>Post</strong>: 13 July 1983</p>
-              <p><strong>Email</strong>: UI Designer</p>
-              <p><strong>Phone</strong>: 88 (02) 123456</p>
+              <p><strong>Country</strong>: Bangladesh</p>
+              <p><strong>State</strong>: <?= $result['data']->bill_state ?></p>
+              <p><strong>Address</strong>: <?= $result['data']->bill_address ?></p>
+              <p><strong>Post</strong>: <?= $result['data']->bill_post ?></p>
+              <p><strong>Email</strong>: <?= $result['data']->bill_email ?></p>
+              <p><strong>Phone</strong>: +880 <?= $result['data']->bill_phone ?></p>
             </div>
             <div class="col-sm-6 mb-3">
             <div class="card-header">Ship Address</div>
-            <p><strong>Country</strong>: </p>
-              <p><strong>State</strong>: Smith</p>
-              <p><strong>Address</strong>: Australia</p>
-              <p><strong>Post</strong>: 13 July 1983</p>
-              <p><strong>Email</strong>: UI Designer</p>
-              <p><strong>Phone</strong>: 88 (02) 123456</p>
+            <p><strong>Country</strong>: Bangladesh</p>
+              <p><strong>State</strong>: <?= $result['data']->ship_state ?></p>
+              <p><strong>Address</strong>: <?= $result['data']->ship_address ?></p>
+              <p><strong>Post</strong>: <?= $result['data']->ship_post ?></p>
+              <p><strong>Email</strong>: <?= $result['data']->ship_email ?></p>
+              <p><strong>Phone</strong>: +880 <?= $result['data']->ship_phone ?></p>
+              <?php  }} ?>
             </div>
           </div>
         </div>
@@ -70,4 +89,6 @@
     </div>
   </div>
 </div>
+<br/>
+<br/>
 <?php include_once('include/footer.php')?>
