@@ -2,22 +2,81 @@
 
 <!-- Start Hero Section -->
 <div class="hero">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-5">
-                <div class="intro-excerpt">
-                    <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-                    <p><a href="<?= $baseurl ?>shop.php" class="btn btn-secondary me-2">Shop Now</a><a href="<?= $baseurl ?>shop.php" class="btn btn-white-outline">Explore</a></p>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="hero-img-wrap">
-                    <img src="<?=  $baseurl ?>assets/images/couch.png" class="img-fluid">
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="<?= $baseurl ?>images/Carousel1.jpg" alt="Los Angeles" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block" style="position:absolute; top:131px">
+        <div class="container">
+            <div class="row justify-content-between" style="text-align:center">
+                <div style="width:100%" class="col-lg-5">
+                    <div class="intro-excerpt" style="max-width:100%">
+                        <h2 style="font-weight:800; font-size:50px; color:#ffde01; border:3px solid; border-radius:10px">Modern Interior Design Studio</h2>
+                        <h3 class="mb-4" style="color:white;font-weight:800; font-size:30px">Organize your life with us</h3>
+                        <p style="margin-tom:36px"><a href="<?= $baseurl ?>shop.php" class="btn btn-secondary me-2">Shop Now</a><a style="color:white; background-color:green" href="<?= $baseurl ?>shop.php" class="btn btn-white-outline">Explore</a></p>
+                    </div>
                 </div>
             </div>
         </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="<?= $baseurl ?>images/Carousel2.jpg" alt="Los Angeles" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block" style="position:absolute; top:131px">
+        <div class="container">
+            <div class="row justify-content-between" style="text-align:center">
+                <div style="width:100%" class="col-lg-5">
+                    <div class="intro-excerpt" style="max-width:100%">
+                        <h2 style="font-weight:800; font-size:50px; color:deepskyblue; border:3px solid; border-radius:10px">Compliments your lifestyle</h2>
+                        <h3 class="mb-4" style="color:black;font-weight:800; font-size:30px">The expression of rest </h3>
+                        <p style="margin-tom:36px"><a href="<?= $baseurl ?>shop.php" class="btn btn-secondary me-2">Shop Now</a><a style="color:white; background-color:green" href="<?= $baseurl ?>shop.php" class="btn btn-white-outline">Explore</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    
+      <div class="carousel-item">
+        <img src="<?= $baseurl ?>images/Carousel3.jpg" alt="Los Angeles" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block" style="position:absolute; top:131px">
+        <div class="container">
+            <div class="row justify-content-between" style="text-align:center">
+                <div style="width:100%" class="col-lg-5">
+                    <div class="intro-excerpt" style="max-width:100%">
+                        <h2 style="font-weight:800; font-size:45px; color:darkviolet; border:3px solid; border-radius:10px">Made for creating tasty memories </h2>
+                        <h3 class="mb-4" style="color:#1fc32a;font-weight:800; font-size:30px">Bundle of satisfaction</h3>
+                        <p style="margin-tom:36px"><a href="<?= $baseurl ?>shop.php" class="btn btn-secondary me-2">Shop Now</a><a style="color:white; background-color:green" href="<?= $baseurl ?>shop.php" class="btn btn-white-outline">Explore</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+    
 </div>
 <!-- End Hero Section -->
 
@@ -109,177 +168,16 @@
 
                 </div>
             </div>
-
             <div class="col-lg-5">
                 <div class="img-wrap">
                     <img src="images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 <!-- End Why Choose Us Section -->
 
-<!-- Start We Help Section -->
-<div class="we-help-section">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-                <div class="imgs-grid">
-                    <div class="grid grid-1"><img src="images/img-grid-1.jpg" alt="Untree.co"></div>
-                    <div class="grid grid-2"><img src="images/img-grid-2.jpg" alt="Untree.co"></div>
-                    <div class="grid grid-3"><img src="images/img-grid-3.jpg" alt="Untree.co"></div>
-                </div>
-            </div>
-            <div class="col-lg-5 ps-lg-5">
-                <h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
-                <p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-
-                <ul class="list-unstyled custom-list my-4">
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                </ul>
-                <p><a herf="<?= $baseurl ?>shop.php" class="btn">Explore</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End We Help Section -->
-
-
- 
-		<!-- Start Testimonial Slider -->
-		<div class="testimonial-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 mx-auto text-center">
-						<h2 class="section-title">Testimonials</h2>
-					</div>
-				</div>
-
-				<div class="row justify-content-center">
-					<div class="col-lg-12">
-						<div class="testimonial-slider-wrap text-center">
-
-							<div id="testimonial-nav">
-								<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
-								<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
-							</div>
-
-							<div class="testimonial-slider">
-								
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<blockquote class="mb-5">
-													<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-												</blockquote>
-
-												<div class="author-info">
-													<div class="author-pic">
-														<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-													</div>
-													<h3 class="font-weight-bold">Maria Jones</h3>
-													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<blockquote class="mb-5">
-													<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-												</blockquote>
-
-												<div class="author-info">
-													<div class="author-pic">
-														<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-													</div>
-													<h3 class="font-weight-bold">Maria Jones</h3>
-													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<blockquote class="mb-5">
-													<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-												</blockquote>
-
-												<div class="author-info">
-													<div class="author-pic">
-														<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-													</div>
-													<h3 class="font-weight-bold">Maria Jones</h3>
-													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Testimonial Slider -->
-
-		<!-- Start Blog Section -->
-		<div class="blog-section">
-			<div class="container">
-				<div class="row mb-5">
-					<div class="col-md-6">
-						<h2 class="section-title">Populer Product</h2>
-					</div>
-				</div>
-
-				<div class="row">
-
-					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
-						</div>
-					</div>
-
-					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image" class="img-fluid"></a>
-						</div>
-					</div>
-
-					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image" class="img-fluid"></a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<!-- End Blog Section -->	
-<?php include_once('include/footer.php')?>
+<!-- Start Footer -->
+<?php include_once('include/footer.php') ?>
+<!-- End Footer -->

@@ -86,6 +86,7 @@
               </div>
               <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
               <a class="btn btn-default btn-block" href="register.php">Register</a>
+              <a style="text-decoration: none; font-size:15px; background:none; color:blue;" href="forget.php">Forget Password ?</a>
             </form>
             <?php
               if($_POST){

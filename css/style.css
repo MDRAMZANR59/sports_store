@@ -100,10 +100,12 @@ a {
   padding: calc(4rem - 30px) 0 0rem 0; }
   @media (min-width: 768px) {
     .hero {
-      padding: calc(4rem - 30px) 0 4rem 0; } }
+      /* padding: calc(4rem - 30px) 0 4rem 0; */
+      } }
   @media (min-width: 992px) {
     .hero {
-      padding: calc(8rem - 30px) 0 8rem 0; } }
+      padding-top: 0px;
+      } }
   .hero .intro-excerpt {
     position: relative;
     z-index: 4; }
@@ -197,7 +199,8 @@ a {
   color: #2f2f2f; }
 
 .product-section {
-  padding: 7rem 0; }
+  padding: 31px 0px 0px 0px;
+  }
   .product-section .product-item {
     text-align: center;
     text-decoration: none;
