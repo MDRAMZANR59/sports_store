@@ -25,24 +25,7 @@
           <?= $data->product_name?>
           </h4>
 <?php  } } } ?>
-<?php 
-    $stockin=$stockout=$balance=$price=0;
-    $result=$mysqli->common_select_query("SELECT sum(if(stock.qty > 0,qty,0)) as stockin,
-                                                sum(if(stock.qty < 0,qty,0)) as stockout,
-                                                  items.product_name FROM `stock`
-                                            JOIN items on items.id=stock.item_id
-                                            group by item_id");
-    if($result){
-        if($result['data']){
-            $i=1;
-            foreach($result['data'] as $data){
-               
-?>
-          <div class="d-flex flex-row my-3">
-            <span class="text-muted"><i class="fas fa-shopping-basket fa-sm mx-1"></i><?= $data->stockin ?>-<?= $data->stockout ?></span>
-            <span class="text-success ms-2">In stock</span>
-          </div>
-          <?php } } } ?>
+
 <?php 
     $id=$_GET['id'];
     $result=$mysqli->common_select_query("SELECT items.*, catagory.name as cat FROM `items` join catagory on catagory.id=items.catagory_id WHERE items.deleted_at is null and items.id=$id");
