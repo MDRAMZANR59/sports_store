@@ -1,28 +1,22 @@
 <?php include_once('include/header.php') ?>
-
+</br></br></br></br></br>
 <div class="container mt-4">
   <div class="row">
     <!-- Profile Navigation -->
     <div class="col-md-3">
       <div class="card">
         <div class="card-body text-center">
-          <?php 
-            $result=$mysqli->common_select_single('customer','*',);
-              if($result){
-                if($result['data']){
-          ?>
-            <img class="img-fluid rounded-circle" alt="Profile Picture" src="<?= $baseurl ?>admin/assets/customer_photos/<?= $result['data']->photo ?>" width="100px">
-          <?php  }} ?>
-          <?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
-          <h4 class="mt-3"><?= $_SESSION['user_data']->first_name ?> <?= $_SESSION['user_data']->last_name ?> </h4>
-          <p class="text-muted"><?= $_SESSION['user_data']->email ?></p>
-          <?php }else{ ?>
-            <?php } ?>
+        
+        <img src="<?= $baseurl ?>assets/users/<?= $result['data']->photo ?>" width="200px" alt="">
+        <h4 class="mt-5"><?= $_SESSION['name'] ?> </h4>
+        <p class="text-muted"><?= $_SESSION['email'] ?> </p>
+        
+          
         </div>
 
         <ul class="nav nav-pills flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="fa fa-user"></i> Profile</a>
+            <a class="nav-link bg-primary active" href="#"><i class="fa fa-user"></i> Profile</a>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-edit"></i> Edit Profile</a>
           </li>
@@ -33,23 +27,36 @@
     <!-- Profile Information -->
     <div class="col-md-9">
       <!-- Bio Graph -->
-      <div class="card mb-4">
-        <div class="card-header">
+      <div style="width:500px" class="card mb-4">
+        <div style="font-size:30px" class="card-header">
           Bio Graph
         </div>
         <div class="card-body">
           <div class="row">
             <div class="col-sm-6 mb-3">
-            <?php if(isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin']){ ?>
-              <span style="color:white" class="last_name"><?= $_SESSION['user_data']->last_name ?></span>
-              <p><strong>First Name</strong>: <?= $_SESSION['user_data']->first_name ?> </p>
-              <p><strong>Last Name</strong>: <?= $_SESSION['user_data']->last_name ?></p>
-              <p><strong>Company Name</strong>: <?= $_SESSION['user_data']->company_name ?></p>
-              <p><strong>Phone</strong>: +880 <?= $_SESSION['user_data']->phone ?></p>
-              <p><strong>Address <br/> </strong><?= $_SESSION['user_data']->post ?>, <?= $_SESSION['user_data']->state ?>, <?= $_SESSION['user_data']->address ?></p>
+            <?php 
+            $con['id']=$_SESSION['id'];
+            $result=$mysqli->common_select_single('authentication','*',$con);
+            if($result){
+                if($result['data']){
+        ?>
+              <span style="color:white" class="last_name">f</span>
+              <p><strong>Name</strong>: <?= $result['data']->name ?> </p>
+              <p><strong>Email</strong>: <?= $result['data']->email ?> </p>
+              <p><strong>Contact</strong>: <?= $result['data']->contact ?> </p>
+              <p><strong>User Name</strong>: <?= $result['data']->username ?> </p>
             </div>
-              <?php }else{ ?>
-              <?php } ?>
+            <?php  }} ?>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header">
+          Address
+        </div>
+        <div class="card-body">
+          <div class="row">
+            </div>
           </div>
         </div>
       </div>

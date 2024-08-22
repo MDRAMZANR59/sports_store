@@ -82,11 +82,11 @@
                             <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                 <div class="header-top-menu tabl-d-n">
                                     <ul class="nav navbar-nav mai-top-nav">
-                                        <li class="nav-item"><a href="#" class="nav-link">Home</a>
+                                        <li class="nav-item"><a href="<?= $baseurl ?>index.php" class="nav-link">Home</a>
                                         </li>
-                                        <li class="nav-item"><a href="#" class="nav-link">About</a>
+                                        <li class="nav-item"><a href="<?= $baseurl ?>index.php" class="nav-link">About</a>
                                         </li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                        <li class="nav-item"><a href="<?= $baseurl ?>index.php" class="nav-link">Services</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -108,7 +108,7 @@
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                <li><a href="userinfo.php"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
+                                                <li><a href="<?= $baseurl ?>userinfo.php"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                                 </li>
                                                 <li><a href="<?= $baseurl ?>logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                 </li>
