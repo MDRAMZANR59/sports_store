@@ -208,7 +208,7 @@
                                 <a href="#"><img src="assets/assets/img/product/profile-bg.jpg" alt=""></a>
                             </div>
                             <div class="single-product-text">
-                                <img src="assets/img/product/pro4.jpg" alt="">
+                                <img style="margin-top:-23px" src="assets/img/product/pro4.jpg" alt="">
                                 <h4><a class="cards-hd-dn" href="#">Angela Dominic</a></h4>
                                 <h5>Web Designer & Developer</h5>
                                 <p class="ctn-cards">Lorem ipsum dolor sit amet, this is a consectetur adipisicing elit</p>
